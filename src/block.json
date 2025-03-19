@@ -1,0 +1,67 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "b-blocks/test-purpose",
+	"version": "1.0.0",
+	"title": "Faq",
+	"category": "widgets",
+	"description": "Short description of the Test Purpose",
+	"keywords": [
+		"Faq"
+	],
+	"textdomain": "b-blocks",
+	"attributes": {
+		"align": {
+			"type": "string",
+			"default": "full"
+		},
+		"faqs":{
+			"type":"object",
+			"default":{
+				"title":"Frequently asked Questions",
+				"buttonText":"Contact Us Now ",
+				"description":"Discover clarity and insights as we unravel answers to your questions",
+				
+				"faqItems":
+					[
+						{
+							"question": "Does BTCPayServer cost extra?",
+							"answer": "No, BTCPayServer is completely free and open-source software."
+						  },
+						  {
+							"question": "Does my Voltage Lightning Node connect to BTC Server automatically?",
+							"answer": "Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."
+						  },
+						  {
+							"question": "Can I accept payments on chain?",
+							"answer": "Yes, you can accept both on-chain and Lightning payments through the platform."
+						  }
+					]
+				
+			}
+		},
+		"options":{
+			"type":"object",
+			"default":{
+		"selectedTheme":"theme2",
+		"icon": "<svg  viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>"
+
+			}
+		}
+	},
+	"supports": {
+		"align": [
+			"wide",
+			"full"
+		],
+		"html": false
+	},
+	"example": {
+		"attributes": {}
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./view.css",
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js"
+}
