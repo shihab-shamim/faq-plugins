@@ -87,13 +87,17 @@
   width: 20px;
   height: 20px;
 }
+.wp-block-b-blocks-test-purpose .wrapper .buttonIcon svg {
+  width: 20px;
+  height: 20px;
+}
 .wp-block-b-blocks-test-purpose .wrapper .faq-item.active .toggle-btn {
   transform: rotate(180deg);
 }
 .wp-block-b-blocks-test-purpose .wrapper .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease-out, padding 0.3s ease;
+  transition: max-height 0.5s ease-out, padding 0.7s ease;
   color: #888;
   margin: 5px 0;
   background-color: #0D0E10;

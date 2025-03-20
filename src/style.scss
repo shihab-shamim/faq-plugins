@@ -245,7 +245,10 @@ $primaryColor: #4527a4;
 			height: 20px;
 		}
 	}
-	
+	.buttonIcon svg{
+		width: 20px;
+		height: 20px;
+	}
 	.faq-item.active .toggle-btn {
 		transform: rotate(180deg);
 		// color: #c5fb00;
@@ -258,7 +261,7 @@ $primaryColor: #4527a4;
 	.faq-answer {
 		max-height: 0;
 		overflow: hidden;
-		transition: max-height 0.3s ease-out, padding 0.3s ease;
+		transition: max-height 0.5s ease-out, padding 0.7s ease;
 		color: #888;
 		// line-height: 1.6;
 		margin:5px 0;

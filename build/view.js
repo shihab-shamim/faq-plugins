@@ -1067,6 +1067,9 @@ const Style2 = ({
   isView
 }) => {
   const words = faqs?.title.split(" ");
+  const {
+    faqItems
+  } = attributes;
   const lastWord = words.pop();
   const [activeIndex, setActiveIndex] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
   const toggleFaq = index => {
@@ -1093,28 +1096,31 @@ const Style2 = ({
         faqs: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.updateData)(faqs, value, "description")
       });
     }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    href: "#",
+  }), attributes?.options?.isShowButton && (isView ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: faqs?.buttonLink,
+    target: attributes?.options?.isLinkTarget ? "_blank" : "_self",
+    className: "contact-btn",
+    rel: "noreferrer"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, faqs?.buttonText), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "buttonIcon",
+    dangerouslySetInnerHTML: {
+      __html: faqs?.buttonIcon
+    }
+  })) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "contact-btn"
-  }, " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, faqs?.buttonText), " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    stroke: "currentColor",
-    fill: "currentColor",
-    strokeWidth: "0",
-    viewBox: "0 0 16 16",
-    height: "20px",
-    width: "20px",
-    xmlns: "http://www.w3.org/2000/svg"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-    fillRule: "evenodd",
-    d: "M10.146 4.646a.5.5 0 01.708 0l3 3a.5.5 0 010 .708l-3 3a.5.5 0 01-.708-.708L12.793 8l-2.647-2.646a.5.5 0 010-.708z",
-    clipRule: "evenodd"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-    fillRule: "evenodd",
-    d: "M2 8a.5.5 0 01.5-.5H13a.5.5 0 010 1H2.5A.5.5 0 012 8z",
-    clipRule: "evenodd"
-  }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    value: faqs?.buttonText,
+    onChange: value => setAttributes({
+      faqs: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.updateData)(faqs, value, "buttonText")
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "buttonIcon",
+    dangerouslySetInnerHTML: {
+      __html: faqs?.buttonIcon
+    }
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "faq-right"
-  }, faqs.faqItems.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, faqItems.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
     isView: isView,
     key: index,
     index: index,
@@ -1160,7 +1166,7 @@ const FaqItem = ({
 }) => {
   const {
     options,
-    faqs
+    faqItems
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `faq-item ${isActive ? "active" : ""}`
@@ -1175,7 +1181,7 @@ const FaqItem = ({
     value: question,
     onChange: value => {
       setAttributes({
-        faqs: (0,_functions__WEBPACK_IMPORTED_MODULE_2__.updateData)(faqs, value, "faqItems", index, "question")
+        faqItems: (0,_functions__WEBPACK_IMPORTED_MODULE_2__.updateData)(faqItems, value, index, "question")
       });
     }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
@@ -1199,7 +1205,7 @@ const FaqItem = ({
     value: answer,
     onChange: value => {
       setAttributes({
-        faqs: (0,_functions__WEBPACK_IMPORTED_MODULE_2__.updateData)(faqs, value, "faqItems", index, "answer")
+        faqItems: (0,_functions__WEBPACK_IMPORTED_MODULE_2__.updateData)(faqItems, value, index, "answer")
       });
     }
   })));
