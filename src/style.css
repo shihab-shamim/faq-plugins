@@ -13,13 +13,13 @@
   width: 100%;
   margin: 0 auto;
   background-color: #000000;
+  padding: 100px 50px;
 }
 .wp-block-b-blocks-test-purpose .wrapper .faq-wrapper {
   display: grid;
   grid-template-columns: minmax(200px, 500px) auto;
   gap: 120px;
   align-items: start;
-  padding: 100px 50px;
 }
 .wp-block-b-blocks-test-purpose .wrapper .faq-left .title {
   color: rgb(252, 252, 253);
