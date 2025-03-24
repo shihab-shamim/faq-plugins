@@ -3,17 +3,72 @@
   "apiVersion": 3,
   "name": "b-blocks/test-purpose",
   "version": "1.0.0",
-  "title": "Faq",
+  "title": "FAQS!",
   "category": "widgets",
   "description": "Short description of the Test Purpose",
   "keywords": [
-    "Faq"
+    "Faq",
+    "faqs",
+    "FAQS"
   ],
   "textdomain": "b-blocks",
   "attributes": {
     "align": {
       "type": "string",
       "default": "full"
+    },
+    "alignment": {
+      "type": "string",
+      "default": "center"
+    },
+    "styles": {
+      "type": "object",
+      "default": {
+        "bg": {
+          "type": "solid",
+          "color": "#000000"
+        },
+        "padding": {
+          "desktop": {
+            "top": "100px",
+            "right": "50px",
+            "bottom": "100px",
+            "left": "50px"
+          },
+          "tablet": {
+            "top": "80px",
+            "right": "40px",
+            "bottom": "80px",
+            "left": "40px"
+          },
+          "mobile": {
+            "top": "50px",
+            "right": "20px",
+            "bottom": "50px",
+            "left": "20px"
+          }
+        },
+        "margin": {
+          "desktop": {
+            "top": "0px",
+            "right": "0px",
+            "bottom": "0px",
+            "left": "0px"
+          },
+          "tablet": {
+            "top": "0px",
+            "right": "0px",
+            "bottom": "0px",
+            "left": "0px"
+          },
+          "mobile": {
+            "top": "0px",
+            "right": "0px",
+            "bottom": "0px",
+            "left": "0px"
+          }
+        }
+      }
     },
     "faqs": {
       "type": "object",

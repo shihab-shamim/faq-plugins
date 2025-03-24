@@ -2,7 +2,6 @@ import { createRoot } from 'react-dom/client';
 import './style.scss';
 import Style from './Components/Common/Style';
 import Faq from './Components/Faq/Faq';
-// import BlockName from './Components/Frontend/BlockName';
 
 document.addEventListener('DOMContentLoaded', () => {
 	const blockNameEls = document.querySelectorAll('.wp-block-b-blocks-test-purpose');
@@ -12,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		createRoot(blockNameEl).render(<>
 			<Style attributes={attributes} id={blockNameEl.id} />
 
-			{/* <BlockName attributes={attributes} /> */}
 
 			<Faq isView={true} attributes={attributes} />
 		</>);

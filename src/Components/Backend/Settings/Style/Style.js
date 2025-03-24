@@ -1,36 +1,40 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { __ } from "@wordpress/i18n";
 import {
   PanelBody,
-  __experimentalBoxControl as BoxControl,
+  PanelRow,
+  // __experimentalBoxControl as BoxControl,
 } from "@wordpress/components";
-import { ColorsControl } from "../../../../../../bpl-tools/Components";
+import { Background, BoxControl, Device, Label } from "../../../../../../bpl-tools/Components";
+import { updateData } from "../../../../utils/functions";
 
-const Style = ({ attributes, setAttributes }) => {
-  const { colors } = attributes;
-  const [values, setValues] = useState({
-    top: "50px",
-    left: "10px",
-    right: "10px",
-    bottom: "50px",
-  });
+const Style = ({ attributes, setAttributes,device }) => {
+  const { styles } = attributes;
 
 
+ console.log(styles?.margin);
 
   return (
     <>
       <PanelBody
       
         className="bPlPanelBody"
-        title={__("Purpose styles title", "b-blocks")}
+        title={__("ContainerWrapper", "b-blocks")}
         initialOpen={false}
       >
-        <ColorsControl
-          value={colors}
-          onChange={(val) => setAttributes({ colors: val })}
-          defaults={{ color: "black", bg: "#B1C5A4" }}
-        />
-        <BoxControl values={values} onChange={setValues} />
+
+        <Background labe="Background Color" onChange={(value)=>setAttributes({styles:updateData(styles,value,"bg")})} />
+
+          
+          <PanelRow><Label>{__("Padding","b-blocks")}</Label> <Device/></PanelRow>
+
+          <BoxControl values={styles?.padding[device]} onChange={(value)=>setAttributes({styles:updateData(styles,value,"padding",device)})} />
+
+          <PanelRow><Label>{__("Margin","b-blocks")}</Label> <Device/></PanelRow>
+
+          <BoxControl values={styles?.margin[device]} onChange={(value)=>setAttributes({styles:updateData(styles,value,"margin",device)})} />
+       
+        
       </PanelBody>
     </>
   );

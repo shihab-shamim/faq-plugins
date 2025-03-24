@@ -1,17 +1,47 @@
-import { getColorsCSS } from '../../../../bpl-tools/utils/getCSS';
+import { mobileBreakpoint, tabBreakpoint } from '../../../../bpl-tools/utils/data';
+import { getBackgroundCSS, getBoxCSS, } from '../../../../bpl-tools/utils/getCSS';
 
 const Style = ({ attributes, id }) => {
-	const { colors } = attributes;
+	const { styles,alignment} = attributes;
 
 	const mainSl = `#${id}`;
-	const blockSl = `${mainSl} .bBlocksTestPurpose`;
+	const wrapperSl = `${mainSl} .wrapper`; 
+	const containerSl = `${wrapperSl} .container`;
 
 	return <style dangerouslySetInnerHTML={{
 		__html: `
 		
-		${blockSl} p{
-			${getColorsCSS(colors)}
+
+		${wrapperSl}{
+			justify-content: ${alignment};
+
+		
 		}
+		
+		${containerSl}{
+		${getBackgroundCSS(styles?.bg)}
+		 padding:${getBoxCSS(styles?.padding.desktop)} ;
+		 margin:${getBoxCSS(styles?.margin.desktop)} ;
+		 
+
+		}
+
+
+		${tabBreakpoint}{
+			${containerSl}{
+		 padding:${getBoxCSS(styles?.padding.tablet)};
+		 margin:${getBoxCSS(styles?.margin.tablet)} ;
+
+
+			}
+		
+		}
+
+		${mobileBreakpoint}{
+		    ${containerSl}{
+         padding:${getBoxCSS(styles?.padding.mobile)}};
+		 margin:${getBoxCSS(styles?.margin.mobile)} ;
+
 
 	`}} />;
 }

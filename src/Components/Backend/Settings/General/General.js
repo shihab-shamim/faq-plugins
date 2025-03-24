@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n';
 
-import { Flex, FormToggle, Panel, PanelBody, SelectControl, TextControl } from '@wordpress/components';
+import {  FormToggle, PanelBody, SelectControl, TextControl } from '@wordpress/components';
 import { themesOption } from '../../../../utils/options';
 import { updateData } from '../../../../utils/functions';
 import { ItemsPanel, Label } from '../../../../../../bpl-tools/Components';
@@ -21,7 +21,7 @@ const General = ({ attributes, setAttributes }) => {
         labelPosition='left'
         value={selectedTheme}
         options={themesOption}
-        // onChange={(v) => setAttributes({ purposeType: updateData(purposeType, v) })}
+       
         onChange={(value) => {
           setAttributes({ options: updateData(options, { selectedTheme: value }) });
         }}
@@ -44,14 +44,14 @@ const General = ({ attributes, setAttributes }) => {
     
        <Label>Show Button <FormToggle
             checked={ options?.isShowButton }
-            onChange={ (e) =>setAttributes({options:{...options, isShowButton:!options?.isShowButton }}) }
+            onChange={ () =>setAttributes({options:{...options, isShowButton:!options?.isShowButton }}) }
         /></Label>
 
        { options?.isShowButton && <> <TextControl value={faqs?.buttonText} label="Button Text"  onChange={(value)=>setAttributes({faqs:updateData(faqs,value,"buttonText")})} />
         <TextControl value={faqs?.buttonLink} label="Button Link"  onChange={(value)=>setAttributes({faqs:updateData(faqs,value,"buttonLink")})} />
         <Label>Open In New Tab <FormToggle
             checked={ options?.isLinkTarget }
-            onChange={ (e) =>setAttributes({options:{...options, isLinkTarget:!options?.isLinkTarget }}) }
+            onChange={ () =>setAttributes({options:{...options, isLinkTarget:!options?.isLinkTarget }}) }
         /></Label>
 </>}
        
@@ -61,4 +61,5 @@ const General = ({ attributes, setAttributes }) => {
   )
 }
 
-export default General
+export default General;
+

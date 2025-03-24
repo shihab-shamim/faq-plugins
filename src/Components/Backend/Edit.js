@@ -1,19 +1,21 @@
 import {  useBlockProps } from "@wordpress/block-editor";
+import {withSelect} from "@wordpress/data"
 
 import Settings from "./Settings/Settings";
 import Style from "../Common/Style";
 import Faq from "../Faq/Faq";
 
 const Edit = (props) => {
-  const { attributes, setAttributes, clientId } = props;
+  const { attributes, setAttributes, clientId ,device} = props;
   // const { purposeType } = attributes;
+  // console.log(device);
 
   return (
     <>
-      <Settings {...{ attributes, setAttributes }} />
+      <Settings {...{ attributes, setAttributes ,device}} />
 
       <div {...useBlockProps()}>
-        <Style attributes={attributes} id={`block-${clientId}`} />
+        <Style attributes={attributes} id={`block-${clientId}`} device={device} />
 
         {/* <div className="bBlocksTestPurpose">
           {purposeType === "test" ? (
@@ -29,10 +31,16 @@ const Edit = (props) => {
               celebrating, and they might even.
             </p>
           )}
-        </div> */}
+        </div> */} 
         <Faq attributes={attributes} setAttributes={setAttributes} />
       </div>
     </>
   );
 };
-export default Edit;
+// export default Edit;
+export default withSelect((select)=>{
+  const {getDeviceType} =select('core/editor')
+  return {
+    device:  getDeviceType()?.toLowerCase(),
+  }
+})(Edit);

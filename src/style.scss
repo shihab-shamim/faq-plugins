@@ -11,7 +11,7 @@ $primaryColor: #4527a4;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 	}
 	.wrapper {
-		// padding: 2rem;
+		display: flex;
 	  
 	  
 	//   .container {
@@ -133,12 +133,12 @@ $primaryColor: #4527a4;
 	//   }
 
 	//   theme 2 
+	
 	.container {
 		max-width: 1350px;
 		width: 100%;
-		margin: 0 auto;
-		background-color: #000000;
-		padding: 100px 50px;
+		// margin: 0 auto;
+		// padding: 100px 50px;
 	}
 	
 	.faq-wrapper {
@@ -215,6 +215,8 @@ $primaryColor: #4527a4;
 		padding: 4px 10px;
 		background-color: #0D0E10;
 		border-radius: 10px;
+		min-width: 200px;
+		justify-content: space-between;
 
 
 	}
