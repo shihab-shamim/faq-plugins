@@ -22,6 +22,11 @@
 		"styles":{
 			"type":"object",
             "default":{
+				"width":{
+					"desktop": "1350px",
+                    "tablet": "768px",
+                    "mobile": "500px"
+				},
                 "bg":{
 					"type":"solid",
 					"color":"#000000"

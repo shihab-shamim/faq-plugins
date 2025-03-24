@@ -4,6 +4,7 @@ import {
   PanelBody,
   PanelRow,
   // __experimentalBoxControl as BoxControl,
+  __experimentalUnitControl as  UnitControl
 } from "@wordpress/components";
 import { Background, BoxControl, Device, Label } from "../../../../../../bpl-tools/Components";
 import { updateData } from "../../../../utils/functions";
@@ -12,7 +13,7 @@ const Style = ({ attributes, setAttributes,device }) => {
   const { styles } = attributes;
 
 
- console.log(styles?.margin);
+
 
   return (
     <>
@@ -22,6 +23,9 @@ const Style = ({ attributes, setAttributes,device }) => {
         title={__("ContainerWrapper", "b-blocks")}
         initialOpen={false}
       >
+          <PanelRow><Label>{__("Width","b-blocks")}</Label> <Device/></PanelRow>
+
+        <UnitControl value={styles?.width[device]} onChange={(value)=>setAttributes({styles:updateData(styles,value,"width",device)})}  />
 
         <Background labe="Background Color" onChange={(value)=>setAttributes({styles:updateData(styles,value,"bg")})} />
 

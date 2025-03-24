@@ -885,6 +885,7 @@ const Style = ({
 		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg)}
 		 padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.desktop)} ;
 		 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.desktop)} ;
+		 max-width:${styles?.width?.desktop}
 		 
 
 		}
@@ -894,6 +895,7 @@ const Style = ({
 			${containerSl}{
 		 padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.tablet)};
 		 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.tablet)} ;
+		  max-width:${styles?.width?.tablet}
 
 
 			}
@@ -904,6 +906,7 @@ const Style = ({
 		    ${containerSl}{
          padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.mobile)}};
 		 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.mobile)} ;
+		  max-width:${styles?.width?.mobile};
 
 
 	`

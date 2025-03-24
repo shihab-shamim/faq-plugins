@@ -45341,12 +45341,16 @@ const Style = ({
   const {
     styles
   } = attributes;
-  console.log(styles?.margin);
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
     className: "bPlPanelBody",
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("ContainerWrapper", "b-blocks"),
     initialOpen: false
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.Background, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.Label, null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Width", "b-blocks")), " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.Device, null)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalUnitControl, {
+    value: styles?.width[device],
+    onChange: value => setAttributes({
+      styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(styles, value, "width", device)
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.Background, {
     labe: "Background Color",
     onChange: value => setAttributes({
       styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(styles, value, "bg")
@@ -45411,6 +45415,7 @@ const Style = ({
 		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg)}
 		 padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.desktop)} ;
 		 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.desktop)} ;
+		 max-width:${styles?.width?.desktop}
 		 
 
 		}
@@ -45420,6 +45425,7 @@ const Style = ({
 			${containerSl}{
 		 padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.tablet)};
 		 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.tablet)} ;
+		  max-width:${styles?.width?.tablet}
 
 
 			}
@@ -45430,6 +45436,7 @@ const Style = ({
 		    ${containerSl}{
          padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.mobile)}};
 		 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.mobile)} ;
+		  max-width:${styles?.width?.mobile};
 
 
 	`
@@ -49360,7 +49367,7 @@ module.exports = /*#__PURE__*/JSON.parse('[{"terms":["Digit Zero","nada","none",
 /***/ ((module) => {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"b-blocks/test-purpose","version":"1.0.0","title":"FAQS!","category":"widgets","description":"Short description of the Test Purpose","keywords":["Faq","faqs","FAQS"],"textdomain":"b-blocks","attributes":{"align":{"type":"string","default":"full"},"alignment":{"type":"string","default":"center"},"styles":{"type":"object","default":{"bg":{"type":"solid","color":"#000000"},"padding":{"desktop":{"top":"100px","right":"50px","bottom":"100px","left":"50px"},"tablet":{"top":"80px","right":"40px","bottom":"80px","left":"40px"},"mobile":{"top":"50px","right":"20px","bottom":"50px","left":"20px"}},"margin":{"desktop":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"tablet":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"mobile":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}}},"faqs":{"type":"object","default":{"title":"Frequently asked Questions","buttonText":"Contact Us Now ","description":"Discover clarity and insights as we unravel answers to your questions","buttonIcon":"<svg stroke=\'currentColor\' fill=\'currentColor\' strokeWidth=\'0\' viewBox=\'0 0 16 16\' xmlns=\'http://www.w3.org/2000/svg\'><path fillRule=\'evenodd\' d=\'M10.146 4.646a.5.5 0 01.708 0l3 3a.5.5 0 010 .708l-3 3a.5.5 0 01-.708-.708L12.793 8l-2.647-2.646a.5.5 0 010-.708z\' clipRule=\'evenodd\'/><path fillRule=\'evenodd\' d=\'M2 8a.5.5 0 01.5-.5H13a.5.5 0 010 1H2.5A.5.5 0 012 8z\' clipRule=\'evenodd\'/></svg>","buttonLink":"https://www.facebook.com"}},"faqItems":{"type":"array","default":[{"question":"Does BTCPayServer cost extra?","answer":"No, BTCPayServer is completely free and open-source software."},{"question":"Does my Voltage Lightning Node connect to BTC Server automatically?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"Can I accept payments on chain?","answer":"Yes, you can accept both on-chain and Lightning payments through the platform."}]},"options":{"type":"object","default":{"selectedTheme":"theme2","icon":"<svg  viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' strokeWidth=\'2\' strokeLinecap=\'round\' strokeLinejoin=\'round\'><polyline points=\'6 9 12 15 18 9\'></polyline></svg>","isLinkTarget":true,"isShowButton":true}}},"supports":{"align":["wide","full"],"html":false},"example":{"attributes":{}},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./view.css","render":"file:./render.php","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"b-blocks/test-purpose","version":"1.0.0","title":"FAQS!","category":"widgets","description":"Short description of the Test Purpose","keywords":["Faq","faqs","FAQS"],"textdomain":"b-blocks","attributes":{"align":{"type":"string","default":"full"},"alignment":{"type":"string","default":"center"},"styles":{"type":"object","default":{"width":{"desktop":"1350px","tablet":"768px","mobile":"500px"},"bg":{"type":"solid","color":"#000000"},"padding":{"desktop":{"top":"100px","right":"50px","bottom":"100px","left":"50px"},"tablet":{"top":"80px","right":"40px","bottom":"80px","left":"40px"},"mobile":{"top":"50px","right":"20px","bottom":"50px","left":"20px"}},"margin":{"desktop":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"tablet":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"mobile":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}}},"faqs":{"type":"object","default":{"title":"Frequently asked Questions","buttonText":"Contact Us Now ","description":"Discover clarity and insights as we unravel answers to your questions","buttonIcon":"<svg stroke=\'currentColor\' fill=\'currentColor\' strokeWidth=\'0\' viewBox=\'0 0 16 16\' xmlns=\'http://www.w3.org/2000/svg\'><path fillRule=\'evenodd\' d=\'M10.146 4.646a.5.5 0 01.708 0l3 3a.5.5 0 010 .708l-3 3a.5.5 0 01-.708-.708L12.793 8l-2.647-2.646a.5.5 0 010-.708z\' clipRule=\'evenodd\'/><path fillRule=\'evenodd\' d=\'M2 8a.5.5 0 01.5-.5H13a.5.5 0 010 1H2.5A.5.5 0 012 8z\' clipRule=\'evenodd\'/></svg>","buttonLink":"https://www.facebook.com"}},"faqItems":{"type":"array","default":[{"question":"Does BTCPayServer cost extra?","answer":"No, BTCPayServer is completely free and open-source software."},{"question":"Does my Voltage Lightning Node connect to BTC Server automatically?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"Can I accept payments on chain?","answer":"Yes, you can accept both on-chain and Lightning payments through the platform."}]},"options":{"type":"object","default":{"selectedTheme":"theme2","icon":"<svg  viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' strokeWidth=\'2\' strokeLinecap=\'round\' strokeLinejoin=\'round\'><polyline points=\'6 9 12 15 18 9\'></polyline></svg>","isLinkTarget":true,"isShowButton":true}}},"supports":{"align":["wide","full"],"html":false},"example":{"attributes":{}},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./view.css","render":"file:./render.php","viewScript":"file:./view.js"}');
 
 /***/ })
 

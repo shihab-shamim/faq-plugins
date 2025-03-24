@@ -22,6 +22,7 @@ const Style = ({ attributes, id }) => {
 		${getBackgroundCSS(styles?.bg)}
 		 padding:${getBoxCSS(styles?.padding.desktop)} ;
 		 margin:${getBoxCSS(styles?.margin.desktop)} ;
+		 max-width:${styles?.width?.desktop}
 		 
 
 		}
@@ -31,6 +32,7 @@ const Style = ({ attributes, id }) => {
 			${containerSl}{
 		 padding:${getBoxCSS(styles?.padding.tablet)};
 		 margin:${getBoxCSS(styles?.margin.tablet)} ;
+		  max-width:${styles?.width?.tablet}
 
 
 			}
@@ -41,6 +43,7 @@ const Style = ({ attributes, id }) => {
 		    ${containerSl}{
          padding:${getBoxCSS(styles?.padding.mobile)}};
 		 margin:${getBoxCSS(styles?.margin.mobile)} ;
+		  max-width:${styles?.width?.mobile};
 
 
 	`}} />;
