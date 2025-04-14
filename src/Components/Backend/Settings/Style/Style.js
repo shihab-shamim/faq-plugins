@@ -44,8 +44,25 @@ const Style = ({ attributes, setAttributes,device }) => {
           <PanelRow><Label>{__("Margin","b-blocks")}</Label> <Device/></PanelRow>
 
           <BoxControl values={styles?.margin[device]} onChange={(value)=>setAttributes({styles:updateData(styles,value,"margin",device)})} />
+
+
+            <BoxControl style={{marginTop:"15px"}} label={__("Radius","b-blocks")} values={styles?.radius} onChange={value=>setAttributes({styles:updateData(styles,value,"radius")})} />
        
         
+      </PanelBody>
+
+      <PanelBody  className="bPlPanelBody"
+        title={__("Button", "b-blocks")}
+        initialOpen={true}>
+
+
+          <ColorsControl value={styles?.button?.colors}  onChange={value=>setAttributes({styles:updateData(styles,value,"button","colors")})} />
+
+          <BoxControl style={{marginTop:"15px"}} label={__("Padding","b-blocks")} values={styles?.button?.padding}  onChange={value=>setAttributes({styles:updateData(styles,value,"button","padding")})} />
+            
+          <BoxControl style={{marginTop:"15px"}} label={__("Radius","b-blocks")} values={styles?.button?.radius}  onChange={value=>setAttributes({styles:updateData(styles,value,"button","radius")})} />
+
+
       </PanelBody>
 
       <PanelBody className="bPlPanelBody"

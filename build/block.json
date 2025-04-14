@@ -74,6 +74,12 @@
             "left": "0px"
           }
         },
+        "radius": {
+          "top": "0px",
+          "right": "0px",
+          "bottom": "0px",
+          "left": "0px"
+        },
         "question": {
           "typho": {
             "fontFamily": "Archivo",
@@ -179,6 +185,25 @@
             "letterSpace": "0px"
           },
           "color": "rgba(252, 252, 253, 0.7)"
+        },
+        "button": {
+          "colors": {
+            "color": "#000000",
+            "bgType": "solid",
+            "bg": "#c5fb00"
+          },
+          "padding": {
+            "top": "8px",
+            "right": "20px",
+            "bottom": "8px",
+            "left": "20px"
+          },
+          "radius": {
+            "top": "8px",
+            "right": "8px",
+            "bottom": "8px",
+            "left": "8px"
+          }
         }
       }
     },

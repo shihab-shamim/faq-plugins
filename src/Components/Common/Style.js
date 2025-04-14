@@ -15,10 +15,12 @@ const Style = ({ attributes, id }) => {
 	const toggleBtnSl = `${faqQuestionSl} .toggle-btn`;
 	const iconSl = `${toggleBtnSl} .icon`;
 	const questionSl = `${faqQuestionSl} .question`;
-	const faqLefttrSl = `${faqWrapperSl} .faq-left`;
-	const faqLitlerSl = `${faqLefttrSl} .title`;
-	const faqhighlighterSl = `${faqLefttrSl} .highlight`;
-	const faqDescriptionrSl = `${faqLefttrSl} .description`;
+	const faqLeftSl = `${faqWrapperSl} .faq-left`;
+	const faqTitle = `${faqLeftSl} .title`;
+	const faqhighlighteSl = `${faqLeftSl} .highlight`;
+	const faqDescriptionSl = `${faqLeftSl} .description`;
+	
+	const faqContactButtonrSl = `${faqLeftSl} .contact-btn`;
 
 	// console.log(styles?.title?.highlightColor);
 	// background:${styles?.title?.highlightColor?.gradient};
@@ -52,19 +54,19 @@ const Style = ({ attributes, id }) => {
 	
 	
 			${getTypoCSS(questionSl, styles?.question?.typho)?.styles}
-			${getTypoCSS(faqLitlerSl, styles?.title?.typho)?.styles}
-			${getTypoCSS(faqhighlighterSl, styles?.title?.typho)?.styles}
-			${getTypoCSS(faqDescriptionrSl, styles?.description?.typho)?.styles}
+			${getTypoCSS(faqTitle, styles?.title?.typho)?.styles}
+			${getTypoCSS(faqhighlighteSl, styles?.title?.typho)?.styles}
+			${getTypoCSS(faqDescriptionSl, styles?.description?.typho)?.styles}
 
 			
 
 
 			
-			${faqDescriptionrSl}{
+			${faqDescriptionSl}{
 			 color:${styles?.description?.color};
 			}
 			
-			${faqLitlerSl}{
+			${faqTitle}{
 			color:${styles?.title?.color}
 			}
 
@@ -80,7 +82,12 @@ const Style = ({ attributes, id }) => {
 			 .faq-answer-dec{
 		    padding:${getBoxCSS(styles?.answer?.padding)};
 		   }
-			
+		
+		   }
+		   ${faqContactButtonrSl}{
+		    ${getColorsCSS(styles?.button?.colors)}
+			 padding:${getBoxCSS(styles?.button?.padding)};
+			 border-radius:${getBoxCSS(styles?.button?.radius)};
 		   }
 		   ${iconSl} svg {
 		   fill:${styles?.question?.colors?.color};
@@ -92,7 +99,7 @@ const Style = ({ attributes, id }) => {
 	
 			
 			}
-			${faqhighlighterSl} {
+			${faqhighlighteSl} {
 			${getBackgroundCSS(styles?.title?.highlightColor)}
 			 
 				
@@ -103,7 +110,9 @@ const Style = ({ attributes, id }) => {
 			${getBackgroundCSS(styles?.bg)}
 			 padding:${getBoxCSS(styles?.padding.desktop)} ;
 			 margin:${getBoxCSS(styles?.margin.desktop)} ;
-			 max-width:${styles?.width?.desktop}
+			 max-width:${styles?.width?.desktop};
+			 border-radius:${getBoxCSS(styles?.radius)};
+
 			 
 	
 			}
@@ -135,9 +144,7 @@ const Style = ({ attributes, id }) => {
 		<style dangerouslySetInnerHTML={{__html:`
 		${getTypoCSS('',styles?.answer?.typho)?.googleFontLink}
 		${getTypoCSS(faqAnswerSl, styles?.answer?.typho)?.styles}
-		
-		
-		
+	
 		`
 
 

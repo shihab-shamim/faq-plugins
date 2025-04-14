@@ -878,10 +878,11 @@ const Style = ({
   const toggleBtnSl = `${faqQuestionSl} .toggle-btn`;
   const iconSl = `${toggleBtnSl} .icon`;
   const questionSl = `${faqQuestionSl} .question`;
-  const faqLefttrSl = `${faqWrapperSl} .faq-left`;
-  const faqLitlerSl = `${faqLefttrSl} .title`;
-  const faqhighlighterSl = `${faqLefttrSl} .highlight`;
-  const faqDescriptionrSl = `${faqLefttrSl} .description`;
+  const faqLeftSl = `${faqWrapperSl} .faq-left`;
+  const faqTitle = `${faqLeftSl} .title`;
+  const faqhighlighteSl = `${faqLeftSl} .highlight`;
+  const faqDescriptionSl = `${faqLeftSl} .description`;
+  const faqContactButtonrSl = `${faqLeftSl} .contact-btn`;
 
   // console.log(styles?.title?.highlightColor);
   // background:${styles?.title?.highlightColor?.gradient};
@@ -911,19 +912,19 @@ const Style = ({
 	
 	
 			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(questionSl, styles?.question?.typho)?.styles}
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqLitlerSl, styles?.title?.typho)?.styles}
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqhighlighterSl, styles?.title?.typho)?.styles}
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqDescriptionrSl, styles?.description?.typho)?.styles}
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqTitle, styles?.title?.typho)?.styles}
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqhighlighteSl, styles?.title?.typho)?.styles}
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqDescriptionSl, styles?.description?.typho)?.styles}
 
 			
 
 
 			
-			${faqDescriptionrSl}{
+			${faqDescriptionSl}{
 			 color:${styles?.description?.color};
 			}
 			
-			${faqLitlerSl}{
+			${faqTitle}{
 			color:${styles?.title?.color}
 			}
 
@@ -939,7 +940,12 @@ const Style = ({
 			 .faq-answer-dec{
 		    padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.answer?.padding)};
 		   }
-			
+		
+		   }
+		   ${faqContactButtonrSl}{
+		    ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getColorsCSS)(styles?.button?.colors)}
+			 padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.button?.padding)};
+			 border-radius:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.button?.radius)};
 		   }
 		   ${iconSl} svg {
 		   fill:${styles?.question?.colors?.color};
@@ -951,7 +957,7 @@ const Style = ({
 	
 			
 			}
-			${faqhighlighterSl} {
+			${faqhighlighteSl} {
 			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.title?.highlightColor)}
 			 
 				
@@ -962,7 +968,9 @@ const Style = ({
 			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg)}
 			 padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.desktop)} ;
 			 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.desktop)} ;
-			 max-width:${styles?.width?.desktop}
+			 max-width:${styles?.width?.desktop};
+			 border-radius:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.radius)};
+
 			 
 	
 			}
@@ -993,9 +1001,7 @@ const Style = ({
       __html: `
 		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.answer?.typho)?.googleFontLink}
 		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqAnswerSl, styles?.answer?.typho)?.styles}
-		
-		
-		
+	
 		`
     }
   }));
