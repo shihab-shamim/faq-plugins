@@ -870,48 +870,135 @@ const Style = ({
   const mainSl = `#${id}`;
   const wrapperSl = `${mainSl} .wrapper`;
   const containerSl = `${wrapperSl} .container`;
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
+  const faqWrapperSl = `${containerSl} .faq-wrapper`;
+  const faqRightrSl = `${faqWrapperSl} .faq-right`;
+  const faqItemrSl = `${faqRightrSl} .faq-item`;
+  const faqAnswerSl = `${faqRightrSl} .faq-answer`;
+  const faqQuestionSl = `${faqItemrSl} .faq-question`;
+  const toggleBtnSl = `${faqQuestionSl} .toggle-btn`;
+  const iconSl = `${toggleBtnSl} .icon`;
+  const questionSl = `${faqQuestionSl} .question`;
+  const faqLefttrSl = `${faqWrapperSl} .faq-left`;
+  const faqLitlerSl = `${faqLefttrSl} .title`;
+  const faqhighlighterSl = `${faqLefttrSl} .highlight`;
+  const faqDescriptionrSl = `${faqLefttrSl} .description`;
+
+  // console.log(styles?.title?.highlightColor);
+  // background:${styles?.title?.highlightColor?.gradient};
+
+  // const highLightColor = (value)=>{
+  // 	if(value?.type ==="solid"){
+  // 		const color=`background-color:${value?.color}`
+  // 		return color;
+  // 	}
+  // 	if(value?.type ==="gradient"){
+  // 		const color =`background:${styles?.title?.highlightColor?.gradient}`
+  // 		return color;
+  // 	}
+
+  // }
+
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: `
-		
 
-		${wrapperSl}{
-			justify-content: ${alignment};
+	
+			
+	
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.question?.typho)?.googleFontLink}
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.title?.typho)?.googleFontLink}
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.description?.typho)?.googleFontLink}
+	
+	
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(questionSl, styles?.question?.typho)?.styles}
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqLitlerSl, styles?.title?.typho)?.styles}
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqhighlighterSl, styles?.title?.typho)?.styles}
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqDescriptionrSl, styles?.description?.typho)?.styles}
 
-		
-		}
-		
-		${containerSl}{
-		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg)}
-		 padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.desktop)} ;
-		 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.desktop)} ;
-		 max-width:${styles?.width?.desktop}
-		 
-
-		}
-
-
-		${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.tabBreakpoint}{
-			${containerSl}{
-		 padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.tablet)};
-		 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.tablet)} ;
-		  max-width:${styles?.width?.tablet}
+			
 
 
+			
+			${faqDescriptionrSl}{
+			 color:${styles?.description?.color};
 			}
-		
-		}
+			
+			${faqLitlerSl}{
+			color:${styles?.title?.color}
+			}
 
-		${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.mobileBreakpoint}{
-		    ${containerSl}{
-         padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.mobile)}};
-		 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.mobile)} ;
-		  max-width:${styles?.width?.mobile};
-
-
-	`
+			${faqQuestionSl}{
+		   ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getColorsCSS)(styles?.question?.colors)}
+		   padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.question?.padding)};
+		   margin-bottom:${styles?.question?.gap};
+		   margin-top:${styles?.question?.gap};
+		  
+			}
+		   ${faqAnswerSl}{
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getColorsCSS)(styles?.answer?.colors)}
+			 .faq-answer-dec{
+		    padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.answer?.padding)};
+		   }
+			
+		   }
+		   ${iconSl} svg {
+		   fill:${styles?.question?.colors?.color};
+		   
+		   }
+	
+			${wrapperSl}{
+				justify-content: ${alignment};
+	
+			
+			}
+			${faqhighlighterSl} {
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.title?.highlightColor)}
+			 
+				
+			  }
+				
+			
+			${containerSl}{
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg)}
+			 padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.desktop)} ;
+			 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.desktop)} ;
+			 max-width:${styles?.width?.desktop}
+			 
+	
+			}
+	
+	
+			${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.tabBreakpoint}{
+				${containerSl}{
+			 padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.tablet)};
+			 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.tablet)} ;
+			  max-width:${styles?.width?.tablet}
+	
+	
+				}
+			
+			}
+	
+			${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.mobileBreakpoint}{
+				${containerSl}{
+			 padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.mobile)}};
+			 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.mobile)} ;
+			  max-width:${styles?.width?.mobile};
+	
+	
+		`
     }
-  });
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
+    dangerouslySetInnerHTML: {
+      __html: `
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.answer?.typho)?.googleFontLink}
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqAnswerSl, styles?.answer?.typho)?.styles}
+		
+		
+		
+		`
+    }
+  }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Style);
 

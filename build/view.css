@@ -23,16 +23,11 @@
   gap: 120px;
   align-items: start;
 }
-.wp-block-b-blocks-test-purpose .wrapper .faq-left .title {
-  color: rgb(252, 252, 253);
-}
 .wp-block-b-blocks-test-purpose .wrapper .highlight {
-  background: -webkit-linear-gradient(white 30%, #c7f32f 65%);
-  -webkit-background-clip: text;
-  color: transparent;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
 }
 .wp-block-b-blocks-test-purpose .wrapper .faq-left .description {
-  color: rgba(252, 252, 253, 0.7);
   margin-top: 20px;
 }
 .wp-block-b-blocks-test-purpose .wrapper .contact-btn {
@@ -64,14 +59,16 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-  padding: 4px 10px;
-  background-color: #0D0E10;
   border-radius: 10px;
   min-width: 200px;
   justify-content: space-between;
 }
 .wp-block-b-blocks-test-purpose .wrapper .faq-question .question {
-  color: #ffffff;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-size: 18px;
+  font-weight: 400;
 }
 .wp-block-b-blocks-test-purpose .wrapper .toggle-btn {
   background: none;
@@ -87,6 +84,7 @@
 .wp-block-b-blocks-test-purpose .wrapper .toggle-btn .icon svg {
   width: 20px;
   height: 20px;
+  fill: #fff;
 }
 .wp-block-b-blocks-test-purpose .wrapper .buttonIcon svg {
   width: 20px;
@@ -99,11 +97,8 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s ease-out, padding 0.7s ease;
-  color: #888;
   margin: 5px 0;
-  background-color: #0D0E10;
   border-radius: 10px;
-  padding: 0px 15px;
 }
 .wp-block-b-blocks-test-purpose .wrapper .faq-item.active .faq-answer {
   max-height: 200px;

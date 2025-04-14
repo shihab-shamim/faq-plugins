@@ -45339,7 +45339,8 @@ const Style = ({
   device
 }) => {
   const {
-    styles
+    styles,
+    options
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
     className: "bPlPanelBody",
@@ -45351,7 +45352,8 @@ const Style = ({
       styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(styles, value, "width", device)
     })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.Background, {
-    labe: "Background Color",
+    isImage: false,
+    value: styles?.bg,
     onChange: value => setAttributes({
       styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(styles, value, "bg")
     })
@@ -45364,6 +45366,92 @@ const Style = ({
     values: styles?.margin[device],
     onChange: value => setAttributes({
       styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(styles, value, "margin", device)
+    })
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+    className: "bPlPanelBody",
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Title", "b-blocks"),
+    initialOpen: false
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.Typography, {
+    value: styles?.title?.typho,
+    onChange: value => setAttributes({
+      styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(styles, value, "title", "typho")
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.ColorControl, {
+    value: styles?.title?.color,
+    onChange: value => setAttributes({
+      styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(styles, value, "title", "color")
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.Background, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("High Light Color", "b-blocks"),
+    isImage: false,
+    value: styles?.title?.highlightColor,
+    onChange: value => setAttributes({
+      styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(styles, value, "title", "highlightColor")
+    })
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+    className: "bPlPanelBody",
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Description", "b-blocks"),
+    initialOpen: false
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.Typography, {
+    value: styles?.description?.typho,
+    onChange: value => setAttributes({
+      styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(styles, value, "description", "typho")
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.ColorControl, {
+    value: styles?.description?.color,
+    onChange: value => setAttributes({
+      styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(styles, value, "description", "color")
+    })
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+    className: "bPlPanelBody",
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Question", "b-blocks"),
+    initialOpen: false
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.Typography, {
+    value: styles?.question?.typho,
+    onChange: v => setAttributes({
+      styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(styles, v, "question", "typho")
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.ColorsControl, {
+    value: styles?.question?.colors,
+    onChange: value => setAttributes({
+      styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(styles, value, "question", "colors")
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.BoxControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Padding", "b-blocks"),
+    values: styles?.question?.padding,
+    onChange: value => setAttributes({
+      styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(styles, value, "question", "padding")
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.Label, null, " Gap: ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalUnitControl, {
+    value: styles?.question?.gap,
+    onChange: value => setAttributes({
+      styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(styles, value, "question", "gap")
+    })
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.IconLibrary, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Icon", "b-blocks"),
+    value: options?.icon,
+    onChange: value => setAttributes({
+      options: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(options, value, "icon")
+    })
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+    className: "bPlPanelBody",
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Answer", "b-blocks"),
+    initialOpen: false
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.Typography, {
+    value: styles?.answer?.typho,
+    onChange: v => setAttributes({
+      styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(styles, v, "answer", "typho")
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.ColorsControl, {
+    value: styles?.answer?.colors,
+    onChange: value => setAttributes({
+      styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(styles, value, "answer", "colors")
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.BoxControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Padding", "b-blocks"),
+    values: styles?.answer?.padding,
+    onChange: value => setAttributes({
+      styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(styles, value, "answer", "padding")
     })
   })));
 };
@@ -45400,48 +45488,135 @@ const Style = ({
   const mainSl = `#${id}`;
   const wrapperSl = `${mainSl} .wrapper`;
   const containerSl = `${wrapperSl} .container`;
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
+  const faqWrapperSl = `${containerSl} .faq-wrapper`;
+  const faqRightrSl = `${faqWrapperSl} .faq-right`;
+  const faqItemrSl = `${faqRightrSl} .faq-item`;
+  const faqAnswerSl = `${faqRightrSl} .faq-answer`;
+  const faqQuestionSl = `${faqItemrSl} .faq-question`;
+  const toggleBtnSl = `${faqQuestionSl} .toggle-btn`;
+  const iconSl = `${toggleBtnSl} .icon`;
+  const questionSl = `${faqQuestionSl} .question`;
+  const faqLefttrSl = `${faqWrapperSl} .faq-left`;
+  const faqLitlerSl = `${faqLefttrSl} .title`;
+  const faqhighlighterSl = `${faqLefttrSl} .highlight`;
+  const faqDescriptionrSl = `${faqLefttrSl} .description`;
+
+  // console.log(styles?.title?.highlightColor);
+  // background:${styles?.title?.highlightColor?.gradient};
+
+  // const highLightColor = (value)=>{
+  // 	if(value?.type ==="solid"){
+  // 		const color=`background-color:${value?.color}`
+  // 		return color;
+  // 	}
+  // 	if(value?.type ==="gradient"){
+  // 		const color =`background:${styles?.title?.highlightColor?.gradient}`
+  // 		return color;
+  // 	}
+
+  // }
+
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: `
-		
 
-		${wrapperSl}{
-			justify-content: ${alignment};
+	
+			
+	
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.question?.typho)?.googleFontLink}
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.title?.typho)?.googleFontLink}
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.description?.typho)?.googleFontLink}
+	
+	
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(questionSl, styles?.question?.typho)?.styles}
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqLitlerSl, styles?.title?.typho)?.styles}
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqhighlighterSl, styles?.title?.typho)?.styles}
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqDescriptionrSl, styles?.description?.typho)?.styles}
 
-		
-		}
-		
-		${containerSl}{
-		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg)}
-		 padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.desktop)} ;
-		 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.desktop)} ;
-		 max-width:${styles?.width?.desktop}
-		 
-
-		}
-
-
-		${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.tabBreakpoint}{
-			${containerSl}{
-		 padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.tablet)};
-		 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.tablet)} ;
-		  max-width:${styles?.width?.tablet}
+			
 
 
+			
+			${faqDescriptionrSl}{
+			 color:${styles?.description?.color};
 			}
-		
-		}
+			
+			${faqLitlerSl}{
+			color:${styles?.title?.color}
+			}
 
-		${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.mobileBreakpoint}{
-		    ${containerSl}{
-         padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.mobile)}};
-		 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.mobile)} ;
-		  max-width:${styles?.width?.mobile};
-
-
-	`
+			${faqQuestionSl}{
+		   ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getColorsCSS)(styles?.question?.colors)}
+		   padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.question?.padding)};
+		   margin-bottom:${styles?.question?.gap};
+		   margin-top:${styles?.question?.gap};
+		  
+			}
+		   ${faqAnswerSl}{
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getColorsCSS)(styles?.answer?.colors)}
+			 .faq-answer-dec{
+		    padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.answer?.padding)};
+		   }
+			
+		   }
+		   ${iconSl} svg {
+		   fill:${styles?.question?.colors?.color};
+		   
+		   }
+	
+			${wrapperSl}{
+				justify-content: ${alignment};
+	
+			
+			}
+			${faqhighlighterSl} {
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.title?.highlightColor)}
+			 
+				
+			  }
+				
+			
+			${containerSl}{
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg)}
+			 padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.desktop)} ;
+			 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.desktop)} ;
+			 max-width:${styles?.width?.desktop}
+			 
+	
+			}
+	
+	
+			${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.tabBreakpoint}{
+				${containerSl}{
+			 padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.tablet)};
+			 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.tablet)} ;
+			  max-width:${styles?.width?.tablet}
+	
+	
+				}
+			
+			}
+	
+			${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.mobileBreakpoint}{
+				${containerSl}{
+			 padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.mobile)}};
+			 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.mobile)} ;
+			  max-width:${styles?.width?.mobile};
+	
+	
+		`
     }
-  });
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
+    dangerouslySetInnerHTML: {
+      __html: `
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.answer?.typho)?.googleFontLink}
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqAnswerSl, styles?.answer?.typho)?.styles}
+		
+		
+		
+		`
+    }
+  }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Style);
 
@@ -49367,7 +49542,7 @@ module.exports = /*#__PURE__*/JSON.parse('[{"terms":["Digit Zero","nada","none",
 /***/ ((module) => {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"b-blocks/test-purpose","version":"1.0.0","title":"FAQS!","category":"widgets","description":"Short description of the Test Purpose","keywords":["Faq","faqs","FAQS"],"textdomain":"b-blocks","attributes":{"align":{"type":"string","default":"full"},"alignment":{"type":"string","default":"center"},"styles":{"type":"object","default":{"width":{"desktop":"1350px","tablet":"768px","mobile":"500px"},"bg":{"type":"solid","color":"#000000"},"padding":{"desktop":{"top":"100px","right":"50px","bottom":"100px","left":"50px"},"tablet":{"top":"80px","right":"40px","bottom":"80px","left":"40px"},"mobile":{"top":"50px","right":"20px","bottom":"50px","left":"20px"}},"margin":{"desktop":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"tablet":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"mobile":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}}},"faqs":{"type":"object","default":{"title":"Frequently asked Questions","buttonText":"Contact Us Now ","description":"Discover clarity and insights as we unravel answers to your questions","buttonIcon":"<svg stroke=\'currentColor\' fill=\'currentColor\' strokeWidth=\'0\' viewBox=\'0 0 16 16\' xmlns=\'http://www.w3.org/2000/svg\'><path fillRule=\'evenodd\' d=\'M10.146 4.646a.5.5 0 01.708 0l3 3a.5.5 0 010 .708l-3 3a.5.5 0 01-.708-.708L12.793 8l-2.647-2.646a.5.5 0 010-.708z\' clipRule=\'evenodd\'/><path fillRule=\'evenodd\' d=\'M2 8a.5.5 0 01.5-.5H13a.5.5 0 010 1H2.5A.5.5 0 012 8z\' clipRule=\'evenodd\'/></svg>","buttonLink":"https://www.facebook.com"}},"faqItems":{"type":"array","default":[{"question":"Does BTCPayServer cost extra?","answer":"No, BTCPayServer is completely free and open-source software."},{"question":"Does my Voltage Lightning Node connect to BTC Server automatically?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"Can I accept payments on chain?","answer":"Yes, you can accept both on-chain and Lightning payments through the platform."}]},"options":{"type":"object","default":{"selectedTheme":"theme2","icon":"<svg  viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' strokeWidth=\'2\' strokeLinecap=\'round\' strokeLinejoin=\'round\'><polyline points=\'6 9 12 15 18 9\'></polyline></svg>","isLinkTarget":true,"isShowButton":true}}},"supports":{"align":["wide","full"],"html":false},"example":{"attributes":{}},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./view.css","render":"file:./render.php","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"b-blocks/test-purpose","version":"1.0.0","title":"FAQ!","category":"widgets","description":"Short description of the Test Purpose","keywords":["Faq","faqs","FAQS"],"textdomain":"b-blocks","attributes":{"align":{"type":"string","default":"full"},"alignment":{"type":"string","default":"center"},"styles":{"type":"object","default":{"width":{"desktop":"1350px","tablet":"768px","mobile":"500px"},"bg":{"type":"solid","color":"#000000","gradient":"linear-gradient(135deg,rgb(34,23,23) 0%,rgb(13,13,15) 100%)"},"padding":{"desktop":{"top":"100px","right":"50px","bottom":"100px","left":"50px"},"tablet":{"top":"80px","right":"40px","bottom":"80px","left":"40px"},"mobile":{"top":"50px","right":"20px","bottom":"50px","left":"20px"}},"margin":{"desktop":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"tablet":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"mobile":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"question":{"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":400,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":18,"tablet":16,"mobile":14},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"},"colors":{"color":"#fcecfd","bgType":"solid","bg":"#0D0E10"},"padding":{"top":"5px","right":"14px","bottom":"5px","left":"14px"},"gap":"5px"},"answer":{"colors":{"color":"#888","bgType":"solid","bg":"#0D0E10"},"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":400,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":16,"tablet":16,"mobile":14},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"},"padding":{"top":"5px","right":"5px","bottom":"5px","left":"5px"}},"title":{"color":"rgba(252, 252, 253, 1)","highlightColor":{"type":"gradient","color":"#c7f32f","gradient":"linear-gradient(white 30%, #c7f32f 65%)"},"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":700,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":48,"tablet":48,"mobile":25},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"}},"description":{"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":400,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":17,"tablet":17,"mobile":17},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"},"color":"rgba(252, 252, 253, 0.7)"}}},"faqs":{"type":"object","default":{"title":"Frequently asked Questions","buttonText":"Contact Us Now ","description":"Discover clarity and insights as we unravel answers to your questions","buttonIcon":"<svg stroke=\'currentColor\' fill=\'currentColor\' strokeWidth=\'0\' viewBox=\'0 0 16 16\' xmlns=\'http://www.w3.org/2000/svg\'><path fillRule=\'evenodd\' d=\'M10.146 4.646a.5.5 0 01.708 0l3 3a.5.5 0 010 .708l-3 3a.5.5 0 01-.708-.708L12.793 8l-2.647-2.646a.5.5 0 010-.708z\' clipRule=\'evenodd\'/><path fillRule=\'evenodd\' d=\'M2 8a.5.5 0 01.5-.5H13a.5.5 0 010 1H2.5A.5.5 0 012 8z\' clipRule=\'evenodd\'/></svg>","buttonLink":"https://www.facebook.com"}},"faqItems":{"type":"array","default":[{"question":"Does BTCPayServer cost extra?","answer":"No, BTCPayServer is completely free and open-source software."},{"question":"Does my Voltage Lightning Node connect to BTC Server automatically?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"Can I accept payments on chain?","answer":"Yes, you can accept both on-chain and Lightning payments through the platform."}]},"options":{"type":"object","default":{"selectedTheme":"theme2","icon":"<svg  stroke-width=\\"0\\" viewBox=\\"0 0 512 512\\" height=\\"16\\" width=\\"16\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z\\"></path></svg","isLinkTarget":true,"isShowButton":true}}},"supports":{"align":["wide","full"],"html":false},"example":{"attributes":{}},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./view.css","render":"file:./render.php","viewScript":"file:./view.js"}');
 
 /***/ })
 

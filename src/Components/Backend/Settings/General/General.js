@@ -11,6 +11,7 @@ const General = ({ attributes, setAttributes }) => {
   const { options,faqs } = attributes;
   const {selectedTheme}=options;
 
+
   
 
   return (
