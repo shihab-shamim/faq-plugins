@@ -239,7 +239,7 @@
 		align-items: center;
 		justify-content: center;
 		color: #666;
-		transition: transform 0.3s ease, color 0.3s ease;
+		transition: transform 0.7s ease, color 0.7s ease;
 		.icon svg{
 			width: 20px;
 			height: 20px;
@@ -261,25 +261,24 @@
 	}
 	
 	
-	.faq-answer {
-		// max-height: 0;
-		overflow: hidden;
-		transition: height 0.3s  ease;
-	
-		margin: 0;
-		height: auto;
-		// border-radius: 10px;
+
+		.faq-answer {
+			max-height: 0;
+			overflow: hidden;
+			padding: 0 10px;
+			transition: max-height 0.5s ease, padding 0.5s ease;
+		  }
 		
 		
 		
-		
-	}
+
 	.active{
-		border: 1px solid red;
+		background-color: #E8DFFF !important;
+		color: #451CB3 !important;
 	}
 	
 	.faq-item.active .faq-answer {
-		  max-height: auto;
+		  max-height:auto;
 		  margin: 5px 0;
 	}
 	

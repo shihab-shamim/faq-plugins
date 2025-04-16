@@ -18,7 +18,7 @@ const FaqItem = ({ question, answer, isActive, onClick,attributes,setAttributes,
 
         </button>
       </div>
-      <div className="faq-answer" style={{ maxHeight: isActive ? "400px" : "0",  padding:isActive?"10px 10px":"0px 10px"}}>
+      <div className={`faq-answer`} style={{ maxHeight: isActive ? "400px" : "0",  padding:isActive?"10px 10px":"0px 10px"}}>
         { isView? <span className="faq-answer-dec">{answer}</span>:<RichText placeholder="Enter Your Answer Here..." className="faq-answer-dec" value={answer} onChange={(value)=>{
             setAttributes({faqItems:updateData(faqItems,value,index,"answer")})
         }}  />}
@@ -26,5 +26,7 @@ const FaqItem = ({ question, answer, isActive, onClick,attributes,setAttributes,
     </div> 
   );
 }; 
-export default FaqItem;
+export default FaqItem;  
+
+
 

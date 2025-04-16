@@ -1423,7 +1423,7 @@ const FaqItem = ({
       __html: options?.icon
     }
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "faq-answer",
+    className: `faq-answer`,
     style: {
       maxHeight: isActive ? "400px" : "0",
       padding: isActive ? "10px 10px" : "0px 10px"
