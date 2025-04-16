@@ -6,14 +6,15 @@ import { updateData } from "../../utils/functions";
 
 const Style3 = ({faqs,setAttributes,attributes,isView}) => {
 
-     const words = faqs?.title.split(" ");
+  
         const {faqItems}=attributes;
-        const lastWord = words.pop()
+      
           const [activeIndex, setActiveIndex] = useState(null);
         
           const toggleFaq = (index) => {
             setActiveIndex(activeIndex === index ? null : index);
           };
+          
     return (
         <div className="container">
         <div className="faq-wrapper">
@@ -48,9 +49,11 @@ const Style3 = ({faqs,setAttributes,attributes,isView}) => {
     </span>
   ))
 }
-            <h1 className="title style-3-title">{faqs?.title}</h1>
+             {isView? <h1 className="title style-3-title">{faqs?.title}</h1> :<RichText placeholder=" title Here..." value={faqs?.title} className="title style-3-title"  onChange={(value)=>{
+            setAttributes({faqs:updateData(faqs,value,"title")})
+           }}/>}
             
-           {isView? <p className="description">{faqs?.description}</p> :<RichText placeholder="Enter Your Description Here......" value={faqs?.description}  className="description" onChange={(value)=>{
+           {isView? <p className="description">{faqs?.description}</p> :<RichText placeholder="Enter Your Description Here..." value={faqs?.description}  className="description" onChange={(value)=>{
             setAttributes({faqs:updateData(faqs,value,"description")})
            }} />}
            

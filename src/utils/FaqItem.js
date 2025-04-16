@@ -6,8 +6,8 @@ const FaqItem = ({ question, answer, isActive, onClick,attributes,setAttributes,
     
 
   return (
-    <div  className={`faq-item ${isActive ? "active" : ""}`}>
-      <div  className="faq-question" onClick={onClick}> 
+    <div  className={`faq-item`}>
+      <div className={`faq-question ${isActive ? "active" : ""}`}   onClick={onClick}> 
         { isView? <span className="question">{question}</span>: <RichText placeholder="Enter Your Questions Here..." className="question" value={question} onChange={(value)=>{
             setAttributes({faqItems:updateData(faqItems,value,index,"question")})
         }} />

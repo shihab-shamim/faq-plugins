@@ -45532,7 +45532,8 @@ const Style = ({
 }) => {
   const {
     styles,
-    alignment
+    alignment,
+    options
   } = attributes;
   const mainSl = `#${id}`;
   const wrapperSl = `${mainSl} .wrapper`;
@@ -45609,6 +45610,7 @@ const Style = ({
 	
 			${wrapperSl}{
 				justify-content: ${alignment};
+				${options?.selectedTheme === "theme3" ? (0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg) : ""}
 	
 			
 			}
@@ -45620,7 +45622,7 @@ const Style = ({
 				
 			
 			${containerSl}{
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg)}
+			${options?.selectedTheme === "theme2" ? (0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg) : ""}
 			 padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.desktop)} ;
 			 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.desktop)} ;
 			 max-width:${styles?.width?.desktop};
@@ -45999,11 +46001,9 @@ const Style3 = ({
   attributes,
   isView
 }) => {
-  const words = faqs?.title.split(" ");
   const {
     faqItems
   } = attributes;
-  const lastWord = words.pop();
   const [activeIndex, setActiveIndex] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
   const toggleFaq = index => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -46036,12 +46036,21 @@ const Style3 = ({
     onChange: value => setAttributes({
       faqs: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.updateData)(faqs, value, "buttonText")
     })
-  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", {
+  }))), isView ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", {
     className: "title style-3-title"
-  }, faqs?.title), isView ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+  }, faqs?.title) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    placeholder: " title Here...",
+    value: faqs?.title,
+    className: "title style-3-title",
+    onChange: value => {
+      setAttributes({
+        faqs: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.updateData)(faqs, value, "title")
+      });
+    }
+  }), isView ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "description"
   }, faqs?.description) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
-    placeholder: "Enter Your Description Here......",
+    placeholder: "Enter Your Description Here...",
     value: faqs?.description,
     className: "description",
     onChange: value => {
@@ -46101,9 +46110,9 @@ const FaqItem = ({
     faqItems
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: `faq-item ${isActive ? "active" : ""}`
+    className: `faq-item`
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "faq-question",
+    className: `faq-question ${isActive ? "active" : ""}`,
     onClick: onClick
   }, isView ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "question"
@@ -46268,12 +46277,76 @@ const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED
         lineHeight: "1.35",
         letterSpace: "0px"
       };
+      draft["styles"]["question"]["typho"] = {
+        fontFamily: "Archivo",
+        fontCategory: "sans-serif",
+        fontWeight: 400,
+        fontVariant: "400",
+        isUploadFont: true,
+        fontSize: {
+          desktop: 18,
+          tablet: 16,
+          mobile: 14
+        },
+        fontStyle: "normal",
+        textTransform: "none",
+        textDecoration: "none",
+        lineHeight: "135%",
+        letterSpace: "0px"
+      };
+      draft["styles"]["question"]["colors"] = {
+        color: "#fcecfd",
+        bgType: "solid",
+        bg: "#0D0E10"
+      };
+      draft["styles"]["question"]["padding"] = {
+        top: "5px",
+        right: "14px",
+        bottom: "5px",
+        left: "14px"
+      };
+      draft["styles"]["question"]["gap"] = "5px";
+      draft["options"]["icon"] = "<svg  stroke-width=\"0\" viewBox=\"0 0 512 512\" height=\"16\" width=\"16\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z\"></path></svg>";
+      draft["styles"]["answer"]["typho"] = {
+        fontFamily: "Archivo",
+        fontCategory: "sans-serif",
+        fontWeight: 400,
+        fontVariant: "400",
+        isUploadFont: true,
+        fontSize: {
+          desktop: 16,
+          tablet: 16,
+          mobile: 14
+        },
+        fontStyle: "normal",
+        textTransform: "none",
+        textDecoration: "none",
+        lineHeight: "135%",
+        letterSpace: "0px"
+      };
+      draft["styles"]["answer"]["colors"] = {
+        color: "#888",
+        bgType: "solid",
+        bg: "#0D0E10"
+      };
+      draft["styles"]["answer"]["padding"] = {
+        top: "5px",
+        right: "5px",
+        bottom: "5px",
+        left: "5px"
+      };
+      draft["styles"]["answer"]["radius"] = {
+        top: "10px",
+        right: "10px",
+        bottom: "10px",
+        left: "10px"
+      };
       break;
     case "theme3":
       draft["options"]["isShowButton"] = true;
       draft["styles"]["bg"] = {
         type: "solid",
-        color: "#ffffff",
+        color: "#F8F9FA",
         gradient: "linear-gradient(to right, #ffffff, #007bff)"
       };
       draft["styles"]["title"]["color"] = "#192534";
@@ -46353,6 +46426,70 @@ const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED
         description: "We’re building a company that recognizes how, when, and where our Paddlers do their best work.",
         buttonIcon: "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1em\" height=\"1em\" viewBox=\"0 0 24 24\"><path fill=\"currentColor\" d=\"M10.313 16.094a1 1 0 0 1-.708-.293l-2.812-2.813a1 1 0 0 1 1.414-1.414l2.105 2.106l5.481-5.48a1 1 0 0 1 1.414 1.413l-6.188 6.188a1 1 0 0 1-.707.293Z\" opacity=\".99\"></path><path fill=\"currentColor\" d=\"M12 2a10 10 0 1 0 10 10A10.01 10.01 0 0 0 12 2m5.207 7.613l-6.188 6.188a1 1 0 0 1-1.414 0l-2.812-2.813a1 1 0 0 1 1.414-1.414l2.105 2.106l5.481-5.48a1 1 0 0 1 1.414 1.413\" opacity=\".5\"></path></svg>",
         buttonLink: "#"
+      };
+      draft["styles"]["question"]["typho"] = {
+        fontFamily: "Archivo",
+        fontCategory: "sans-serif",
+        fontWeight: 400,
+        fontVariant: "400",
+        isUploadFont: true,
+        fontSize: {
+          desktop: 18,
+          tablet: 16,
+          mobile: 14
+        },
+        fontStyle: "normal",
+        textTransform: "none",
+        textDecoration: "none",
+        lineHeight: "135%",
+        letterSpace: "0px"
+      };
+      draft["styles"]["question"]["colors"] = {
+        color: "#192534",
+        bgType: "solid",
+        bg: "#ffffff"
+      };
+      draft["styles"]["question"]["padding"] = {
+        top: "5px",
+        right: "14px",
+        bottom: "5px",
+        left: "14px"
+      };
+      draft["styles"]["question"]["gap"] = "5px";
+      draft["options"]["icon"] = "<svg  stroke-width=\"0\" viewBox=\"0 0 512 512\" height=\"16\" width=\"16\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z\"></path></svg>";
+      draft["styles"]["answer"]["typho"] = {
+        fontFamily: "Archivo",
+        fontCategory: "sans-serif",
+        fontWeight: 400,
+        fontVariant: "400",
+        isUploadFont: true,
+        fontSize: {
+          desktop: 16,
+          tablet: 16,
+          mobile: 14
+        },
+        fontStyle: "normal",
+        textTransform: "none",
+        textDecoration: "none",
+        lineHeight: "135%",
+        letterSpace: "0px"
+      };
+      draft["styles"]["answer"]["colors"] = {
+        color: "#253544",
+        bgType: "solid",
+        bg: "#FFFFFF"
+      };
+      draft["styles"]["answer"]["padding"] = {
+        top: "5px",
+        right: "5px",
+        bottom: "5px",
+        left: "5px"
+      };
+      draft["styles"]["answer"]["radius"] = {
+        top: "10px",
+        right: "10px",
+        bottom: "10px",
+        left: "10px"
       };
       break;
   }
@@ -49873,7 +50010,7 @@ module.exports = /*#__PURE__*/JSON.parse('[{"terms":["Digit Zero","nada","none",
 /***/ ((module) => {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"b-blocks/test-purpose","version":"1.0.0","title":"FAQ!","category":"widgets","description":"Short description of the Test Purpose","keywords":["Faq","faqs","FAQS"],"textdomain":"b-blocks","attributes":{"align":{"type":"string","default":"full"},"alignment":{"type":"string","default":"center"},"styles":{"type":"object","default":{"width":{"desktop":"1350px","tablet":"768px","mobile":"500px"},"bg":{"type":"solid","color":"#000000","gradient":"linear-gradient(135deg,rgb(34,23,23) 0%,rgb(13,13,15) 100%)"},"padding":{"desktop":{"top":"100px","right":"50px","bottom":"100px","left":"50px"},"tablet":{"top":"80px","right":"40px","bottom":"80px","left":"40px"},"mobile":{"top":"50px","right":"20px","bottom":"50px","left":"20px"}},"margin":{"desktop":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"tablet":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"mobile":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"radius":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"question":{"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":400,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":18,"tablet":16,"mobile":14},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"},"colors":{"color":"#fcecfd","bgType":"solid","bg":"#0D0E10"},"padding":{"top":"5px","right":"14px","bottom":"5px","left":"14px"},"gap":"5px"},"answer":{"colors":{"color":"#888","bgType":"solid","bg":"#0D0E10"},"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":400,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":16,"tablet":16,"mobile":14},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"},"padding":{"top":"5px","right":"5px","bottom":"5px","left":"5px"},"radius":{"top":"10px","right":"10px","bottom":"10px","left":"10px"}},"title":{"color":"rgba(252, 252, 253, 1)","highlightColor":{"type":"gradient","color":"#c7f32f","gradient":"linear-gradient(white 30%, #c7f32f 65%)"},"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":700,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":48,"tablet":48,"mobile":25},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"}},"description":{"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":400,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":17,"tablet":17,"mobile":17},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"},"color":"rgba(252, 252, 253, 0.7)"},"button":{"colors":{"color":"#000000","bgType":"solid","bg":"#c5fb00"},"padding":{"top":"10px","right":"20px","bottom":"10px","left":"20px"},"radius":{"top":"8px","right":"8px","bottom":"8px","left":"8px"},"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":600,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":18,"tablet":18,"mobile":18},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"}}}},"faqs":{"type":"object","default":{"title":"Frequently asked Questions","buttonText":"Contact Us Now ","description":"Discover clarity and insights as we unravel answers to your questions","buttonIcon":"<svg stroke=\'currentColor\' fill=\'currentColor\' strokeWidth=\'0\' viewBox=\'0 0 16 16\' xmlns=\'http://www.w3.org/2000/svg\'><path fillRule=\'evenodd\' d=\'M10.146 4.646a.5.5 0 01.708 0l3 3a.5.5 0 010 .708l-3 3a.5.5 0 01-.708-.708L12.793 8l-2.647-2.646a.5.5 0 010-.708z\' clipRule=\'evenodd\'/><path fillRule=\'evenodd\' d=\'M2 8a.5.5 0 01.5-.5H13a.5.5 0 010 1H2.5A.5.5 0 012 8z\' clipRule=\'evenodd\'/></svg>","buttonLink":"#"}},"faqItems":{"type":"array","default":[{"question":"Does BTCPayServer cost extra?","answer":"No, BTCPayServer is completely free and open-source software."},{"question":"Does my Voltage Lightning Node connect to BTC Server automatically?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"Can I accept payments on chain?","answer":"Yes, you can accept both on-chain and Lightning payments through the platform."}]},"options":{"type":"object","default":{"selectedTheme":"theme2","icon":"<svg  stroke-width=\\"0\\" viewBox=\\"0 0 512 512\\" height=\\"16\\" width=\\"16\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z\\"></path></svg","isLinkTarget":true,"isShowButton":true}}},"supports":{"align":["wide","full"],"html":false},"example":{"attributes":{}},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./view.css","render":"file:./render.php","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"b-blocks/test-purpose","version":"1.0.0","title":"FAQ!","category":"widgets","description":"Short description of the Test Purpose","keywords":["Faq","faqs","FAQS"],"textdomain":"b-blocks","attributes":{"align":{"type":"string","default":"full"},"alignment":{"type":"string","default":"center"},"styles":{"type":"object","default":{"width":{"desktop":"1350px","tablet":"768px","mobile":"500px"},"bg":{"type":"solid","color":"#000000","gradient":"linear-gradient(135deg,rgb(34,23,23) 0%,rgb(13,13,15) 100%)"},"padding":{"desktop":{"top":"100px","right":"50px","bottom":"100px","left":"50px"},"tablet":{"top":"80px","right":"40px","bottom":"80px","left":"40px"},"mobile":{"top":"50px","right":"20px","bottom":"50px","left":"20px"}},"margin":{"desktop":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"tablet":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"mobile":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"radius":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"question":{"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":400,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":18,"tablet":16,"mobile":14},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"},"colors":{"color":"#fcecfd","bgType":"solid","bg":"#0D0E10"},"padding":{"top":"5px","right":"14px","bottom":"5px","left":"14px"},"gap":"5px"},"answer":{"colors":{"color":"#888","bgType":"solid","bg":"#0D0E10"},"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":400,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":16,"tablet":16,"mobile":14},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"},"padding":{"top":"5px","right":"5px","bottom":"5px","left":"5px"},"radius":{"top":"10px","right":"10px","bottom":"10px","left":"10px"}},"title":{"color":"rgba(252, 252, 253, 1)","highlightColor":{"type":"gradient","color":"#c7f32f","gradient":"linear-gradient(white 30%, #c7f32f 65%)"},"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":700,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":48,"tablet":48,"mobile":25},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"}},"description":{"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":400,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":17,"tablet":17,"mobile":17},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"},"color":"rgba(252, 252, 253, 0.7)"},"button":{"colors":{"color":"#000000","bgType":"solid","bg":"#c5fb00"},"padding":{"top":"10px","right":"20px","bottom":"10px","left":"20px"},"radius":{"top":"8px","right":"8px","bottom":"8px","left":"8px"},"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":600,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":18,"tablet":18,"mobile":18},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"}}}},"faqs":{"type":"object","default":{"title":"Frequently asked Questions","buttonText":"Contact Us Now ","description":"Discover clarity and insights as we unravel answers to your questions","buttonIcon":"<svg stroke=\'currentColor\' fill=\'currentColor\' strokeWidth=\'0\' viewBox=\'0 0 16 16\' xmlns=\'http://www.w3.org/2000/svg\'><path fillRule=\'evenodd\' d=\'M10.146 4.646a.5.5 0 01.708 0l3 3a.5.5 0 010 .708l-3 3a.5.5 0 01-.708-.708L12.793 8l-2.647-2.646a.5.5 0 010-.708z\' clipRule=\'evenodd\'/><path fillRule=\'evenodd\' d=\'M2 8a.5.5 0 01.5-.5H13a.5.5 0 010 1H2.5A.5.5 0 012 8z\' clipRule=\'evenodd\'/></svg>","buttonLink":"#"}},"faqItems":{"type":"array","default":[{"question":"Does BTCPayServer cost extra?","answer":"No, BTCPayServer is completely free and open-source software."},{"question":"Does my Voltage Lightning Node connect to BTC Server automatically?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"Can I accept payments on chain?","answer":"Yes, you can accept both on-chain and Lightning payments through the platform."}]},"options":{"type":"object","default":{"selectedTheme":"theme2","icon":"<svg  stroke-width=\\"0\\" viewBox=\\"0 0 512 512\\" height=\\"16\\" width=\\"16\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z\\"></path></svg>","isLinkTarget":true,"isShowButton":true}}},"supports":{"align":["wide","full"],"html":false},"example":{"attributes":{}},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./view.css","render":"file:./render.php","viewScript":"file:./view.js"}');
 
 /***/ })
 

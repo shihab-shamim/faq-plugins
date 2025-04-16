@@ -2,7 +2,7 @@ import { mobileBreakpoint, tabBreakpoint } from '../../../../bpl-tools/utils/dat
 import { getBackgroundCSS, getBoxCSS, getColorsCSS, getTypoCSS, } from '../../../../bpl-tools/utils/getCSS';
 
 const Style = ({ attributes, id }) => {
-	const { styles,alignment} = attributes;
+	const { styles,alignment,options} = attributes;
 
 	const mainSl = `#${id}`;
 	const wrapperSl = `${mainSl} .wrapper`; 
@@ -86,6 +86,7 @@ const Style = ({ attributes, id }) => {
 	
 			${wrapperSl}{
 				justify-content: ${alignment};
+				${options?.selectedTheme ==="theme3"?getBackgroundCSS(styles?.bg):""}
 	
 			
 			}
@@ -97,7 +98,7 @@ const Style = ({ attributes, id }) => {
 				
 			
 			${containerSl}{
-			${getBackgroundCSS(styles?.bg)}
+			${options?.selectedTheme==="theme2"?getBackgroundCSS(styles?.bg):""}
 			 padding:${getBoxCSS(styles?.padding.desktop)} ;
 			 margin:${getBoxCSS(styles?.margin.desktop)} ;
 			 max-width:${styles?.width?.desktop};

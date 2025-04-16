@@ -262,20 +262,25 @@
 	
 	
 	.faq-answer {
-		max-height: 0;
+		// max-height: 0;
 		overflow: hidden;
-		transition: max-height 0.5s ease-out, padding 0.7s ease;
+		transition: height 0.3s  ease;
 	
-		margin:5px 0;
+		margin: 0;
+		height: auto;
 		// border-radius: 10px;
 		
 		
 		
 		
 	}
+	.active{
+		border: 1px solid red;
+	}
 	
 	.faq-item.active .faq-answer {
-		  max-height: 200px;
+		  max-height: auto;
+		  margin: 5px 0;
 	}
 	
 	@media (max-width: 768px) {

@@ -865,7 +865,8 @@ const Style = ({
 }) => {
   const {
     styles,
-    alignment
+    alignment,
+    options
   } = attributes;
   const mainSl = `#${id}`;
   const wrapperSl = `${mainSl} .wrapper`;
@@ -942,6 +943,7 @@ const Style = ({
 	
 			${wrapperSl}{
 				justify-content: ${alignment};
+				${options?.selectedTheme === "theme3" ? (0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg) : ""}
 	
 			
 			}
@@ -953,7 +955,7 @@ const Style = ({
 				
 			
 			${containerSl}{
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg)}
+			${options?.selectedTheme === "theme2" ? (0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg) : ""}
 			 padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.desktop)} ;
 			 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.desktop)} ;
 			 max-width:${styles?.width?.desktop};
@@ -1290,11 +1292,9 @@ const Style3 = ({
   attributes,
   isView
 }) => {
-  const words = faqs?.title.split(" ");
   const {
     faqItems
   } = attributes;
-  const lastWord = words.pop();
   const [activeIndex, setActiveIndex] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
   const toggleFaq = index => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -1327,12 +1327,21 @@ const Style3 = ({
     onChange: value => setAttributes({
       faqs: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.updateData)(faqs, value, "buttonText")
     })
-  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", {
+  }))), isView ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", {
     className: "title style-3-title"
-  }, faqs?.title), isView ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+  }, faqs?.title) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    placeholder: " title Here...",
+    value: faqs?.title,
+    className: "title style-3-title",
+    onChange: value => {
+      setAttributes({
+        faqs: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.updateData)(faqs, value, "title")
+      });
+    }
+  }), isView ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "description"
   }, faqs?.description) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
-    placeholder: "Enter Your Description Here......",
+    placeholder: "Enter Your Description Here...",
     value: faqs?.description,
     className: "description",
     onChange: value => {
@@ -1391,9 +1400,9 @@ const FaqItem = ({
     faqItems
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: `faq-item ${isActive ? "active" : ""}`
+    className: `faq-item`
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "faq-question",
+    className: `faq-question ${isActive ? "active" : ""}`,
     onClick: onClick
   }, isView ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "question"
@@ -1557,12 +1566,76 @@ const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED
         lineHeight: "1.35",
         letterSpace: "0px"
       };
+      draft["styles"]["question"]["typho"] = {
+        fontFamily: "Archivo",
+        fontCategory: "sans-serif",
+        fontWeight: 400,
+        fontVariant: "400",
+        isUploadFont: true,
+        fontSize: {
+          desktop: 18,
+          tablet: 16,
+          mobile: 14
+        },
+        fontStyle: "normal",
+        textTransform: "none",
+        textDecoration: "none",
+        lineHeight: "135%",
+        letterSpace: "0px"
+      };
+      draft["styles"]["question"]["colors"] = {
+        color: "#fcecfd",
+        bgType: "solid",
+        bg: "#0D0E10"
+      };
+      draft["styles"]["question"]["padding"] = {
+        top: "5px",
+        right: "14px",
+        bottom: "5px",
+        left: "14px"
+      };
+      draft["styles"]["question"]["gap"] = "5px";
+      draft["options"]["icon"] = "<svg  stroke-width=\"0\" viewBox=\"0 0 512 512\" height=\"16\" width=\"16\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z\"></path></svg>";
+      draft["styles"]["answer"]["typho"] = {
+        fontFamily: "Archivo",
+        fontCategory: "sans-serif",
+        fontWeight: 400,
+        fontVariant: "400",
+        isUploadFont: true,
+        fontSize: {
+          desktop: 16,
+          tablet: 16,
+          mobile: 14
+        },
+        fontStyle: "normal",
+        textTransform: "none",
+        textDecoration: "none",
+        lineHeight: "135%",
+        letterSpace: "0px"
+      };
+      draft["styles"]["answer"]["colors"] = {
+        color: "#888",
+        bgType: "solid",
+        bg: "#0D0E10"
+      };
+      draft["styles"]["answer"]["padding"] = {
+        top: "5px",
+        right: "5px",
+        bottom: "5px",
+        left: "5px"
+      };
+      draft["styles"]["answer"]["radius"] = {
+        top: "10px",
+        right: "10px",
+        bottom: "10px",
+        left: "10px"
+      };
       break;
     case "theme3":
       draft["options"]["isShowButton"] = true;
       draft["styles"]["bg"] = {
         type: "solid",
-        color: "#ffffff",
+        color: "#F8F9FA",
         gradient: "linear-gradient(to right, #ffffff, #007bff)"
       };
       draft["styles"]["title"]["color"] = "#192534";
@@ -1642,6 +1715,70 @@ const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED
         description: "We’re building a company that recognizes how, when, and where our Paddlers do their best work.",
         buttonIcon: "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1em\" height=\"1em\" viewBox=\"0 0 24 24\"><path fill=\"currentColor\" d=\"M10.313 16.094a1 1 0 0 1-.708-.293l-2.812-2.813a1 1 0 0 1 1.414-1.414l2.105 2.106l5.481-5.48a1 1 0 0 1 1.414 1.413l-6.188 6.188a1 1 0 0 1-.707.293Z\" opacity=\".99\"></path><path fill=\"currentColor\" d=\"M12 2a10 10 0 1 0 10 10A10.01 10.01 0 0 0 12 2m5.207 7.613l-6.188 6.188a1 1 0 0 1-1.414 0l-2.812-2.813a1 1 0 0 1 1.414-1.414l2.105 2.106l5.481-5.48a1 1 0 0 1 1.414 1.413\" opacity=\".5\"></path></svg>",
         buttonLink: "#"
+      };
+      draft["styles"]["question"]["typho"] = {
+        fontFamily: "Archivo",
+        fontCategory: "sans-serif",
+        fontWeight: 400,
+        fontVariant: "400",
+        isUploadFont: true,
+        fontSize: {
+          desktop: 18,
+          tablet: 16,
+          mobile: 14
+        },
+        fontStyle: "normal",
+        textTransform: "none",
+        textDecoration: "none",
+        lineHeight: "135%",
+        letterSpace: "0px"
+      };
+      draft["styles"]["question"]["colors"] = {
+        color: "#192534",
+        bgType: "solid",
+        bg: "#ffffff"
+      };
+      draft["styles"]["question"]["padding"] = {
+        top: "5px",
+        right: "14px",
+        bottom: "5px",
+        left: "14px"
+      };
+      draft["styles"]["question"]["gap"] = "5px";
+      draft["options"]["icon"] = "<svg  stroke-width=\"0\" viewBox=\"0 0 512 512\" height=\"16\" width=\"16\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z\"></path></svg>";
+      draft["styles"]["answer"]["typho"] = {
+        fontFamily: "Archivo",
+        fontCategory: "sans-serif",
+        fontWeight: 400,
+        fontVariant: "400",
+        isUploadFont: true,
+        fontSize: {
+          desktop: 16,
+          tablet: 16,
+          mobile: 14
+        },
+        fontStyle: "normal",
+        textTransform: "none",
+        textDecoration: "none",
+        lineHeight: "135%",
+        letterSpace: "0px"
+      };
+      draft["styles"]["answer"]["colors"] = {
+        color: "#253544",
+        bgType: "solid",
+        bg: "#FFFFFF"
+      };
+      draft["styles"]["answer"]["padding"] = {
+        top: "5px",
+        right: "5px",
+        bottom: "5px",
+        left: "5px"
+      };
+      draft["styles"]["answer"]["radius"] = {
+        top: "10px",
+        right: "10px",
+        bottom: "10px",
+        left: "10px"
       };
       break;
   }
