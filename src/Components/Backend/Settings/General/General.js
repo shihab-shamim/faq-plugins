@@ -2,7 +2,7 @@ import { __ } from '@wordpress/i18n';
 
 import {  FormToggle, PanelBody, SelectControl, TextControl } from '@wordpress/components';
 import { themesOption } from '../../../../utils/options';
-import { updateData } from '../../../../utils/functions';
+import { themeSwitch, updateData } from '../../../../utils/functions';
 import { ItemsPanel, Label } from '../../../../../../bpl-tools/Components';
 import FaqSetting from '../../../Faq/FaqSetting';
 
@@ -24,7 +24,7 @@ const General = ({ attributes, setAttributes }) => {
         options={themesOption}
        
         onChange={(value) => {
-          setAttributes({ options: updateData(options, { selectedTheme: value }) });
+          setAttributes(themeSwitch(value,attributes));
         }}
       />
 
@@ -43,10 +43,10 @@ const General = ({ attributes, setAttributes }) => {
       <TextControl  placeholder='Title...' label="Title" value={faqs?.title} onChange={(value)=>{setAttributes({faqs:updateData(faqs,value,"title")})}}/>
       <TextControl placeholder='Description...' label="Descriptions" value={faqs?.description} onChange={(value)=>{setAttributes({faqs:updateData(faqs,value,"description")})}}/>
     
-       <Label>Show Button <FormToggle
+    {   options?.selectedTheme ==="theme1" || <Label>Show Button <FormToggle
             checked={ options?.isShowButton }
             onChange={ () =>setAttributes({options:{...options, isShowButton:!options?.isShowButton }}) }
-        /></Label>
+        /></Label>}
 
        { options?.isShowButton && <> <TextControl value={faqs?.buttonText} label="Button Text"  onChange={(value)=>setAttributes({faqs:updateData(faqs,value,"buttonText")})} />
         <TextControl value={faqs?.buttonLink} label="Button Link"  onChange={(value)=>setAttributes({faqs:updateData(faqs,value,"buttonLink")})} />

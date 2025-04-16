@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Style2 from "./Style2";
+import Style3 from "./Style3";
 
 // FAQ Item Component
 const FaqItem = ({ question, answer, isActive, onClick }) => {
@@ -176,7 +177,7 @@ const Faq = ({ isView, setAttributes, attributes }) => {
       {options.selectedTheme === "theme2" && <Style2 isView={isView} attributes={attributes} setAttributes={setAttributes} faqData={faqData} faqs={faqs} />}
 
       {/* Theme 3 */}
-      {options.selectedTheme === "theme3" && <p>Theme 3</p>}
+      {options.selectedTheme === "theme3" && <Style3 isView={isView} attributes={attributes} setAttributes={setAttributes} faqData={faqData} faqs={faqs}/>}
     </div>
   );
 };

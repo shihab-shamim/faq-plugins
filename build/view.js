@@ -883,22 +883,6 @@ const Style = ({
   const faqhighlighteSl = `${faqLeftSl} .highlight`;
   const faqDescriptionSl = `${faqLeftSl} .description`;
   const faqContactButtonrSl = `${faqLeftSl} .contact-btn`;
-
-  // console.log(styles?.title?.highlightColor);
-  // background:${styles?.title?.highlightColor?.gradient};
-
-  // const highLightColor = (value)=>{
-  // 	if(value?.type ==="solid"){
-  // 		const color=`background-color:${value?.color}`
-  // 		return color;
-  // 	}
-  // 	if(value?.type ==="gradient"){
-  // 		const color =`background:${styles?.title?.highlightColor?.gradient}`
-  // 		return color;
-  // 	}
-
-  // }
-
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: `
@@ -909,9 +893,11 @@ const Style = ({
 			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.question?.typho)?.googleFontLink}
 			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.title?.typho)?.googleFontLink}
 			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.description?.typho)?.googleFontLink}
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.button?.typho)?.googleFontLink}
 	
 	
 			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(questionSl, styles?.question?.typho)?.styles}
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqContactButtonrSl, styles?.button?.typho)?.styles}
 			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqTitle, styles?.title?.typho)?.styles}
 			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqhighlighteSl, styles?.title?.typho)?.styles}
 			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqDescriptionSl, styles?.description?.typho)?.styles}
@@ -937,6 +923,8 @@ const Style = ({
 			}
 		   ${faqAnswerSl}{
 			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getColorsCSS)(styles?.answer?.colors)}
+	
+			border-radius:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.answer?.radius)};
 			 .faq-answer-dec{
 		    padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.answer?.padding)};
 		   }
@@ -1023,6 +1011,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Style2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Style2 */ "./src/Components/Faq/Style2.js");
+/* harmony import */ var _Style3__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Style3 */ "./src/Components/Faq/Style3.js");
+
 
 
 
@@ -1161,7 +1151,13 @@ const Faq = ({
     setAttributes: setAttributes,
     faqData: faqData,
     faqs: faqs
-  }), options.selectedTheme === "theme3" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Theme 3"));
+  }), options.selectedTheme === "theme3" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Style3__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    isView: isView,
+    attributes: attributes,
+    setAttributes: setAttributes,
+    faqData: faqData,
+    faqs: faqs
+  }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Faq);
 
@@ -1229,7 +1225,9 @@ const Style2 = ({
     target: attributes?.options?.isLinkTarget ? "_blank" : "_self",
     className: "contact-btn",
     rel: "noreferrer"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, faqs?.buttonText), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "contact-btn-text"
+  }, faqs?.buttonText), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "buttonIcon",
     dangerouslySetInnerHTML: {
       __html: faqs?.buttonIcon
@@ -1237,6 +1235,7 @@ const Style2 = ({
   })) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "contact-btn"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    className: "contact-btn-text",
     value: faqs?.buttonText,
     onChange: value => setAttributes({
       faqs: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.updateData)(faqs, value, "buttonText")
@@ -1261,6 +1260,101 @@ const Style2 = ({
   })))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Style2);
+
+/***/ }),
+
+/***/ "./src/Components/Faq/Style3.js":
+/*!**************************************!*\
+  !*** ./src/Components/Faq/Style3.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/FaqItem */ "./src/utils/FaqItem.js");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _utils_functions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/functions */ "./src/utils/functions.js");
+
+
+
+
+
+const Style3 = ({
+  faqs,
+  setAttributes,
+  attributes,
+  isView
+}) => {
+  const words = faqs?.title.split(" ");
+  const {
+    faqItems
+  } = attributes;
+  const lastWord = words.pop();
+  const [activeIndex, setActiveIndex] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+  const toggleFaq = index => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "container"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "faq-wrapper"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "faq-left"
+  }, attributes?.options?.isShowButton && (isView ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: faqs?.buttonLink,
+    target: attributes?.options?.isLinkTarget ? "_blank" : "_self",
+    className: "contact-btn",
+    rel: "noreferrer"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "buttonIcon",
+    dangerouslySetInnerHTML: {
+      __html: faqs?.buttonIcon
+    }
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, faqs?.buttonText)) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "contact-btn"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "buttonIcon",
+    dangerouslySetInnerHTML: {
+      __html: faqs?.buttonIcon
+    }
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    value: faqs?.buttonText,
+    onChange: value => setAttributes({
+      faqs: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.updateData)(faqs, value, "buttonText")
+    })
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", {
+    className: "title style-3-title"
+  }, faqs?.title), isView ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "description"
+  }, faqs?.description) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    placeholder: "Enter Your Description Here......",
+    value: faqs?.description,
+    className: "description",
+    onChange: value => {
+      setAttributes({
+        faqs: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.updateData)(faqs, value, "description")
+      });
+    }
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "faq-right"
+  }, faqItems.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    isView: isView,
+    key: index,
+    index: index,
+    question: item.question,
+    answer: item.answer,
+    isActive: activeIndex === index,
+    onClick: () => toggleFaq(index),
+    attributes: attributes,
+    setAttributes: setAttributes
+  })))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Style3);
 
 /***/ }),
 
@@ -1350,6 +1444,7 @@ const FaqItem = ({
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   themeSwitch: () => (/* binding */ themeSwitch),
 /* harmony export */   updateData: () => (/* binding */ updateData)
 /* harmony export */ });
 /* harmony import */ var immer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! immer */ "./node_modules/immer/dist/immer.mjs");
@@ -1371,6 +1466,186 @@ const updateData = (attr, value, ...props) => {
     draft[currentProp] = updateData(draft[currentProp], value, ...remainingProps);
   });
 };
+const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED_MODULE_0__.produce)(attributes, draft => {
+  draft["options"]["selectedTheme"] = theme;
+  switch (theme) {
+    case "theme1":
+      draft["options"]["isShowButton"] = false;
+      break;
+    case "theme2":
+      draft["options"]["isShowButton"] = true;
+      draft["styles"]["bg"] = {
+        type: "solid",
+        color: "#000000",
+        gradient: "linear-gradient(135deg,rgb(34,23,23) 0%,rgb(13,13,15) 100%)"
+      };
+      draft["styles"]["title"]["color"] = "rgba(252, 252, 253, 1)";
+      draft["styles"]["button"]["colors"] = {
+        color: "#000000",
+        bgType: "solid",
+        bg: "#c5fb00"
+      };
+      draft["styles"]["title"]["color"] = "rgba(252, 252, 253, 1)";
+      draft["styles"]["description"]["color"] = "rgba(252, 252, 253, 0.7)";
+      draft["faqs"] = {
+        title: "Frequently asked Questions",
+        buttonText: "Contact Us Now",
+        description: "Discover clarity and insights as we unravel answers to your questions",
+        buttonIcon: "<svg stroke='currentColor' fill='currentColor' strokeWidth='0' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'><path fillRule='evenodd' d='M10.146 4.646a.5.5 0 01.708 0l3 3a.5.5 0 010 .708l-3 3a.5.5 0 01-.708-.708L12.793 8l-2.647-2.646a.5.5 0 010-.708z' clipRule='evenodd'/><path fillRule='evenodd' d='M2 8a.5.5 0 01.5-.5H13a.5.5 0 010 1H2.5A.5.5 0 012 8z' clipRule='evenodd'/></svg>",
+        buttonLink: "#"
+      };
+      draft["styles"]["button"]["padding"] = {
+        top: '10px',
+        right: '20px',
+        bottom: '10px',
+        left: '20px'
+      };
+      draft["styles"]["button"]["radius"] = {
+        top: '8px',
+        right: '8px',
+        bottom: '8px',
+        left: '8px'
+      };
+      draft["styles"]["button"]["typho"] = {
+        fontFamily: "Archivo",
+        fontCategory: "sans-serif",
+        fontWeight: 600,
+        fontVariant: "regular",
+        isUploadFont: true,
+        fontSize: {
+          desktop: 18,
+          tablet: 18,
+          mobile: 18
+        },
+        fontStyle: "normal",
+        textTransform: "none",
+        textDecoration: "none",
+        lineHeight: "1.35",
+        letterSpace: "0px"
+      };
+      draft["styles"]["title"]["typho"] = {
+        fontFamily: "Archivo",
+        fontCategory: "sans-serif",
+        fontWeight: 700,
+        fontVariant: "regular",
+        isUploadFont: true,
+        fontSize: {
+          desktop: 48,
+          tablet: 48,
+          mobile: 25
+        },
+        fontStyle: "normal",
+        textTransform: "none",
+        textDecoration: "none",
+        lineHeight: "1.35",
+        letterSpace: "0px"
+      };
+      draft["styles"]["description"]["typho"] = {
+        fontFamily: "Archivo",
+        fontCategory: "sans-serif",
+        fontWeight: 400,
+        fontVariant: "regular",
+        isUploadFont: true,
+        fontSize: {
+          desktop: 17,
+          tablet: 17,
+          mobile: 17
+        },
+        fontStyle: "normal",
+        textTransform: "none",
+        textDecoration: "none",
+        lineHeight: "1.35",
+        letterSpace: "0px"
+      };
+      break;
+    case "theme3":
+      draft["options"]["isShowButton"] = true;
+      draft["styles"]["bg"] = {
+        type: "solid",
+        color: "#ffffff",
+        gradient: "linear-gradient(to right, #ffffff, #007bff)"
+      };
+      draft["styles"]["title"]["color"] = "#192534";
+      draft["styles"]["description"]["color"] = "#616A72";
+      draft["styles"]["title"]["color"] = "#192534";
+      draft["styles"]["title"]["typho"] = {
+        fontFamily: "Archivo",
+        fontCategory: "sans-serif",
+        fontWeight: 700,
+        fontVariant: "regular",
+        isUploadFont: true,
+        fontSize: {
+          desktop: 48,
+          tablet: 48,
+          mobile: 25
+        },
+        fontStyle: "normal",
+        textTransform: "none",
+        textDecoration: "none",
+        lineHeight: "1.35",
+        letterSpace: "0px"
+      };
+      draft["styles"]["description"]["typho"] = {
+        fontFamily: "Archivo",
+        fontCategory: "sans-serif",
+        fontWeight: 400,
+        fontVariant: "regular",
+        isUploadFont: true,
+        fontSize: {
+          desktop: 17,
+          tablet: 17,
+          mobile: 17
+        },
+        fontStyle: "normal",
+        textTransform: "none",
+        textDecoration: "none",
+        lineHeight: "1.35",
+        letterSpace: "0px"
+      };
+      draft["styles"]["button"]["colors"] = {
+        color: "#E8DFFF",
+        bgType: "solid",
+        bg: "#451CB3"
+      };
+      draft["styles"]["button"]["padding"] = {
+        top: '4px',
+        right: '8px',
+        bottom: '4px',
+        left: '8px'
+      };
+      draft["styles"]["button"]["radius"] = {
+        top: '0px',
+        right: '0px',
+        bottom: '0px',
+        left: '0px'
+      };
+      draft["styles"]["button"]["typho"] = {
+        fontFamily: "Archivo",
+        fontCategory: "sans-serif",
+        fontWeight: 600,
+        fontVariant: "regular",
+        isUploadFont: true,
+        fontSize: {
+          desktop: 14,
+          tablet: 14,
+          mobile: 14
+        },
+        fontStyle: "normal",
+        textTransform: "none",
+        textDecoration: "none",
+        lineHeight: "1.35",
+        letterSpace: "0px"
+      };
+      draft["faqs"] = {
+        title: "General FAQ",
+        buttonText: "Support",
+        description: "We’re building a company that recognizes how, when, and where our Paddlers do their best work.",
+        buttonIcon: "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1em\" height=\"1em\" viewBox=\"0 0 24 24\"><path fill=\"currentColor\" d=\"M10.313 16.094a1 1 0 0 1-.708-.293l-2.812-2.813a1 1 0 0 1 1.414-1.414l2.105 2.106l5.481-5.48a1 1 0 0 1 1.414 1.413l-6.188 6.188a1 1 0 0 1-.707.293Z\" opacity=\".99\"></path><path fill=\"currentColor\" d=\"M12 2a10 10 0 1 0 10 10A10.01 10.01 0 0 0 12 2m5.207 7.613l-6.188 6.188a1 1 0 0 1-1.414 0l-2.812-2.813a1 1 0 0 1 1.414-1.414l2.105 2.106l5.481-5.48a1 1 0 0 1 1.414 1.413\" opacity=\".5\"></path></svg>",
+        buttonLink: "#"
+      };
+      break;
+  }
+});
 
 /***/ }),
 

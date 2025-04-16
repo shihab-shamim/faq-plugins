@@ -3,6 +3,7 @@ import { updateData } from "./functions";
 
 const FaqItem = ({ question, answer, isActive, onClick,attributes,setAttributes,isView,index}) => {
     const {options,faqItems}=attributes;
+    
 
   return (
     <div  className={`faq-item ${isActive ? "active" : ""}`}>

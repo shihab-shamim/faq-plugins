@@ -22,20 +22,6 @@ const Style = ({ attributes, id }) => {
 	
 	const faqContactButtonrSl = `${faqLeftSl} .contact-btn`;
 
-	// console.log(styles?.title?.highlightColor);
-	// background:${styles?.title?.highlightColor?.gradient};
-
-	// const highLightColor = (value)=>{
-	// 	if(value?.type ==="solid"){
-	// 		const color=`background-color:${value?.color}`
-	// 		return color;
-	// 	}
-	// 	if(value?.type ==="gradient"){
-	// 		const color =`background:${styles?.title?.highlightColor?.gradient}`
-	// 		return color;
-	// 	}
-
-	// }
 
 
 
@@ -51,9 +37,11 @@ const Style = ({ attributes, id }) => {
 			${getTypoCSS('', styles?.question?.typho)?.googleFontLink}
 			${getTypoCSS('', styles?.title?.typho)?.googleFontLink}
 			${getTypoCSS('', styles?.description?.typho)?.googleFontLink}
+			${getTypoCSS('', styles?.button?.typho)?.googleFontLink}
 	
 	
 			${getTypoCSS(questionSl, styles?.question?.typho)?.styles}
+			${getTypoCSS(faqContactButtonrSl, styles?.button?.typho)?.styles}
 			${getTypoCSS(faqTitle, styles?.title?.typho)?.styles}
 			${getTypoCSS(faqhighlighteSl, styles?.title?.typho)?.styles}
 			${getTypoCSS(faqDescriptionSl, styles?.description?.typho)?.styles}
@@ -79,6 +67,8 @@ const Style = ({ attributes, id }) => {
 			}
 		   ${faqAnswerSl}{
 			${getColorsCSS(styles?.answer?.colors)}
+	
+			border-radius:${getBoxCSS(styles?.answer?.radius)};
 			 .faq-answer-dec{
 		    padding:${getBoxCSS(styles?.answer?.padding)};
 		   }
