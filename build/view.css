@@ -92,7 +92,7 @@
   width: 20px;
   height: 20px;
 }
-.wp-block-b-blocks-test-purpose .wrapper .faq-item.active .toggle-btn {
+.wp-block-b-blocks-test-purpose .wrapper .faq-question.active .toggle-btn {
   transform: rotate(180deg);
 }
 .wp-block-b-blocks-test-purpose .wrapper .faq-answer {
