@@ -17,6 +17,7 @@
 }
 .wp-block-b-blocks-test-purpose .wrapper .container {
   display: flex;
+  overflow: hidden;
 }
 .wp-block-b-blocks-test-purpose .wrapper .container {
   width: 100%;

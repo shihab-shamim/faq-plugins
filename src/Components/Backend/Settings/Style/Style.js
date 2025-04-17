@@ -4,7 +4,7 @@ import {
   PanelBody,
   PanelRow,
   // __experimentalBoxControl as BoxControl,
-  __experimentalUnitControl as  UnitControl
+  __experimentalUnitControl as  UnitControl ,  __experimentalBoxControl as Boxcontrol
 } from "@wordpress/components";
 import {  Background, BoxControl, ColorControl, ColorsControl, Device, IconLibrary, Label, Typography } from "../../../../../../bpl-tools/Components";
 import { updateData } from "../../../../utils/functions";
@@ -44,8 +44,13 @@ const Style = ({ attributes, setAttributes,device }) => {
 
           <BoxControl values={styles?.margin[device]} onChange={(value)=>setAttributes({styles:updateData(styles,value,"margin",device)})} />
 
+            <div className="border-radius">
+            <Boxcontrol label={__("Radius","b-blocks")} values={styles?.radius} onChange={value=>setAttributes({styles:updateData(styles,value,"radius")})} />
 
-            <BoxControl style={{marginTop:"15px"}} label={__("Radius","b-blocks")} values={styles?.radius} onChange={value=>setAttributes({styles:updateData(styles,value,"radius")})} />
+
+            </div>
+
+
        
         
       </PanelBody>
