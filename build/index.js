@@ -45216,6 +45216,9 @@ const General = ({
       }
     })
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_5__.BButtonGroup, {
+    style: {
+      marginTop: "15px"
+    },
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Alignment", "b-blocks"),
     options: _utils_options__WEBPACK_IMPORTED_MODULE_3__.contentAlignment,
     value: options?.contentAlignment,
@@ -46354,6 +46357,7 @@ const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED
         bottom: "10px",
         left: "10px"
       };
+      draft["options"]["contentAlignment"] = "center";
       break;
     case "theme3":
       draft["options"]["isShowButton"] = true;
@@ -46509,6 +46513,7 @@ const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED
         bottom: "10px",
         left: "10px"
       };
+      draft["options"]["contentAlignment"] = "center";
       break;
   }
 });

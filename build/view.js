@@ -1636,6 +1636,7 @@ const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED
         bottom: "10px",
         left: "10px"
       };
+      draft["options"]["contentAlignment"] = "center";
       break;
     case "theme3":
       draft["options"]["isShowButton"] = true;
@@ -1791,6 +1792,7 @@ const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED
         bottom: "10px",
         left: "10px"
       };
+      draft["options"]["contentAlignment"] = "center";
       break;
   }
 });

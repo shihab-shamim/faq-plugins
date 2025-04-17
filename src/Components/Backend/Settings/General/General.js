@@ -55,7 +55,7 @@ const General = ({ attributes, setAttributes }) => {
             onChange={ () =>setAttributes({options:{...options, isLinkTarget:!options?.isLinkTarget }}) }
         /></Label>
 </>}
-       <BButtonGroup label={__("Alignment","b-blocks")} options={contentAlignment} value={options?.contentAlignment}  onChange={(value)=>setAttributes({options:updateData(options,value,"contentAlignment")})} />
+       <BButtonGroup style={{marginTop:"15px"}} label={__("Alignment","b-blocks")} options={contentAlignment} value={options?.contentAlignment}  onChange={(value)=>setAttributes({options:updateData(options,value,"contentAlignment")})} />
 
     </PanelBody>
    </>

@@ -147,6 +147,7 @@ draft["styles"]["question"]["gap"]="5px";
       bottom: "10px",
       left: "10px"
     };
+    draft["options"]["contentAlignment"]="center";
     
 
 
@@ -272,6 +273,7 @@ draft["styles"]["question"]["gap"]="5px";
         bottom: "10px",
         left: "10px"
       };
+      draft["options"]["contentAlignment"]="center";
       
 
     break;
