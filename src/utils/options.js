@@ -6,7 +6,7 @@ export const generalStyleTabs = [
 ];
 
 export const themesOption = [
-	{ label: 'Style 1', value: 'theme1' },
+	{ label: 'Default', value: 'theme1' },
 	{ label: 'Style 2', value: 'theme2' },
 	{ label: 'Style 3', value: 'theme3' }
 ]

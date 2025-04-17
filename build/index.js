@@ -46621,7 +46621,7 @@ const generalStyleTabs = [{
   title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Style', 'textdomain')
 }];
 const themesOption = [{
-  label: 'Style 1',
+  label: 'Default',
   value: 'theme1'
 }, {
   label: 'Style 2',
