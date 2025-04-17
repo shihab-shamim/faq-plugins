@@ -985,17 +985,22 @@ const Style = ({
 			
 			}
 	
-			${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.mobileBreakpoint}{
-				${containerSl}{
-			 padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.mobile)}};
+			
+			  	
+			 
+			  
+			  
+
+			  ${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.mobileBreakpoint}{
+				${faqWrapperSl}{
+					gap:${styles?.gap?.mobile};
+				 }
+				 ${containerSl}{
+				  padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.mobile)};
 			 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.mobile)} ;
 			  max-width:${styles?.width?.mobile};
 			  
-			  }
-			  	${faqWrapperSl}{
-			   gap:${styles?.gap?.mobile};
-			}
-			 
+				 }
 			  
 			  }
 

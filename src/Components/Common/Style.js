@@ -128,17 +128,22 @@ const Style = ({ attributes, id }) => {
 			
 			}
 	
-			${mobileBreakpoint}{
-				${containerSl}{
-			 padding:${getBoxCSS(styles?.padding.mobile)}};
+			
+			  	
+			 
+			  
+			  
+
+			  ${mobileBreakpoint}{
+				${faqWrapperSl}{
+					gap:${styles?.gap?.mobile};
+				 }
+				 ${containerSl}{
+				  padding:${getBoxCSS(styles?.padding.mobile)};
 			 margin:${getBoxCSS(styles?.margin.mobile)} ;
 			  max-width:${styles?.width?.mobile};
 			  
-			  }
-			  	${faqWrapperSl}{
-			   gap:${styles?.gap?.mobile};
-			}
-			 
+				 }
 			  
 			  }
 
