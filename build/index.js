@@ -45885,6 +45885,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_functions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/functions */ "./src/utils/functions.js");
+
 
 
 const FaqSetting = props => {
@@ -45899,10 +45901,16 @@ const FaqSetting = props => {
   const item = faqItems[index];
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
     label: "Question",
-    value: item.question
+    value: item.question,
+    onChange: value => setAttributes({
+      faqItems: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_2__.updateData)(faqItems, value, index, "question")
+    })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
     label: "Answer",
-    value: item.answer
+    value: item.answer,
+    onChange: value => setAttributes({
+      faqItems: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_2__.updateData)(faqItems, value, index, "answer")
+    })
   }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FaqSetting);
