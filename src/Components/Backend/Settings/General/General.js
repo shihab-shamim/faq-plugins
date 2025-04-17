@@ -1,9 +1,9 @@
 import { __ } from '@wordpress/i18n';
 
 import {  FormToggle, PanelBody, SelectControl, TextControl } from '@wordpress/components';
-import { themesOption } from '../../../../utils/options';
+import { contentAlignment, themesOption } from '../../../../utils/options';
 import { themeSwitch, updateData } from '../../../../utils/functions';
-import { ItemsPanel, Label } from '../../../../../../bpl-tools/Components';
+import { BButtonGroup, ItemsPanel, Label } from '../../../../../../bpl-tools/Components';
 import FaqSetting from '../../../Faq/FaqSetting';
 
 
@@ -55,7 +55,7 @@ const General = ({ attributes, setAttributes }) => {
             onChange={ () =>setAttributes({options:{...options, isLinkTarget:!options?.isLinkTarget }}) }
         /></Label>
 </>}
-       
+       <BButtonGroup label={__("Alignment","b-blocks")} options={contentAlignment} value={options?.contentAlignment}  onChange={(value)=>setAttributes({options:updateData(options,value,"contentAlignment")})} />
 
     </PanelBody>
    </>

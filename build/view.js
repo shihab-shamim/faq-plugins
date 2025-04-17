@@ -960,6 +960,7 @@ const Style = ({
 			 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.desktop)} ;
 			 max-width:${styles?.width?.desktop};
 			 border-radius:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.radius)};
+			 justify-content: ${options?.contentAlignment};
 
 			 
 	
@@ -1496,6 +1497,11 @@ const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED
       };
       draft["styles"]["title"]["color"] = "rgba(252, 252, 253, 1)";
       draft["styles"]["description"]["color"] = "rgba(252, 252, 253, 0.7)";
+      draft["width"] = {
+        desktop: "1350px",
+        tablet: "768px",
+        mobile: "500px"
+      };
       draft["faqs"] = {
         title: "Frequently asked Questions",
         buttonText: "Contact Us Now",
@@ -1641,6 +1647,11 @@ const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED
       draft["styles"]["title"]["color"] = "#192534";
       draft["styles"]["description"]["color"] = "#616A72";
       draft["styles"]["title"]["color"] = "#192534";
+      draft["styles"]["width"] = {
+        desktop: "1350px",
+        tablet: "768px",
+        mobile: "500px"
+      };
       draft["styles"]["title"]["typho"] = {
         fontFamily: "Archivo",
         fontCategory: "sans-serif",

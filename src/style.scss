@@ -12,7 +12,11 @@
 	}
 	.wrapper {
 		display: flex;
-	  
+		overflow: hidden;
+	  .container{
+		display: flex;
+		
+	  }
 	  
 	//   .container {
 	// 	max-width: 1200px;
@@ -259,7 +263,9 @@
 	.faq-item.active .faq-question span {
 		// color: #c5fb00;
 	}
-	
+	.faq-answer ,.faq-question{
+		max-width: 700px;
+	}
 	
 
 		.faq-answer {

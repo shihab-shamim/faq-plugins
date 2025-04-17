@@ -13,6 +13,10 @@
 }
 .wp-block-b-blocks-test-purpose .wrapper {
   display: flex;
+  overflow: hidden;
+}
+.wp-block-b-blocks-test-purpose .wrapper .container {
+  display: flex;
 }
 .wp-block-b-blocks-test-purpose .wrapper .container {
   width: 100%;
@@ -94,6 +98,9 @@
 }
 .wp-block-b-blocks-test-purpose .wrapper .faq-question.active .toggle-btn {
   transform: rotate(180deg);
+}
+.wp-block-b-blocks-test-purpose .wrapper .faq-answer, .wp-block-b-blocks-test-purpose .wrapper .faq-question {
+  max-width: 700px;
 }
 .wp-block-b-blocks-test-purpose .wrapper .faq-answer {
   max-height: 0;

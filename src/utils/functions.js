@@ -36,7 +36,12 @@ export const themeSwitch=(theme="theme2",attributes)=>produce(attributes,(draft)
       draft["styles"]["title"]["color"]="rgba(252, 252, 253, 1)";
       draft["styles"]["button"]["colors"]={color: "#000000",bgType: "solid",bg: "#c5fb00"}
       draft["styles"]["title"]["color"]="rgba(252, 252, 253, 1)"
-      draft["styles"]["description"]["color"]="rgba(252, 252, 253, 0.7)"
+      draft["styles"]["description"]["color"]="rgba(252, 252, 253, 0.7)";
+      draft["width"]={
+        desktop: "1350px",
+        tablet: "768px",
+        mobile: "500px"
+      }
     
       draft["faqs"]={title: "Frequently asked Questions",
         buttonText: "Contact Us Now",
@@ -152,7 +157,13 @@ draft["styles"]["question"]["gap"]="5px";
       draft["styles"]["bg"]={type:"solid",color:"#F8F9FA",gradient: "linear-gradient(to right, #ffffff, #007bff)"};
       draft["styles"]["title"]["color"]="#192534";
       draft["styles"]["description"]["color"]="#616A72";
-      draft["styles"]["title"]["color"]="#192534"
+      draft["styles"]["title"]["color"]="#192534";
+      draft["styles"]["width"]={
+        desktop: "1350px",
+        tablet: "768px",
+        mobile: "500px"
+      }
+    
      
       draft["styles"]["title"]["typho"]={
         fontFamily: "Archivo",

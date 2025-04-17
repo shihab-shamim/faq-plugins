@@ -103,6 +103,7 @@ const Style = ({ attributes, id }) => {
 			 margin:${getBoxCSS(styles?.margin.desktop)} ;
 			 max-width:${styles?.width?.desktop};
 			 border-radius:${getBoxCSS(styles?.radius)};
+			 justify-content: ${options?.contentAlignment};
 
 			 
 	

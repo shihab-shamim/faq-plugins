@@ -10,3 +10,8 @@ export const themesOption = [
 	{ label: 'Style 2', value: 'theme2' },
 	{ label: 'Style 3', value: 'theme3' }
 ]
+export const contentAlignment = [
+	{ label: 'Left', value: 'left' },
+	{ label: 'Center', value: 'center' },
+	{ label: 'Right', value: 'right' }
+]
