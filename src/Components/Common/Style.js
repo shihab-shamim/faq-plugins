@@ -22,7 +22,6 @@ const Style = ({ attributes, id }) => {
 	
 	const faqContactButtonrSl = `${faqLeftSl} .contact-btn`;
 
-console.log(styles?.gap);
 
 
 
