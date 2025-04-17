@@ -24,7 +24,6 @@
 .wp-block-b-blocks-test-purpose .wrapper .faq-wrapper {
   display: grid;
   grid-template-columns: minmax(200px, 500px) auto;
-  gap: 120px;
   align-items: start;
 }
 .wp-block-b-blocks-test-purpose .wrapper .highlight {
@@ -119,7 +118,6 @@
 @media (max-width: 768px) {
   .wp-block-b-blocks-test-purpose .wrapper .faq-wrapper {
     grid-template-columns: 1fr;
-    gap: 2rem;
   }
 }
 

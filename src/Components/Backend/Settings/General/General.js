@@ -1,14 +1,15 @@
 import { __ } from '@wordpress/i18n';
 
-import {  FormToggle, PanelBody, SelectControl, TextControl } from '@wordpress/components';
+import {  FormToggle, PanelBody, PanelRow, SelectControl, TextControl,__experimentalUnitControl as UnitControl } from '@wordpress/components';
 import { contentAlignment, themesOption } from '../../../../utils/options';
 import { themeSwitch, updateData } from '../../../../utils/functions';
-import { BButtonGroup, ItemsPanel, Label } from '../../../../../../bpl-tools/Components';
+import { BButtonGroup, Device, ItemsPanel, Label } from '../../../../../../bpl-tools/Components';
 import FaqSetting from '../../../Faq/FaqSetting';
+// import UnitControl from '@wordpress/components/build-types/unit-control';
 
 
-const General = ({ attributes, setAttributes }) => {
-  const { options,faqs } = attributes;
+const General = ({ attributes, setAttributes,device}) => {
+  const { options,faqs,styles} = attributes;
   const {selectedTheme}=options;
 
 
@@ -55,6 +56,16 @@ const General = ({ attributes, setAttributes }) => {
             onChange={ () =>setAttributes({options:{...options, isLinkTarget:!options?.isLinkTarget }}) }
         /></Label>
 </>}
+
+      <PanelRow>
+      <Label>Gap</Label>
+        
+      <Device/>
+
+      </PanelRow>
+      <UnitControl value={styles?.gap[device]}  onChange={value=>setAttributes({styles:updateData(styles,value,"gap",device)})} />
+
+
        <BButtonGroup style={{marginTop:"15px"}} label={__("Alignment","b-blocks")} options={contentAlignment} value={options?.contentAlignment}  onChange={(value)=>setAttributes({options:updateData(options,value,"contentAlignment")})} />
 
     </PanelBody>

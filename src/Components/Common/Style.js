@@ -22,6 +22,7 @@ const Style = ({ attributes, id }) => {
 	
 	const faqContactButtonrSl = `${faqLeftSl} .contact-btn`;
 
+console.log(styles?.gap);
 
 
 
@@ -49,6 +50,9 @@ const Style = ({ attributes, id }) => {
 			
 
 
+			${faqWrapperSl}{
+			gap:${styles?.gap?.desktop};
+			}
 			
 			${faqDescriptionSl}{
 			 color:${styles?.description?.color};
@@ -118,6 +122,10 @@ const Style = ({ attributes, id }) => {
 	
 	
 				}
+			  	${faqWrapperSl}{
+			   gap:${styles?.gap?.tablet};
+			}
+			 
 			
 			}
 	
@@ -126,6 +134,16 @@ const Style = ({ attributes, id }) => {
 			 padding:${getBoxCSS(styles?.padding.mobile)}};
 			 margin:${getBoxCSS(styles?.margin.mobile)} ;
 			  max-width:${styles?.width?.mobile};
+			  
+			  }
+			  	${faqWrapperSl}{
+			   gap:${styles?.gap?.mobile};
+			}
+			 
+			  
+			  }
+
+			
 	
 	
 		`}} />

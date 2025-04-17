@@ -29,6 +29,11 @@
           "tablet": "768px",
           "mobile": "500px"
         },
+        "gap": {
+          "desktop": "120px",
+          "tablet": "14px",
+          "mobile": "40px"
+        },
         "bg": {
           "type": "solid",
           "color": "#000000",
@@ -162,7 +167,7 @@
             "isUploadFont": true,
             "fontSize": {
               "desktop": 48,
-              "tablet": 48,
+              "tablet": 32,
               "mobile": 25
             },
             "fontStyle": "normal",
@@ -181,7 +186,7 @@
             "isUploadFont": true,
             "fontSize": {
               "desktop": 17,
-              "tablet": 17,
+              "tablet": 16,
               "mobile": 17
             },
             "fontStyle": "normal",
@@ -218,8 +223,8 @@
             "isUploadFont": true,
             "fontSize": {
               "desktop": 18,
-              "tablet": 18,
-              "mobile": 18
+              "tablet": 15,
+              "mobile": 13
             },
             "fontStyle": "normal",
             "textTransform": "none",

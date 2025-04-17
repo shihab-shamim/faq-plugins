@@ -884,6 +884,7 @@ const Style = ({
   const faqhighlighteSl = `${faqLeftSl} .highlight`;
   const faqDescriptionSl = `${faqLeftSl} .description`;
   const faqContactButtonrSl = `${faqLeftSl} .contact-btn`;
+  console.log(styles?.gap);
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: `
@@ -906,6 +907,9 @@ const Style = ({
 			
 
 
+			${faqWrapperSl}{
+			gap:${styles?.gap?.desktop};
+			}
 			
 			${faqDescriptionSl}{
 			 color:${styles?.description?.color};
@@ -975,6 +979,10 @@ const Style = ({
 	
 	
 				}
+			  	${faqWrapperSl}{
+			   gap:${styles?.gap?.tablet};
+			}
+			 
 			
 			}
 	
@@ -983,6 +991,16 @@ const Style = ({
 			 padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.mobile)}};
 			 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.mobile)} ;
 			  max-width:${styles?.width?.mobile};
+			  
+			  }
+			  	${faqWrapperSl}{
+			   gap:${styles?.gap?.mobile};
+			}
+			 
+			  
+			  }
+
+			
 	
 	
 		`

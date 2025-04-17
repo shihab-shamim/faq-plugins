@@ -148,7 +148,6 @@
 	.faq-wrapper {
 		display: grid;
 		grid-template-columns: minmax(200px, 500px) auto;
-		gap:120px;
 		align-items: start;
 		
 	}
@@ -291,11 +290,9 @@
 	@media (max-width: 768px) {
 		.faq-wrapper {
 			grid-template-columns: 1fr;
-			gap: 2rem;
+			// gap: 2rem;
 		}
-	
-		
-	
+			
 		
 	}
 	  
