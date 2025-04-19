@@ -17,7 +17,7 @@ const Style2 = ({faqs,setAttributes,attributes,isView}) => {
         setActiveIndex(activeIndex === index ? null : index);
       };
     return (
-        <div className="container">
+        <div className="container sdjfksj sdjflsjdfk ksljsk f sjfksk">
         <div className="faq-wrapper">
           <div className="faq-left">
             <h1 className="title">{words.join(" ")} <span className="highlight">{lastWord}</span></h1>

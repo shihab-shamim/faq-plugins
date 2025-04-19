@@ -1220,7 +1220,7 @@ const Style2 = ({
     setActiveIndex(activeIndex === index ? null : index);
   };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "container"
+    className: "container sdjfksj sdjflsjdfk ksljsk f sjfksk"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "faq-wrapper"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
