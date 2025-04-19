@@ -1571,8 +1571,8 @@ const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED
         isUploadFont: true,
         fontSize: {
           desktop: 18,
-          tablet: 18,
-          mobile: 18
+          tablet: 15,
+          mobile: 13
         },
         fontStyle: "normal",
         textTransform: "none",
@@ -1588,7 +1588,7 @@ const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED
         isUploadFont: true,
         fontSize: {
           desktop: 48,
-          tablet: 48,
+          tablet: 32,
           mobile: 25
         },
         fontStyle: "normal",
@@ -1605,8 +1605,8 @@ const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED
         isUploadFont: true,
         fontSize: {
           desktop: 17,
-          tablet: 17,
-          mobile: 17
+          tablet: 13,
+          mobile: 14
         },
         fontStyle: "normal",
         textTransform: "none",
@@ -1690,7 +1690,7 @@ const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED
       draft["options"]["isShowButton"] = true;
       draft["styles"]["bg"] = {
         type: "solid",
-        color: "#A5959508",
+        color: "#F8F9FA",
         gradient: "linear-gradient(to right, #ffffff, #007bff)"
       };
       draft["styles"]["title"]["color"] = "#192534";
@@ -1709,7 +1709,7 @@ const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED
         isUploadFont: true,
         fontSize: {
           desktop: 48,
-          tablet: 48,
+          tablet: 32,
           mobile: 25
         },
         fontStyle: "normal",
@@ -1726,8 +1726,8 @@ const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED
         isUploadFont: true,
         fontSize: {
           desktop: 17,
-          tablet: 17,
-          mobile: 17
+          tablet: 13,
+          mobile: 14
         },
         fontStyle: "normal",
         textTransform: "none",

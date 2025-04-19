@@ -45370,6 +45370,7 @@ const Style = ({
       styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(styles, value, "width", device)
     })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.Background, {
+    className: "mt15",
     isImage: false,
     value: styles?.bg,
     onChange: value => setAttributes({
@@ -45486,6 +45487,9 @@ const Style = ({
       styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(styles, value, "question", "gap")
     })
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.IconLibrary, {
+    style: {
+      marginTop: "15px"
+    },
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Icon", "b-blocks"),
     value: options?.icon,
     onChange: value => setAttributes({
@@ -46317,8 +46321,8 @@ const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED
         isUploadFont: true,
         fontSize: {
           desktop: 18,
-          tablet: 18,
-          mobile: 18
+          tablet: 15,
+          mobile: 13
         },
         fontStyle: "normal",
         textTransform: "none",
@@ -46334,7 +46338,7 @@ const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED
         isUploadFont: true,
         fontSize: {
           desktop: 48,
-          tablet: 48,
+          tablet: 32,
           mobile: 25
         },
         fontStyle: "normal",
@@ -46351,8 +46355,8 @@ const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED
         isUploadFont: true,
         fontSize: {
           desktop: 17,
-          tablet: 17,
-          mobile: 17
+          tablet: 13,
+          mobile: 14
         },
         fontStyle: "normal",
         textTransform: "none",
@@ -46436,7 +46440,7 @@ const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED
       draft["options"]["isShowButton"] = true;
       draft["styles"]["bg"] = {
         type: "solid",
-        color: "#A5959508",
+        color: "#F8F9FA",
         gradient: "linear-gradient(to right, #ffffff, #007bff)"
       };
       draft["styles"]["title"]["color"] = "#192534";
@@ -46455,7 +46459,7 @@ const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED
         isUploadFont: true,
         fontSize: {
           desktop: 48,
-          tablet: 48,
+          tablet: 32,
           mobile: 25
         },
         fontStyle: "normal",
@@ -46472,8 +46476,8 @@ const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED
         isUploadFont: true,
         fontSize: {
           desktop: 17,
-          tablet: 17,
-          mobile: 17
+          tablet: 13,
+          mobile: 14
         },
         fontStyle: "normal",
         textTransform: "none",

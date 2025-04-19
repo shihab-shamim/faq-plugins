@@ -32,7 +32,7 @@ const Style = ({ attributes, setAttributes,device }) => {
         <UnitControl value={styles?.width[device]} onChange={(value)=>setAttributes({styles:updateData(styles,value,"width",device)})}  />
 
         
-        <Background  isImage={false} value={styles?.bg}  onChange={(value)=>setAttributes({styles:updateData(styles,value,"bg")})} />
+        <Background className="mt15"  isImage={false} value={styles?.bg}  onChange={(value)=>setAttributes({styles:updateData(styles,value,"bg")})} />
 
 
           
@@ -109,7 +109,7 @@ const Style = ({ attributes, setAttributes,device }) => {
 
        <Label> Gap: <UnitControl value={styles?.question?.gap}  onChange={value=>setAttributes({styles:updateData(styles,value,"question","gap")})} /></Label>
 
-       <IconLibrary label={__("Icon","b-blocks")}  value={options?.icon}  onChange={value=>setAttributes({options:updateData(options,value,"icon")})} />
+       <IconLibrary style={{marginTop:"15px"}} label={__("Icon","b-blocks")}  value={options?.icon}  onChange={value=>setAttributes({options:updateData(options,value,"icon")})} />
 
 
            { options?.selectedTheme==="theme2"?"" : <ColorsControl label={__("Active Colors","b-blocks")} value={styles?.question?.active} onChange={value=>setAttributes({styles:updateData(styles,value,"question","active")})} />}

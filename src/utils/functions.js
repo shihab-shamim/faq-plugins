@@ -50,7 +50,7 @@ export const themeSwitch=(theme="theme2",attributes)=>produce(attributes,(draft)
         buttonLink: "#"}
       draft["styles"]["button"]["padding"]={top: '10px',right: '20px', bottom: '10px',left: '20px'};
       draft["styles"]["button"]["radius"]= { top: '8px',right: '8px',bottom: '8px',left: '8px'};
-      draft["styles"]["button"]["typho"]= {fontFamily: "Archivo",fontCategory: "sans-serif",fontWeight: 600,fontVariant: "regular",isUploadFont: true,fontSize: { desktop: 18,tablet:18, mobile: 18},fontStyle: "normal",textTransform: "none", textDecoration: "none", lineHeight: "1.35", letterSpace: "0px" };
+      draft["styles"]["button"]["typho"]= {fontFamily: "Archivo",fontCategory: "sans-serif",fontWeight: 600,fontVariant: "regular",isUploadFont: true,fontSize: { desktop: 18,tablet:15, mobile: 13},fontStyle: "normal",textTransform: "none", textDecoration: "none", lineHeight: "1.35", letterSpace: "0px" };
       draft["styles"]["title"]["typho"]={
         fontFamily: "Archivo",
         fontCategory: "sans-serif",
@@ -59,7 +59,7 @@ export const themeSwitch=(theme="theme2",attributes)=>produce(attributes,(draft)
         isUploadFont: true,
         fontSize: {
           desktop: 48,
-          tablet: 48,
+          tablet: 32,
           mobile: 25
         },
         fontStyle: "normal",
@@ -76,8 +76,8 @@ export const themeSwitch=(theme="theme2",attributes)=>produce(attributes,(draft)
         isUploadFont: true,
         fontSize: {
           desktop: 17,
-          tablet: 17,
-          mobile: 17
+          tablet: 13,
+          mobile: 14
         },
         fontStyle: "normal",
         textTransform: "none",
@@ -162,7 +162,7 @@ draft["styles"]["question"]["gap"]="5px";
      
     case "theme3":
       draft["options"]["isShowButton"]=true
-      draft["styles"]["bg"]={type:"solid",color:"#A5959508",gradient: "linear-gradient(to right, #ffffff, #007bff)"};
+      draft["styles"]["bg"]={type:"solid",color:"#F8F9FA",gradient: "linear-gradient(to right, #ffffff, #007bff)"};
       draft["styles"]["title"]["color"]="#192534";
       draft["styles"]["description"]["color"]="#616A72";
       draft["styles"]["title"]["color"]="#192534";
@@ -181,7 +181,7 @@ draft["styles"]["question"]["gap"]="5px";
         isUploadFont: true,
         fontSize: {
           desktop: 48,
-          tablet: 48,
+          tablet: 32,
           mobile: 25
         },
         fontStyle: "normal",
@@ -198,8 +198,8 @@ draft["styles"]["question"]["gap"]="5px";
         isUploadFont: true,
         fontSize: {
           desktop: 17,
-          tablet: 17,
-          mobile: 17
+          tablet: 13,
+          mobile: 14
         },
         fontStyle: "normal",
         textTransform: "none",
