@@ -967,7 +967,6 @@ const Style = ({
 		
 				${wrapperSl}{
 					justify-content: ${alignment};
-					${options?.selectedTheme === "theme3" ? (0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg) : ""}
 		
 				
 				}
@@ -979,7 +978,7 @@ const Style = ({
 					
 				
 				${containerSl}{
-				${options?.selectedTheme === "theme2" ? (0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg) : ""}
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg)}
 				padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.desktop)} ;
 				margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.desktop)} ;
 				max-width:${styles?.width?.desktop};
@@ -1691,7 +1690,7 @@ const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED
       draft["options"]["isShowButton"] = true;
       draft["styles"]["bg"] = {
         type: "solid",
-        color: "#F8F9FA",
+        color: "#A5959508",
         gradient: "linear-gradient(to right, #ffffff, #007bff)"
       };
       draft["styles"]["title"]["color"] = "#192534";

@@ -116,10 +116,10 @@
           },
           "gap": "5px",
           "active": {
-            "color": "#451CB3",
-            "bgType": "solid",
-            "bg": "#E8DFFF",
-            "gradient": "linear-gradient(135deg, #E8DFFF, #C8B6FF)"
+            "color": "",
+            "bgType": "",
+            "bg": "",
+            "gradient": ""
           }
         },
         "answer": {

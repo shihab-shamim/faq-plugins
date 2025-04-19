@@ -162,7 +162,7 @@ draft["styles"]["question"]["gap"]="5px";
      
     case "theme3":
       draft["options"]["isShowButton"]=true
-      draft["styles"]["bg"]={type:"solid",color:"#F8F9FA",gradient: "linear-gradient(to right, #ffffff, #007bff)"};
+      draft["styles"]["bg"]={type:"solid",color:"#A5959508",gradient: "linear-gradient(to right, #ffffff, #007bff)"};
       draft["styles"]["title"]["color"]="#192534";
       draft["styles"]["description"]["color"]="#616A72";
       draft["styles"]["title"]["color"]="#192534";

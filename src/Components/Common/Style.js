@@ -117,7 +117,6 @@
 		
 				${wrapperSl}{
 					justify-content: ${alignment};
-					${options?.selectedTheme ==="theme3"?getBackgroundCSS(styles?.bg):""}
 		
 				
 				}
@@ -129,7 +128,7 @@
 					
 				
 				${containerSl}{
-				${options?.selectedTheme==="theme2"?getBackgroundCSS(styles?.bg):""}
+				${getBackgroundCSS(styles?.bg)}
 				padding:${getBoxCSS(styles?.padding.desktop)} ;
 				margin:${getBoxCSS(styles?.margin.desktop)} ;
 				max-width:${styles?.width?.desktop};

@@ -24,7 +24,7 @@ const Style = ({ attributes, setAttributes,device }) => {
       <PanelBody
       
         className="bPlPanelBody"
-        title={__(`${options?.selectedTheme==="theme2"?"ContainerWrapper":"Content"}`, "b-blocks")}
+        title={__(`${"Wrapper"}`, "b-blocks")}
         initialOpen={false}
       >
           <PanelRow><Label>{__("Width","b-blocks")}</Label> <Device/></PanelRow>
@@ -55,21 +55,6 @@ const Style = ({ attributes, setAttributes,device }) => {
         
       </PanelBody>
 
-      { options?.isShowButton && <PanelBody  className="bPlPanelBody"
-        title={__("Button", "b-blocks")}
-        initialOpen={false}>
-
-          <Typography value={styles?.button?.typho} onChange={value=>setAttributes({styles:updateData(styles,value,"button","typho")})}  />
-
-
-          <ColorsControl value={styles?.button?.colors}  onChange={value=>setAttributes({styles:updateData(styles,value,"button","colors")})} />
-
-          <BoxControl style={{marginTop:"15px"}} label={__("Padding","b-blocks")} values={styles?.button?.padding}  onChange={value=>setAttributes({styles:updateData(styles,value,"button","padding")})} />
-            
-          <BoxControl style={{marginTop:"15px"}} label={__("Radius","b-blocks")} values={styles?.button?.radius}  onChange={value=>setAttributes({styles:updateData(styles,value,"button","radius")})} />
-
-
-      </PanelBody>}
 
       <PanelBody className="bPlPanelBody"
         title={__("Title", "b-blocks")}
@@ -92,6 +77,22 @@ const Style = ({ attributes, setAttributes,device }) => {
             <ColorControl value={styles?.description?.color} onChange={value=>setAttributes({styles:updateData(styles,value,"description","color")})} />
 
     </PanelBody>
+    
+    { options?.isShowButton && <PanelBody  className="bPlPanelBody"
+        title={__("Button", "b-blocks")}
+        initialOpen={false}>
+
+          <Typography value={styles?.button?.typho} onChange={value=>setAttributes({styles:updateData(styles,value,"button","typho")})}  />
+
+
+          <ColorsControl value={styles?.button?.colors}  onChange={value=>setAttributes({styles:updateData(styles,value,"button","colors")})} />
+
+          <BoxControl style={{marginTop:"15px"}} label={__("Padding","b-blocks")} values={styles?.button?.padding}  onChange={value=>setAttributes({styles:updateData(styles,value,"button","padding")})} />
+            
+          <BoxControl style={{marginTop:"15px"}} label={__("Radius","b-blocks")} values={styles?.button?.radius}  onChange={value=>setAttributes({styles:updateData(styles,value,"button","radius")})} />
+
+
+      </PanelBody>}
 
       <PanelBody
       
