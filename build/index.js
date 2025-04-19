@@ -45357,9 +45357,12 @@ const Style = ({
     styles,
     options
   } = attributes;
+
+  // console.log(options?.selectedTheme);
+
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
     className: "bPlPanelBody",
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("ContainerWrapper", "b-blocks"),
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`${options?.selectedTheme === "theme2" ? "ContainerWrapper" : "Content"}`, "b-blocks"),
     initialOpen: false
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.Label, null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Width", "b-blocks")), " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.Device, null)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalUnitControl, {
     value: styles?.width[device],
@@ -45488,6 +45491,12 @@ const Style = ({
     onChange: value => setAttributes({
       options: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(options, value, "icon")
     })
+  }), options?.selectedTheme === "theme2" ? "" : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.ColorsControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Active Colors", "b-blocks"),
+    value: styles?.question?.active,
+    onChange: value => setAttributes({
+      styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(styles, value, "question", "active")
+    })
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
     className: "bPlPanelBody",
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Answer", "b-blocks"),
@@ -45564,143 +45573,164 @@ const Style = ({
   const toggleBtnSl = `${faqQuestionSl} .toggle-btn`;
   const iconSl = `${toggleBtnSl} .icon`;
   const questionSl = `${faqQuestionSl} .question`;
+  const activeSl = `${faqItemrSl} .active`;
   const faqLeftSl = `${faqWrapperSl} .faq-left`;
   const faqTitle = `${faqLeftSl} .title`;
   const faqhighlighteSl = `${faqLeftSl} .highlight`;
   const faqDescriptionSl = `${faqLeftSl} .description`;
   const faqContactButtonrSl = `${faqLeftSl} .contact-btn`;
+
+  // console.log(styles?.question?.active);
+  // color: ${styles?.question?.active?.color} !important;
+  // background: ${styles?.question?.active?.bg} !important;
+  const getActiveColorsCSS = colors => {
+    if (colors?.bgType === "solid") {
+      const color = `color: ${styles?.question?.active?.color} !important;`;
+      const background = ` background-color: ${styles?.question?.active?.bg} !important; `;
+      return `${color} ${background}`;
+    }
+    if (colors?.bgType === "gradient") {
+      const color = `color: ${styles?.question?.active?.color} !important;`;
+      const background = ` background: ${styles?.question?.active?.gradient} !important; `;
+      return `${color} ${background}`;
+    }
+  };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: `
 
-	
-			
-	
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.question?.typho)?.googleFontLink}
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.title?.typho)?.googleFontLink}
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.description?.typho)?.googleFontLink}
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.button?.typho)?.googleFontLink}
-	
-	
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(questionSl, styles?.question?.typho)?.styles}
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqContactButtonrSl, styles?.button?.typho)?.styles}
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqTitle, styles?.title?.typho)?.styles}
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqhighlighteSl, styles?.title?.typho)?.styles}
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqDescriptionSl, styles?.description?.typho)?.styles}
-
-			
-
-
-			${faqWrapperSl}{
-			gap:${styles?.gap?.desktop};
-			}
-			
-			${faqDescriptionSl}{
-			 color:${styles?.description?.color};
-			}
-			
-			${faqTitle}{
-			color:${styles?.title?.color}
-			}
-
-			${faqQuestionSl}{
-		   ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getColorsCSS)(styles?.question?.colors)}
-		   padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.question?.padding)};
-		   margin-bottom:${styles?.question?.gap};
-		   margin-top:${styles?.question?.gap};
-		  
-			}
-		   ${faqAnswerSl}{
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getColorsCSS)(styles?.answer?.colors)}
-	
-			border-radius:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.answer?.radius)};
-			 .faq-answer-dec{
-		    padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.answer?.padding)};
-		   }
 		
-		   }
-		   ${faqContactButtonrSl}{
-		    ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getColorsCSS)(styles?.button?.colors)}
-			 padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.button?.padding)};
-			 border-radius:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.button?.radius)};
-		   }
-		   ${iconSl} svg {
-		   fill:${styles?.question?.colors?.color};
-		   
-		   }
-	
-			${wrapperSl}{
-				justify-content: ${alignment};
-				${options?.selectedTheme === "theme3" ? (0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg) : ""}
-	
-			
-			}
-			${faqhighlighteSl} {
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.title?.highlightColor)}
-			 
 				
-			  }
+		
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.question?.typho)?.googleFontLink}
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.title?.typho)?.googleFontLink}
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.description?.typho)?.googleFontLink}
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.button?.typho)?.googleFontLink}
+		
+		
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(questionSl, styles?.question?.typho)?.styles}
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqContactButtonrSl, styles?.button?.typho)?.styles}
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqTitle, styles?.title?.typho)?.styles}
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqhighlighteSl, styles?.title?.typho)?.styles}
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqDescriptionSl, styles?.description?.typho)?.styles}
+
 				
-			
-			${containerSl}{
-			${options?.selectedTheme === "theme2" ? (0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg) : ""}
-			 padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.desktop)} ;
-			 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.desktop)} ;
-			 max-width:${styles?.width?.desktop};
-			 border-radius:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.radius)};
-			 justify-content: ${options?.contentAlignment};
 
-			 
-	
-			}
-	
-	
-			${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.tabBreakpoint}{
-				${containerSl}{
-			 padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.tablet)};
-			 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.tablet)} ;
-			  max-width:${styles?.width?.tablet}
-	
-	
-				}
-			  	${faqWrapperSl}{
-			   gap:${styles?.gap?.tablet};
-			}
-			 
-			
-			}
-	
-			
-			  	
-			 
-			  
-			  
 
-			  ${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.mobileBreakpoint}{
 				${faqWrapperSl}{
-					gap:${styles?.gap?.mobile};
-				 }
-				 ${containerSl}{
-				  padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.mobile)};
-			 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.mobile)} ;
-			  max-width:${styles?.width?.mobile};
-			  
-				 }
-			  
-			  }
+				gap:${styles?.gap?.desktop};
+				}
+				${activeSl}{
+				${getActiveColorsCSS(styles?.question?.active)}
 
+				}
+				
+				${faqDescriptionSl}{
+				color:${styles?.description?.color};
+				}
+				
+				${faqTitle}{
+				color:${styles?.title?.color}
+				}
+
+				${faqQuestionSl}{
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getColorsCSS)(styles?.question?.colors)}
+			padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.question?.padding)};
+			margin-bottom:${styles?.question?.gap};
+			margin-top:${styles?.question?.gap};
 			
-	
-	
-		`
+				}
+			${faqAnswerSl}{
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getColorsCSS)(styles?.answer?.colors)}
+		
+				border-radius:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.answer?.radius)};
+				.faq-answer-dec{
+				padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.answer?.padding)};
+			}
+			
+			}
+			${faqContactButtonrSl}{
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getColorsCSS)(styles?.button?.colors)}
+				padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.button?.padding)};
+				border-radius:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.button?.radius)};
+			}
+			${iconSl} svg {
+			fill:${styles?.question?.colors?.color};
+			
+			}
+		
+				${wrapperSl}{
+					justify-content: ${alignment};
+					${options?.selectedTheme === "theme3" ? (0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg) : ""}
+		
+				
+				}
+				${faqhighlighteSl} {
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.title?.highlightColor)}
+				
+					
+				}
+					
+				
+				${containerSl}{
+				${options?.selectedTheme === "theme2" ? (0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg) : ""}
+				padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.desktop)} ;
+				margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.desktop)} ;
+				max-width:${styles?.width?.desktop};
+				border-radius:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.radius)};
+				justify-content: ${options?.contentAlignment};
+
+				
+		
+				}
+		
+		
+				${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.tabBreakpoint}{
+					${containerSl}{
+				padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.tablet)};
+				margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.tablet)} ;
+				max-width:${styles?.width?.tablet}
+		
+		
+					}
+					${faqWrapperSl}{
+				gap:${styles?.gap?.tablet};
+				}
+				
+				
+				}
+		
+				
+					
+				
+				
+				
+
+				${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.mobileBreakpoint}{
+					${faqWrapperSl}{
+						gap:${styles?.gap?.mobile};
+					}
+					${containerSl}{
+					padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.mobile)};
+				margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.mobile)} ;
+				max-width:${styles?.width?.mobile};
+				
+					}
+				
+				}
+
+				
+		
+		
+			`
     }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: `
-		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.answer?.typho)?.googleFontLink}
-		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqAnswerSl, styles?.answer?.typho)?.styles}
-	
-		`
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.answer?.typho)?.googleFontLink}
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqAnswerSl, styles?.answer?.typho)?.styles}
+		
+			`
     }
   }));
 };
@@ -46396,6 +46426,12 @@ const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED
         left: "10px"
       };
       draft["options"]["contentAlignment"] = "center";
+      draft["styles"]["question"]["active"] = {
+        color: "#",
+        bgType: "",
+        bg: "#",
+        gradient: ""
+      };
       break;
     case "theme3":
       draft["options"]["isShowButton"] = true;
@@ -46552,6 +46588,12 @@ const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED
         left: "10px"
       };
       draft["options"]["contentAlignment"] = "center";
+      draft["styles"]["question"]["active"] = {
+        color: "#451CB3",
+        bgType: "solid",
+        bg: "#E8DFFF",
+        gradient: "linear-gradient(135deg, #E8DFFF, #C8B6FF)"
+      };
       break;
   }
 });
@@ -50082,7 +50124,7 @@ module.exports = /*#__PURE__*/JSON.parse('[{"terms":["Digit Zero","nada","none",
 /***/ ((module) => {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"b-blocks/test-purpose","version":"1.0.0","title":"FAQ!","category":"widgets","description":"Short description of the Test Purpose","keywords":["Faq","faqs","FAQS"],"textdomain":"b-blocks","attributes":{"align":{"type":"string","default":"full"},"alignment":{"type":"string","default":"center"},"styles":{"type":"object","default":{"width":{"desktop":"1350px","tablet":"768px","mobile":"500px"},"gap":{"desktop":"120px","tablet":"14px","mobile":"40px"},"bg":{"type":"solid","color":"#000000","gradient":"linear-gradient(135deg,rgb(34,23,23) 0%,rgb(13,13,15) 100%)"},"padding":{"desktop":{"top":"100px","right":"50px","bottom":"100px","left":"50px"},"tablet":{"top":"80px","right":"40px","bottom":"80px","left":"40px"},"mobile":{"top":"50px","right":"20px","bottom":"50px","left":"20px"}},"margin":{"desktop":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"tablet":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"mobile":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"radius":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"question":{"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":400,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":18,"tablet":16,"mobile":14},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"},"colors":{"color":"#fcecfd","bgType":"solid","bg":"#0D0E10"},"padding":{"top":"5px","right":"14px","bottom":"5px","left":"14px"},"gap":"5px"},"answer":{"colors":{"color":"#888","bgType":"solid","bg":"#0D0E10"},"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":400,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":16,"tablet":16,"mobile":14},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"},"padding":{"top":"5px","right":"5px","bottom":"5px","left":"5px"},"radius":{"top":"10px","right":"10px","bottom":"10px","left":"10px"}},"title":{"color":"rgba(252, 252, 253, 1)","highlightColor":{"type":"gradient","color":"#c7f32f","gradient":"linear-gradient(white 30%, #c7f32f 65%)"},"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":700,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":48,"tablet":32,"mobile":25},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"}},"description":{"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":400,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":17,"tablet":16,"mobile":17},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"},"color":"rgba(252, 252, 253, 0.7)"},"button":{"colors":{"color":"#000000","bgType":"solid","bg":"#c5fb00"},"padding":{"top":"10px","right":"20px","bottom":"10px","left":"20px"},"radius":{"top":"8px","right":"8px","bottom":"8px","left":"8px"},"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":600,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":18,"tablet":15,"mobile":13},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"}}}},"faqs":{"type":"object","default":{"title":"Frequently asked Questions","buttonText":"Contact Us Now ","description":"Discover clarity and insights as we unravel answers to your questions","buttonIcon":"<svg stroke=\'currentColor\' fill=\'currentColor\' strokeWidth=\'0\' viewBox=\'0 0 16 16\' xmlns=\'http://www.w3.org/2000/svg\'><path fillRule=\'evenodd\' d=\'M10.146 4.646a.5.5 0 01.708 0l3 3a.5.5 0 010 .708l-3 3a.5.5 0 01-.708-.708L12.793 8l-2.647-2.646a.5.5 0 010-.708z\' clipRule=\'evenodd\'/><path fillRule=\'evenodd\' d=\'M2 8a.5.5 0 01.5-.5H13a.5.5 0 010 1H2.5A.5.5 0 012 8z\' clipRule=\'evenodd\'/></svg>","buttonLink":"#"}},"faqItems":{"type":"array","default":[{"question":"Does BTCPayServer cost extra?","answer":"No, BTCPayServer is completely free and open-source software."},{"question":"Does my Voltage Lightning Node connect to BTC Server automatically?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"Can I accept payments on chain?","answer":"Yes, you can accept both on-chain and Lightning payments through the platform."}]},"options":{"type":"object","default":{"selectedTheme":"theme2","icon":"<svg  stroke-width=\\"0\\" viewBox=\\"0 0 512 512\\" height=\\"16\\" width=\\"16\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z\\"></path></svg>","isLinkTarget":true,"isShowButton":true,"contentAlignment":"center"}}},"supports":{"align":["wide","full"],"html":false},"example":{"attributes":{}},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./view.css","render":"file:./render.php","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"b-blocks/test-purpose","version":"1.0.0","title":"FAQ!","category":"widgets","description":"Short description of the Test Purpose","keywords":["Faq","faqs","FAQS"],"textdomain":"b-blocks","attributes":{"align":{"type":"string","default":"full"},"alignment":{"type":"string","default":"center"},"styles":{"type":"object","default":{"width":{"desktop":"1350px","tablet":"768px","mobile":"500px"},"gap":{"desktop":"120px","tablet":"14px","mobile":"40px"},"bg":{"type":"solid","color":"#000000","gradient":"linear-gradient(135deg,rgb(34,23,23) 0%,rgb(13,13,15) 100%)"},"padding":{"desktop":{"top":"100px","right":"50px","bottom":"100px","left":"50px"},"tablet":{"top":"80px","right":"40px","bottom":"80px","left":"40px"},"mobile":{"top":"50px","right":"20px","bottom":"50px","left":"20px"}},"margin":{"desktop":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"tablet":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"mobile":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"radius":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"question":{"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":400,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":18,"tablet":16,"mobile":14},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"},"colors":{"color":"#fcecfd","bgType":"solid","bg":"#0D0E10"},"padding":{"top":"5px","right":"14px","bottom":"5px","left":"14px"},"gap":"5px","active":{"color":"#451CB3","bgType":"solid","bg":"#E8DFFF","gradient":"linear-gradient(135deg, #E8DFFF, #C8B6FF)"}},"answer":{"colors":{"color":"#888","bgType":"solid","bg":"#0D0E10"},"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":400,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":16,"tablet":16,"mobile":14},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"},"padding":{"top":"5px","right":"5px","bottom":"5px","left":"5px"},"radius":{"top":"10px","right":"10px","bottom":"10px","left":"10px"}},"title":{"color":"rgba(252, 252, 253, 1)","highlightColor":{"type":"gradient","color":"#c7f32f","gradient":"linear-gradient(white 30%, #c7f32f 65%)"},"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":700,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":48,"tablet":32,"mobile":25},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"}},"description":{"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":400,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":17,"tablet":16,"mobile":17},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"},"color":"rgba(252, 252, 253, 0.7)"},"button":{"colors":{"color":"#000000","bgType":"solid","bg":"#c5fb00"},"padding":{"top":"10px","right":"20px","bottom":"10px","left":"20px"},"radius":{"top":"8px","right":"8px","bottom":"8px","left":"8px"},"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":600,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":18,"tablet":15,"mobile":13},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"}}}},"faqs":{"type":"object","default":{"title":"Frequently asked Questions","buttonText":"Contact Us Now ","description":"Discover clarity and insights as we unravel answers to your questions","buttonIcon":"<svg stroke=\'currentColor\' fill=\'currentColor\' strokeWidth=\'0\' viewBox=\'0 0 16 16\' xmlns=\'http://www.w3.org/2000/svg\'><path fillRule=\'evenodd\' d=\'M10.146 4.646a.5.5 0 01.708 0l3 3a.5.5 0 010 .708l-3 3a.5.5 0 01-.708-.708L12.793 8l-2.647-2.646a.5.5 0 010-.708z\' clipRule=\'evenodd\'/><path fillRule=\'evenodd\' d=\'M2 8a.5.5 0 01.5-.5H13a.5.5 0 010 1H2.5A.5.5 0 012 8z\' clipRule=\'evenodd\'/></svg>","buttonLink":"#"}},"faqItems":{"type":"array","default":[{"question":"Does BTCPayServer cost extra?","answer":"No, BTCPayServer is completely free and open-source software."},{"question":"Does my Voltage Lightning Node connect to BTC Server automatically?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"Can I accept payments on chain?","answer":"Yes, you can accept both on-chain and Lightning payments through the platform."}]},"options":{"type":"object","default":{"selectedTheme":"theme2","icon":"<svg  stroke-width=\\"0\\" viewBox=\\"0 0 512 512\\" height=\\"16\\" width=\\"16\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z\\"></path></svg>","isLinkTarget":true,"isShowButton":true,"contentAlignment":"center"}}},"supports":{"align":["wide","full"],"html":false},"example":{"attributes":{}},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./view.css","render":"file:./render.php","viewScript":"file:./view.js"}');
 
 /***/ })
 

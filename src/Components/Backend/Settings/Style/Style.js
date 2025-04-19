@@ -13,7 +13,7 @@ const Style = ({ attributes, setAttributes,device }) => {
   const { styles,options} = attributes;
 
 
-
+// console.log(options?.selectedTheme);
 
 
   return (
@@ -24,7 +24,7 @@ const Style = ({ attributes, setAttributes,device }) => {
       <PanelBody
       
         className="bPlPanelBody"
-        title={__("ContainerWrapper", "b-blocks")}
+        title={__(`${options?.selectedTheme==="theme2"?"ContainerWrapper":"Content"}`, "b-blocks")}
         initialOpen={false}
       >
           <PanelRow><Label>{__("Width","b-blocks")}</Label> <Device/></PanelRow>
@@ -110,6 +110,9 @@ const Style = ({ attributes, setAttributes,device }) => {
 
        <IconLibrary label={__("Icon","b-blocks")}  value={options?.icon}  onChange={value=>setAttributes({options:updateData(options,value,"icon")})} />
 
+
+           { options?.selectedTheme==="theme2"?"" : <ColorsControl label={__("Active Colors","b-blocks")} value={styles?.question?.active} onChange={value=>setAttributes({styles:updateData(styles,value,"question","active")})} />}
+ 
       </PanelBody>
 
       <PanelBody 

@@ -879,143 +879,164 @@ const Style = ({
   const toggleBtnSl = `${faqQuestionSl} .toggle-btn`;
   const iconSl = `${toggleBtnSl} .icon`;
   const questionSl = `${faqQuestionSl} .question`;
+  const activeSl = `${faqItemrSl} .active`;
   const faqLeftSl = `${faqWrapperSl} .faq-left`;
   const faqTitle = `${faqLeftSl} .title`;
   const faqhighlighteSl = `${faqLeftSl} .highlight`;
   const faqDescriptionSl = `${faqLeftSl} .description`;
   const faqContactButtonrSl = `${faqLeftSl} .contact-btn`;
+
+  // console.log(styles?.question?.active);
+  // color: ${styles?.question?.active?.color} !important;
+  // background: ${styles?.question?.active?.bg} !important;
+  const getActiveColorsCSS = colors => {
+    if (colors?.bgType === "solid") {
+      const color = `color: ${styles?.question?.active?.color} !important;`;
+      const background = ` background-color: ${styles?.question?.active?.bg} !important; `;
+      return `${color} ${background}`;
+    }
+    if (colors?.bgType === "gradient") {
+      const color = `color: ${styles?.question?.active?.color} !important;`;
+      const background = ` background: ${styles?.question?.active?.gradient} !important; `;
+      return `${color} ${background}`;
+    }
+  };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: `
 
-	
-			
-	
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.question?.typho)?.googleFontLink}
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.title?.typho)?.googleFontLink}
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.description?.typho)?.googleFontLink}
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.button?.typho)?.googleFontLink}
-	
-	
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(questionSl, styles?.question?.typho)?.styles}
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqContactButtonrSl, styles?.button?.typho)?.styles}
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqTitle, styles?.title?.typho)?.styles}
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqhighlighteSl, styles?.title?.typho)?.styles}
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqDescriptionSl, styles?.description?.typho)?.styles}
-
-			
-
-
-			${faqWrapperSl}{
-			gap:${styles?.gap?.desktop};
-			}
-			
-			${faqDescriptionSl}{
-			 color:${styles?.description?.color};
-			}
-			
-			${faqTitle}{
-			color:${styles?.title?.color}
-			}
-
-			${faqQuestionSl}{
-		   ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getColorsCSS)(styles?.question?.colors)}
-		   padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.question?.padding)};
-		   margin-bottom:${styles?.question?.gap};
-		   margin-top:${styles?.question?.gap};
-		  
-			}
-		   ${faqAnswerSl}{
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getColorsCSS)(styles?.answer?.colors)}
-	
-			border-radius:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.answer?.radius)};
-			 .faq-answer-dec{
-		    padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.answer?.padding)};
-		   }
 		
-		   }
-		   ${faqContactButtonrSl}{
-		    ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getColorsCSS)(styles?.button?.colors)}
-			 padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.button?.padding)};
-			 border-radius:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.button?.radius)};
-		   }
-		   ${iconSl} svg {
-		   fill:${styles?.question?.colors?.color};
-		   
-		   }
-	
-			${wrapperSl}{
-				justify-content: ${alignment};
-				${options?.selectedTheme === "theme3" ? (0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg) : ""}
-	
-			
-			}
-			${faqhighlighteSl} {
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.title?.highlightColor)}
-			 
 				
-			  }
+		
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.question?.typho)?.googleFontLink}
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.title?.typho)?.googleFontLink}
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.description?.typho)?.googleFontLink}
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.button?.typho)?.googleFontLink}
+		
+		
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(questionSl, styles?.question?.typho)?.styles}
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqContactButtonrSl, styles?.button?.typho)?.styles}
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqTitle, styles?.title?.typho)?.styles}
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqhighlighteSl, styles?.title?.typho)?.styles}
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqDescriptionSl, styles?.description?.typho)?.styles}
+
 				
-			
-			${containerSl}{
-			${options?.selectedTheme === "theme2" ? (0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg) : ""}
-			 padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.desktop)} ;
-			 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.desktop)} ;
-			 max-width:${styles?.width?.desktop};
-			 border-radius:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.radius)};
-			 justify-content: ${options?.contentAlignment};
 
-			 
-	
-			}
-	
-	
-			${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.tabBreakpoint}{
-				${containerSl}{
-			 padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.tablet)};
-			 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.tablet)} ;
-			  max-width:${styles?.width?.tablet}
-	
-	
-				}
-			  	${faqWrapperSl}{
-			   gap:${styles?.gap?.tablet};
-			}
-			 
-			
-			}
-	
-			
-			  	
-			 
-			  
-			  
 
-			  ${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.mobileBreakpoint}{
 				${faqWrapperSl}{
-					gap:${styles?.gap?.mobile};
-				 }
-				 ${containerSl}{
-				  padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.mobile)};
-			 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.mobile)} ;
-			  max-width:${styles?.width?.mobile};
-			  
-				 }
-			  
-			  }
+				gap:${styles?.gap?.desktop};
+				}
+				${activeSl}{
+				${getActiveColorsCSS(styles?.question?.active)}
 
+				}
+				
+				${faqDescriptionSl}{
+				color:${styles?.description?.color};
+				}
+				
+				${faqTitle}{
+				color:${styles?.title?.color}
+				}
+
+				${faqQuestionSl}{
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getColorsCSS)(styles?.question?.colors)}
+			padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.question?.padding)};
+			margin-bottom:${styles?.question?.gap};
+			margin-top:${styles?.question?.gap};
 			
-	
-	
-		`
+				}
+			${faqAnswerSl}{
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getColorsCSS)(styles?.answer?.colors)}
+		
+				border-radius:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.answer?.radius)};
+				.faq-answer-dec{
+				padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.answer?.padding)};
+			}
+			
+			}
+			${faqContactButtonrSl}{
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getColorsCSS)(styles?.button?.colors)}
+				padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.button?.padding)};
+				border-radius:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.button?.radius)};
+			}
+			${iconSl} svg {
+			fill:${styles?.question?.colors?.color};
+			
+			}
+		
+				${wrapperSl}{
+					justify-content: ${alignment};
+					${options?.selectedTheme === "theme3" ? (0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg) : ""}
+		
+				
+				}
+				${faqhighlighteSl} {
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.title?.highlightColor)}
+				
+					
+				}
+					
+				
+				${containerSl}{
+				${options?.selectedTheme === "theme2" ? (0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg) : ""}
+				padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.desktop)} ;
+				margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.desktop)} ;
+				max-width:${styles?.width?.desktop};
+				border-radius:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.radius)};
+				justify-content: ${options?.contentAlignment};
+
+				
+		
+				}
+		
+		
+				${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.tabBreakpoint}{
+					${containerSl}{
+				padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.tablet)};
+				margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.tablet)} ;
+				max-width:${styles?.width?.tablet}
+		
+		
+					}
+					${faqWrapperSl}{
+				gap:${styles?.gap?.tablet};
+				}
+				
+				
+				}
+		
+				
+					
+				
+				
+				
+
+				${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.mobileBreakpoint}{
+					${faqWrapperSl}{
+						gap:${styles?.gap?.mobile};
+					}
+					${containerSl}{
+					padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.mobile)};
+				margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.mobile)} ;
+				max-width:${styles?.width?.mobile};
+				
+					}
+				
+				}
+
+				
+		
+		
+			`
     }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: `
-		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.answer?.typho)?.googleFontLink}
-		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqAnswerSl, styles?.answer?.typho)?.styles}
-	
-		`
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.answer?.typho)?.googleFontLink}
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqAnswerSl, styles?.answer?.typho)?.styles}
+		
+			`
     }
   }));
 };
@@ -1659,6 +1680,12 @@ const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED
         left: "10px"
       };
       draft["options"]["contentAlignment"] = "center";
+      draft["styles"]["question"]["active"] = {
+        color: "#",
+        bgType: "",
+        bg: "#",
+        gradient: ""
+      };
       break;
     case "theme3":
       draft["options"]["isShowButton"] = true;
@@ -1815,6 +1842,12 @@ const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED
         left: "10px"
       };
       draft["options"]["contentAlignment"] = "center";
+      draft["styles"]["question"]["active"] = {
+        color: "#451CB3",
+        bgType: "solid",
+        bg: "#E8DFFF",
+        gradient: "linear-gradient(135deg, #E8DFFF, #C8B6FF)"
+      };
       break;
   }
 });

@@ -148,6 +148,13 @@ draft["styles"]["question"]["gap"]="5px";
       left: "10px"
     };
     draft["options"]["contentAlignment"]="center";
+    draft["styles"]["question"]["active"]={
+      color: "#",
+      bgType: "",
+      bg: "#",
+      gradient: ""
+    };
+    
     
 
 
@@ -274,6 +281,12 @@ draft["styles"]["question"]["gap"]="5px";
         left: "10px"
       };
       draft["options"]["contentAlignment"]="center";
+      draft["styles"]["question"]["active"]={
+        color: "#451CB3",
+        bgType: "solid",
+        bg: "#E8DFFF",
+        gradient: "linear-gradient(135deg, #E8DFFF, #C8B6FF)"
+      };
       
 
     break;
