@@ -15,4 +15,4 @@ const FaqSetting = (props) => {
     );
 };
 
-export default FaqSetting;
+export default FaqSetting; 
