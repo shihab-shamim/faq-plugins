@@ -20,7 +20,7 @@ export const updateData = (attr, value, ...props) => {
 
 
 
-export const themeSwitch=(theme="theme2",attributes)=>produce(attributes,(draft)=>{
+export const themeSwitch=(theme="theme1",attributes)=>produce(attributes,(draft)=>{
 
   draft["options"]["selectedTheme"]=theme
 
@@ -32,7 +32,74 @@ export const themeSwitch=(theme="theme2",attributes)=>produce(attributes,(draft)
         description: "Discover clarity and insights as we unravel answers to your questions",
         buttonIcon: "  <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1em\" height=\"1em\" viewBox=\"0 0 24 24\"><path fill=\"white\" fill-rule=\"evenodd\" d=\"M12 21a9 9 0 1 0 0-18a9 9 0 0 0 0 18m-.232-5.36l5-6l-1.536-1.28l-4.3 5.159l-2.225-2.226l-1.414 1.414l3 3l.774.774z\" clip-rule=\"evenodd\"></path></svg>",
         buttonLink: "#"}
-      draft["styles"]["bg"]={type:"solid",color:"",gradient: ""};
+      draft["styles"]["bg"]={type:"solid",color:"#F8F9FA",gradient: ""};
+draft["styles"]["question"]["gap"]="0px";
+draft["styles"]["question"]["typho"]={
+  fontFamily: "Archivo",
+  fontCategory: "sans-serif",
+  fontWeight: 600,
+  fontVariant: "600",
+  isUploadFont: true,
+  fontSize: {
+    desktop: 16,
+    tablet: 16,
+    mobile: 14
+  },
+  fontStyle: "normal",
+  textTransform: "none",
+  textDecoration: "none",
+  lineHeight: "1.5",
+  letterSpace: "0px"
+};
+draft["styles"]["question"]["colors"]={color: "#192534",bgType: "solid",bg: ""}
+      draft["styles"]["question"]["padding"]={
+        top: "5px",
+        right: "14px",
+        bottom: "5px",
+        left: "14px"
+      };
+      draft["styles"]["answer"]["typho"]={
+        fontFamily: "Archivo",
+        fontCategory: "sans-serif",
+        fontWeight: 400,
+        fontVariant: "400",
+        isUploadFont: true,
+        fontSize: {
+          desktop: 16,
+          tablet: 16,
+          mobile: 14
+        },
+        fontStyle: "normal",
+        textTransform: "none",
+        textDecoration: "none",
+        lineHeight: "135%",
+        letterSpace: "0px"
+      };
+      draft["styles"]["answer"]["colors"]={
+        color: "#616A72",
+        bgType: "solid",
+        bg: ""
+      };
+      draft["styles"]["answer"]["padding"]={
+        top: "5px",
+        right: "5px",
+        bottom: "5px",
+        left: "5px"
+      };
+      
+      draft["styles"]["answer"]["radius"]={
+        top: "10px",
+        right: "10px",
+        bottom: "10px",
+        left: "10px"
+      };
+      draft["styles"]['gap']={
+        desktop: "50px",
+        tablet: "40px",
+        mobile: "30px"
+      };
+      
+
 
 
     break;
@@ -161,6 +228,12 @@ draft["styles"]["question"]["gap"]="5px";
       bg: "#",
       gradient: ""
     };
+    draft["styles"]['gap']={
+      desktop: "120px",
+      tablet: "40px",
+      mobile: "30px"
+    };
+    
     
     
 
@@ -293,6 +366,11 @@ draft["styles"]["question"]["gap"]="5px";
         bgType: "solid",
         bg: "#E8DFFF",
         gradient: "linear-gradient(135deg, #E8DFFF, #C8B6FF)"
+      };
+      draft["styles"]['gap']={
+        desktop: "120px",
+        tablet: "40px",
+        mobile: "30px"
       };
       
 

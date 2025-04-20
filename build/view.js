@@ -949,6 +949,7 @@ const Style = ({
 			margin-bottom:${styles?.question?.gap};
 			margin-top:${styles?.question?.gap};
 			
+			
 				}
 			${faqAnswerSl}{
 				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getColorsCSS)(styles?.answer?.colors)}
@@ -1231,6 +1232,33 @@ const Style1 = ({
   attributes,
   isView
 }) => {
+  const faqData = [{
+    question: "What is BTCPayServer used for?",
+    answer: "BTCPayServer is a self-hosted, open-source cryptocurrency payment processor that helps businesses accept Bitcoin payments without third-party involvement."
+  }, {
+    question: "Is it possible to run BTCPayServer without technical knowledge?",
+    answer: "Yes, many hosting services offer one-click deployments, so you can get started without deep technical skills."
+  }, {
+    question: "Can I accept both Bitcoin and Lightning payments?",
+    answer: "Absolutely! BTCPayServer supports both traditional Bitcoin on-chain payments and the Lightning Network."
+  }, {
+    question: "Is there a transaction fee for using BTCPayServer?",
+    answer: "No extra fees are charged by BTCPayServer itself. You only pay the standard network fees associated with Bitcoin transactions."
+  }, {
+    question: "Does BTCPayServer integrate with online stores?",
+    answer: "Yes, it supports plugins for popular e-commerce platforms like WooCommerce, Shopify (via third-party), and others."
+  }, {
+    question: "How do I secure my BTCPayServer setup?",
+    answer: "You can enhance security by keeping your server software up-to-date, using strong passwords, and running BTCPayServer behind a reverse proxy or firewall."
+  }];
+  const [leftActiveIndex, setLeftActiveIndex] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+  const [rightActiveIndex, setRightActiveIndex] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+  const toggleLeftFaq = index => {
+    setLeftActiveIndex(leftActiveIndex === index ? null : index);
+  };
+  const toggleRightFaq = index => {
+    setRightActiveIndex(rightActiveIndex === index ? null : index);
+  };
   const {
     faqItems
   } = attributes;
@@ -1281,6 +1309,38 @@ const Style1 = ({
     className: "faq-wrapper"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "faq-left"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-shadow",
+    style: {
+      backgroundColor: "#FFFFFF",
+      padding: "20px",
+      borderRadius: "20px",
+      overflow: "hidden"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h5", {
+    style: {
+      paddingLeft: "13px"
+    }
+  }, "General FAQ"), faqData.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    key: index,
+    isView: isView,
+    index: index,
+    question: item.question,
+    answer: item.answer,
+    isActive: leftActiveIndex === index,
+    onClick: () => toggleLeftFaq(index),
+    attributes: attributes,
+    setAttributes: setAttributes
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "faq-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-shadow",
+    style: {
+      backgroundColor: "#FFFFFF",
+      padding: "20px",
+      borderRadius: "20px",
+      overflow: "hidden"
+    }
   }, faqItems.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
     isView: isView,
     key: index,
@@ -1292,18 +1352,25 @@ const Style1 = ({
     attributes: attributes,
     setAttributes: setAttributes
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "faq-right"
+    className: "custom-shadow",
+    style: {
+      backgroundColor: "#FFFFFF",
+      padding: "20px",
+      borderRadius: "20px",
+      overflow: "hidden",
+      marginTop: "50px"
+    }
   }, faqItems.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
     isView: isView,
     key: index,
     index: index,
     question: item.question,
     answer: item.answer,
-    isActive: activeIndex === index,
-    onClick: () => toggleFaq(index),
+    isActive: rightActiveIndex === index,
+    onClick: () => toggleRightFaq(index),
     attributes: attributes,
     setAttributes: setAttributes
-  }))))));
+  })))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Style1);
 
@@ -1619,7 +1686,7 @@ const updateData = (attr, value, ...props) => {
     draft[currentProp] = updateData(draft[currentProp], value, ...remainingProps);
   });
 };
-const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED_MODULE_0__.produce)(attributes, draft => {
+const themeSwitch = (theme = "theme1", attributes) => (0,immer__WEBPACK_IMPORTED_MODULE_0__.produce)(attributes, draft => {
   draft["options"]["selectedTheme"] = theme;
   switch (theme) {
     case "theme1":
@@ -1633,8 +1700,76 @@ const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED
       };
       draft["styles"]["bg"] = {
         type: "solid",
-        color: "",
+        color: "#F8F9FA",
         gradient: ""
+      };
+      draft["styles"]["question"]["gap"] = "0px";
+      draft["styles"]["question"]["typho"] = {
+        fontFamily: "Archivo",
+        fontCategory: "sans-serif",
+        fontWeight: 600,
+        fontVariant: "600",
+        isUploadFont: true,
+        fontSize: {
+          desktop: 16,
+          tablet: 16,
+          mobile: 14
+        },
+        fontStyle: "normal",
+        textTransform: "none",
+        textDecoration: "none",
+        lineHeight: "1.5",
+        letterSpace: "0px"
+      };
+      draft["styles"]["question"]["colors"] = {
+        color: "#192534",
+        bgType: "solid",
+        bg: ""
+      };
+      draft["styles"]["question"]["padding"] = {
+        top: "5px",
+        right: "14px",
+        bottom: "5px",
+        left: "14px"
+      };
+      draft["styles"]["answer"]["typho"] = {
+        fontFamily: "Archivo",
+        fontCategory: "sans-serif",
+        fontWeight: 400,
+        fontVariant: "400",
+        isUploadFont: true,
+        fontSize: {
+          desktop: 16,
+          tablet: 16,
+          mobile: 14
+        },
+        fontStyle: "normal",
+        textTransform: "none",
+        textDecoration: "none",
+        lineHeight: "135%",
+        letterSpace: "0px"
+      };
+      draft["styles"]["answer"]["colors"] = {
+        color: "#616A72",
+        bgType: "solid",
+        bg: ""
+      };
+      draft["styles"]["answer"]["padding"] = {
+        top: "5px",
+        right: "5px",
+        bottom: "5px",
+        left: "5px"
+      };
+      draft["styles"]["answer"]["radius"] = {
+        top: "10px",
+        right: "10px",
+        bottom: "10px",
+        left: "10px"
+      };
+      draft["styles"]['gap'] = {
+        desktop: "50px",
+        tablet: "40px",
+        mobile: "30px"
       };
       break;
     case "theme2":
@@ -1798,6 +1933,11 @@ const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED
         bg: "#",
         gradient: ""
       };
+      draft["styles"]['gap'] = {
+        desktop: "120px",
+        tablet: "40px",
+        mobile: "30px"
+      };
       break;
     case "theme3":
       draft["options"]["isShowButton"] = true;
@@ -1959,6 +2099,11 @@ const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED
         bgType: "solid",
         bg: "#E8DFFF",
         gradient: "linear-gradient(135deg, #E8DFFF, #C8B6FF)"
+      };
+      draft["styles"]['gap'] = {
+        desktop: "120px",
+        tablet: "40px",
+        mobile: "30px"
       };
       break;
   }

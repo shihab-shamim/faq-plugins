@@ -16,6 +16,11 @@
 	  .container{
 		display: flex;
 		overflow: hidden;
+		margin-top: 100px;
+		.custom-shadow {
+			box-shadow: 0 -3rem -1rem rgba(0, 0, 0, 0.175) !important;
+			overflow: hidden !important;
+		  }
 
 		
 	  }
