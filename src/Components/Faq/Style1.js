@@ -102,8 +102,8 @@ const toggleRightFaq = (index) => {
                {isView? <p className="description">{faqs?.description}</p> :<RichText placeholder="Enter Your Description Here..." value={faqs?.description}  className="description" onChange={(value)=>{
                 setAttributes({faqs:updateData(faqs,value,"description")})
                }} />} */}
-   <div className="custom-shadow" style={{backgroundColor:"#FFFFFF",padding:"20px",borderRadius:"20px",overflow:"hidden"}}>
-    <h5 style={{paddingLeft:"13px"}}>General FAQ</h5>
+   <div className="custom-shadow" style={{backgroundColor:"#FFFFFF",padding:"20px",borderRadius:"20px"}}>
+    <h5 style={{color:"#192534",fontWeight:"600", fontSize:"28px",textTransform:"capitalize"}}>General FAQ</h5>
    {faqData.map((item, index) => (
   <FaqItem
     key={index}
@@ -125,6 +125,7 @@ const toggleRightFaq = (index) => {
     
               <div className="faq-right">
             <div className="custom-shadow" style={{backgroundColor:"#FFFFFF",padding:"20px",borderRadius:"20px",overflow:"hidden"}}>
+            <h5 style={{color:"#192534",fontWeight:"600", fontSize:"28px",textTransform:"capitalize"}}>General FAQ</h5>
             {faqItems.map((item, index) => (
         <FaqItem isView={isView}
           key={index}
@@ -138,7 +139,8 @@ const toggleRightFaq = (index) => {
         />
       ))}
             </div>
-            <div className="custom-shadow" style={{backgroundColor:"#FFFFFF",padding:"20px",borderRadius:"20px",overflow:"hidden",marginTop:"50px"}}>
+            <div className="custom-shadow" style={{backgroundColor:"#FFFFFF",padding:"20px",borderRadius:"20px",overflow:"hidden",marginTop:"20px"}}>
+            <h5 style={{color:"#192534",fontWeight:"600", fontSize:"28px",textTransform:"capitalize"}}>Support</h5>
             {faqItems.map((item, index) => (
         <FaqItem isView={isView}
           key={index}

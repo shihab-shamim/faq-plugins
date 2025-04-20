@@ -17,13 +17,13 @@
 		display: flex;
 		overflow: hidden;
 		margin-top: 100px;
-		.custom-shadow {
-			box-shadow: 0 -3rem -1rem rgba(0, 0, 0, 0.175) !important;
-			overflow: hidden !important;
-		  }
+		
 
 		
 	  }
+	 .container{
+		overflow: hidden !important;
+	 }
 	  
 	//   .container {
 	// 	max-width: 1200px;
@@ -152,6 +152,11 @@
     justify-content: center;
     align-items: center;
 	}
+	.custom-shadow {
+		box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1) !important;
+		// box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+		
+	  }
 
 	//   theme 2 
 	

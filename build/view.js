@@ -1314,12 +1314,14 @@ const Style1 = ({
     style: {
       backgroundColor: "#FFFFFF",
       padding: "20px",
-      borderRadius: "20px",
-      overflow: "hidden"
+      borderRadius: "20px"
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h5", {
     style: {
-      paddingLeft: "13px"
+      color: "#192534",
+      fontWeight: "600",
+      fontSize: "28px",
+      textTransform: "capitalize"
     }
   }, "General FAQ"), faqData.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
     key: index,
@@ -1341,7 +1343,14 @@ const Style1 = ({
       borderRadius: "20px",
       overflow: "hidden"
     }
-  }, faqItems.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h5", {
+    style: {
+      color: "#192534",
+      fontWeight: "600",
+      fontSize: "28px",
+      textTransform: "capitalize"
+    }
+  }, "General FAQ"), faqItems.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
     isView: isView,
     key: index,
     index: index,
@@ -1358,9 +1367,16 @@ const Style1 = ({
       padding: "20px",
       borderRadius: "20px",
       overflow: "hidden",
-      marginTop: "50px"
+      marginTop: "20px"
     }
-  }, faqItems.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h5", {
+    style: {
+      color: "#192534",
+      fontWeight: "600",
+      fontSize: "28px",
+      textTransform: "capitalize"
+    }
+  }, "Support"), faqItems.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
     isView: isView,
     key: index,
     index: index,

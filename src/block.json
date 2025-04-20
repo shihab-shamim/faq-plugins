@@ -29,9 +29,9 @@
 				},
 				"gap":{
 					
-					"desktop": "50px",
-                    "tablet": "30px",
-                    "mobile": "30px"
+					"desktop": "20px",
+                    "tablet": "20",
+                    "mobile": "20"
 
 				},
                 "bg":{
