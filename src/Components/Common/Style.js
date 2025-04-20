@@ -10,18 +10,20 @@
 		const faqWrapperSl = `${containerSl} .faq-wrapper`;
 		const faqRightrSl = `${faqWrapperSl} .faq-right`;
 		const faqItemrSl = `${faqRightrSl} .faq-item`;
-		const faqAnswerSl = `${faqRightrSl} .faq-answer`;
-		const faqQuestionSl = `${faqItemrSl} .faq-question`;
+		const faqAnswerSl = `${containerSl} .faq-answer`;
+		const faqQuestionSl = `${containerSl} .faq-question`;
 		const toggleBtnSl = `${faqQuestionSl} .toggle-btn`;
 		const iconSl = `${toggleBtnSl} .icon`;
-		const questionSl = `${faqQuestionSl} .question`;
-		const activeSl = `${faqItemrSl} .active`;
+		const questionSl = `${containerSl} .question`;
+		const activeSl = `${containerSl} .active`;
 		const faqLeftSl = `${faqWrapperSl} .faq-left`;
-		const faqTitle = `${faqLeftSl} .title`;
+		const faqTitle = `${wrapperSl} .title`;
 		const faqhighlighteSl = `${faqLeftSl} .highlight`;
 		const faqDescriptionSl = `${faqLeftSl} .description`;
 		
-		const faqContactButtonrSl = `${faqLeftSl} .contact-btn`;
+		const faqContactButtonrSl = `${wrapperSl} .contact-btn`;
+		// theme 1 
+		const defaultThemeContainerSl=`${wrapperSl} .defaultThemeContainer`;
 
 
 	// console.log(styles?.question?.active);
@@ -74,7 +76,9 @@
 
 
 				${faqWrapperSl}{
+				grid-template-columns:${options?.selectedTheme ==="theme1"?"1fr 1fr":" minmax(200px, 500px) auto"};
 				gap:${styles?.gap?.desktop};
+
 				}
 				${activeSl}{
 				${getActiveColorsCSS(styles?.question?.active)}
@@ -128,6 +132,17 @@
 					
 				
 				${containerSl}{
+				${options?.selectedTheme === "theme1"?"":getBackgroundCSS(styles?.bg)}
+				padding:${options?.selectedTheme === "theme1"?"":getBoxCSS(styles?.padding.desktop)} ;
+				margin:${options?.selectedTheme === "theme1"?"":getBoxCSS(styles?.margin.desktop)} ;
+				max-width:${options?.selectedTheme === "theme1"?"":styles?.width?.desktop};
+				border-radius:${options?.selectedTheme === "theme1"?"":getBoxCSS(styles?.radius)};
+				justify-content: ${options?.selectedTheme === "theme1"?"":options?.contentAlignment};
+
+				
+		
+				}
+				${defaultThemeContainerSl}{
 				${getBackgroundCSS(styles?.bg)}
 				padding:${getBoxCSS(styles?.padding.desktop)} ;
 				margin:${getBoxCSS(styles?.margin.desktop)} ;
@@ -135,8 +150,7 @@
 				border-radius:${getBoxCSS(styles?.radius)};
 				justify-content: ${options?.contentAlignment};
 
-				
-		
+
 				}
 		
 		
@@ -149,6 +163,8 @@
 		
 					}
 					${faqWrapperSl}{
+				grid-template-columns:${options?.selectedTheme ==="theme1"?"1fr":" 1fr"};
+
 				gap:${styles?.gap?.tablet};
 				}
 				
@@ -164,6 +180,8 @@
 				${mobileBreakpoint}{
 					${faqWrapperSl}{
 						gap:${styles?.gap?.mobile};
+				grid-template-columns:${options?.selectedTheme ==="theme1"?"1fr":" 1fr"};
+
 					}
 					${containerSl}{
 					padding:${getBoxCSS(styles?.padding.mobile)};

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Style2 from "./Style2";
 import Style3 from "./Style3";
+import Style1 from "./Style1";
 
 // FAQ Item Component
 const FaqItem = ({ question, answer, isActive, onClick }) => {
@@ -77,56 +78,7 @@ const Faq = ({ isView, setAttributes, attributes }) => {
   return (
     <div className="wrapper">
       {/* Theme 1 */}
-      {options.selectedTheme === "theme1" && (
-        <div className="container">
-          <div className="header">
-            <span className="badge">FAQ</span>
-            <h1>Have Any Questions?</h1>
-          </div>
-
-          <div className="faq-container">
-            <div className="faq-column-1">
-              {/* Display category 1 in its own column */}
-              {faqData
-                .filter((section) => section.category === "1")
-                .map((section, sectionIndex) => (
-                  <div key={sectionIndex} className="faq-column">
-                    <h2>{section.title}</h2>
-                    {section.items.map((item, index) => (
-                      <FaqItem
-                        key={index}
-                        question={item.question}
-                        answer={item.answer}
-                        isActive={activeIndex === `${section.category}-${index}`}
-                        onClick={() => toggleFaq(`${section.category}-${index}`)}
-                      />
-                    ))}
-                  </div>
-                ))}
-            </div>
-
-            <div className="faq-column-2">
-              {/* Display categories 2 and 3 in the second column */}
-              {faqData
-                .filter((section) => section.category !== "1")
-                .map((section, sectionIndex) => (
-                  <div key={sectionIndex} className="faq-column">
-                    <h2>{section.title}</h2>
-                    {section.items.map((item, index) => (
-                      <FaqItem
-                        key={index}
-                        question={item.question}
-                        answer={item.answer}
-                        isActive={activeIndex === `${section.category}-${index}`}
-                        onClick={() => toggleFaq(`${section.category}-${index}`)}
-                      />
-                    ))}
-                  </div>
-                ))}
-            </div>
-          </div>
-        </div>
-      )}
+      {options.selectedTheme === "theme1" && <Style1 isView={isView} attributes={attributes} setAttributes={setAttributes} faqData={faqData} faqs={faqs} />}
 
       {/* Theme 2 */}
       {/* {options.selectedTheme === "theme2" && (

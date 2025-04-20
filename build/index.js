@@ -45234,7 +45234,15 @@ const General = ({
     onChange: value => setAttributes({
       options: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(options, value, "contentAlignment")
     })
-  })));
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_5__.Label, null, "Show Button ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FormToggle, {
+    checked: options?.isShowButton,
+    onChange: () => setAttributes({
+      options: {
+        ...options,
+        isShowButton: !options?.isShowButton
+      }
+    })
+  }))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (General);
 
@@ -45572,17 +45580,19 @@ const Style = ({
   const faqWrapperSl = `${containerSl} .faq-wrapper`;
   const faqRightrSl = `${faqWrapperSl} .faq-right`;
   const faqItemrSl = `${faqRightrSl} .faq-item`;
-  const faqAnswerSl = `${faqRightrSl} .faq-answer`;
-  const faqQuestionSl = `${faqItemrSl} .faq-question`;
+  const faqAnswerSl = `${containerSl} .faq-answer`;
+  const faqQuestionSl = `${containerSl} .faq-question`;
   const toggleBtnSl = `${faqQuestionSl} .toggle-btn`;
   const iconSl = `${toggleBtnSl} .icon`;
-  const questionSl = `${faqQuestionSl} .question`;
-  const activeSl = `${faqItemrSl} .active`;
+  const questionSl = `${containerSl} .question`;
+  const activeSl = `${containerSl} .active`;
   const faqLeftSl = `${faqWrapperSl} .faq-left`;
-  const faqTitle = `${faqLeftSl} .title`;
+  const faqTitle = `${wrapperSl} .title`;
   const faqhighlighteSl = `${faqLeftSl} .highlight`;
   const faqDescriptionSl = `${faqLeftSl} .description`;
-  const faqContactButtonrSl = `${faqLeftSl} .contact-btn`;
+  const faqContactButtonrSl = `${wrapperSl} .contact-btn`;
+  // theme 1 
+  const defaultThemeContainerSl = `${wrapperSl} .defaultThemeContainer`;
 
   // console.log(styles?.question?.active);
   // color: ${styles?.question?.active?.color} !important;
@@ -45622,7 +45632,9 @@ const Style = ({
 
 
 				${faqWrapperSl}{
+				grid-template-columns:${options?.selectedTheme === "theme1" ? "1fr 1fr" : " minmax(200px, 500px) auto"};
 				gap:${styles?.gap?.desktop};
+
 				}
 				${activeSl}{
 				${getActiveColorsCSS(styles?.question?.active)}
@@ -45676,6 +45688,17 @@ const Style = ({
 					
 				
 				${containerSl}{
+				${options?.selectedTheme === "theme1" ? "" : (0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg)}
+				padding:${options?.selectedTheme === "theme1" ? "" : (0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.desktop)} ;
+				margin:${options?.selectedTheme === "theme1" ? "" : (0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.desktop)} ;
+				max-width:${options?.selectedTheme === "theme1" ? "" : styles?.width?.desktop};
+				border-radius:${options?.selectedTheme === "theme1" ? "" : (0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.radius)};
+				justify-content: ${options?.selectedTheme === "theme1" ? "" : options?.contentAlignment};
+
+				
+		
+				}
+				${defaultThemeContainerSl}{
 				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg)}
 				padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.desktop)} ;
 				margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.desktop)} ;
@@ -45683,8 +45706,7 @@ const Style = ({
 				border-radius:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.radius)};
 				justify-content: ${options?.contentAlignment};
 
-				
-		
+
 				}
 		
 		
@@ -45697,6 +45719,8 @@ const Style = ({
 		
 					}
 					${faqWrapperSl}{
+				grid-template-columns:${options?.selectedTheme === "theme1" ? "1fr" : " 1fr"};
+
 				gap:${styles?.gap?.tablet};
 				}
 				
@@ -45712,6 +45736,8 @@ const Style = ({
 				${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.mobileBreakpoint}{
 					${faqWrapperSl}{
 						gap:${styles?.gap?.mobile};
+				grid-template-columns:${options?.selectedTheme === "theme1" ? "1fr" : " 1fr"};
+
 					}
 					${containerSl}{
 					padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.mobile)};
@@ -45756,6 +45782,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Style2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Style2 */ "./src/Components/Faq/Style2.js");
 /* harmony import */ var _Style3__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Style3 */ "./src/Components/Faq/Style3.js");
+/* harmony import */ var _Style1__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Style1 */ "./src/Components/Faq/Style1.js");
+
 
 
 
@@ -45859,37 +45887,13 @@ const Faq = ({
   }];
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wrapper"
-  }, options.selectedTheme === "theme1" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "container"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "header"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "badge"
-  }, "FAQ"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", null, "Have Any Questions?")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "faq-container"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "faq-column-1"
-  }, faqData.filter(section => section.category === "1").map((section, sectionIndex) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    key: sectionIndex,
-    className: "faq-column"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, section.title), section.items.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(FaqItem, {
-    key: index,
-    question: item.question,
-    answer: item.answer,
-    isActive: activeIndex === `${section.category}-${index}`,
-    onClick: () => toggleFaq(`${section.category}-${index}`)
-  }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "faq-column-2"
-  }, faqData.filter(section => section.category !== "1").map((section, sectionIndex) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    key: sectionIndex,
-    className: "faq-column"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, section.title), section.items.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(FaqItem, {
-    key: index,
-    question: item.question,
-    answer: item.answer,
-    isActive: activeIndex === `${section.category}-${index}`,
-    onClick: () => toggleFaq(`${section.category}-${index}`)
-  }))))))), options.selectedTheme === "theme2" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Style2__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, options.selectedTheme === "theme1" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Style1__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    isView: isView,
+    attributes: attributes,
+    setAttributes: setAttributes,
+    faqData: faqData,
+    faqs: faqs
+  }), options.selectedTheme === "theme2" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Style2__WEBPACK_IMPORTED_MODULE_1__["default"], {
     isView: isView,
     attributes: attributes,
     setAttributes: setAttributes,
@@ -45951,6 +45955,112 @@ const FaqSetting = props => {
   }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FaqSetting);
+
+/***/ }),
+
+/***/ "./src/Components/Faq/Style1.js":
+/*!**************************************!*\
+  !*** ./src/Components/Faq/Style1.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/FaqItem */ "./src/utils/FaqItem.js");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _utils_functions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/functions */ "./src/utils/functions.js");
+
+
+
+
+
+const Style1 = ({
+  faqs,
+  setAttributes,
+  attributes,
+  isView
+}) => {
+  const {
+    faqItems
+  } = attributes;
+  const [activeIndex, setActiveIndex] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+  const toggleFaq = index => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "defaultThemeContainer"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "heading"
+  }, attributes?.options?.isShowButton && (isView ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: faqs?.buttonLink,
+    target: attributes?.options?.isLinkTarget ? "_blank" : "_self",
+    className: "contact-btn",
+    rel: "noreferrer"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "buttonIcon",
+    dangerouslySetInnerHTML: {
+      __html: faqs?.buttonIcon
+    }
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, faqs?.buttonText, " ")) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "contact-btn"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "buttonIcon",
+    dangerouslySetInnerHTML: {
+      __html: faqs?.buttonIcon
+    }
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    value: faqs?.buttonText,
+    onChange: value => setAttributes({
+      faqs: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.updateData)(faqs, value, "buttonText")
+    })
+  }))), isView ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", {
+    className: "title style-3-title"
+  }, faqs?.title) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    placeholder: " title Here...",
+    value: faqs?.title,
+    className: "title style-3-title",
+    onChange: value => {
+      setAttributes({
+        faqs: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.updateData)(faqs, value, "title")
+      });
+    }
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "container"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "faq-wrapper"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "faq-left"
+  }, faqItems.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    isView: isView,
+    key: index,
+    index: index,
+    question: item.question,
+    answer: item.answer,
+    isActive: activeIndex === index,
+    onClick: () => toggleFaq(index),
+    attributes: attributes,
+    setAttributes: setAttributes
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "faq-right"
+  }, faqItems.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    isView: isView,
+    key: index,
+    index: index,
+    question: item.question,
+    answer: item.answer,
+    isActive: activeIndex === index,
+    onClick: () => toggleFaq(index),
+    attributes: attributes,
+    setAttributes: setAttributes
+  }))))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Style1);
 
 /***/ }),
 
@@ -46272,7 +46382,19 @@ const themeSwitch = (theme = "theme2", attributes) => (0,immer__WEBPACK_IMPORTED
   draft["options"]["selectedTheme"] = theme;
   switch (theme) {
     case "theme1":
-      draft["options"]["isShowButton"] = false;
+      draft["options"]["isShowButton"] = true;
+      draft["faqs"] = {
+        title: "Have Any Question",
+        buttonText: "FAQ",
+        description: "Discover clarity and insights as we unravel answers to your questions",
+        buttonIcon: "  <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1em\" height=\"1em\" viewBox=\"0 0 24 24\"><path fill=\"white\" fill-rule=\"evenodd\" d=\"M12 21a9 9 0 1 0 0-18a9 9 0 0 0 0 18m-.232-5.36l5-6l-1.536-1.28l-4.3 5.159l-2.225-2.226l-1.414 1.414l3 3l.774.774z\" clip-rule=\"evenodd\"></path></svg>",
+        buttonLink: "#"
+      };
+      draft["styles"]["bg"] = {
+        type: "solid",
+        color: "",
+        gradient: ""
+      };
       break;
     case "theme2":
       draft["options"]["isShowButton"] = true;

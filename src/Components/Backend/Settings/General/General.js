@@ -67,6 +67,10 @@ const General = ({ attributes, setAttributes,device}) => {
 
 
        <BButtonGroup style={{marginTop:"15px"}} label={__("Alignment","b-blocks")} options={contentAlignment} value={options?.contentAlignment}  onChange={(value)=>setAttributes({options:updateData(options,value,"contentAlignment")})} />
+       <Label>Show Button <FormToggle
+            checked={ options?.isShowButton }
+            onChange={ () =>setAttributes({options:{...options, isShowButton:!options?.isShowButton }}) }
+        /></Label>
 
     </PanelBody>
    </>

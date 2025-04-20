@@ -19,12 +19,18 @@
   display: flex;
   overflow: hidden;
 }
+.wp-block-b-blocks-test-purpose .wrapper .heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .wp-block-b-blocks-test-purpose .wrapper .container {
   width: 100%;
 }
 .wp-block-b-blocks-test-purpose .wrapper .faq-wrapper {
   display: grid;
-  grid-template-columns: minmax(200px, 500px) auto;
+  grid-template-columns: 1fr 1fr;
   align-items: start;
 }
 .wp-block-b-blocks-test-purpose .wrapper .highlight {
