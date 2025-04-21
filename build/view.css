@@ -13,15 +13,10 @@
 }
 .wp-block-b-blocks-test-purpose .wrapper {
   display: flex;
-  overflow: hidden;
 }
 .wp-block-b-blocks-test-purpose .wrapper .container {
   display: flex;
-  overflow: hidden;
-  margin-top: 100px;
-}
-.wp-block-b-blocks-test-purpose .wrapper .container {
-  overflow: hidden !important;
+  margin-top: 50px;
 }
 .wp-block-b-blocks-test-purpose .wrapper .heading {
   display: flex;

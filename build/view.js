@@ -887,6 +887,7 @@ const Style = ({
   const faqContactButtonrSl = `${wrapperSl} .contact-btn`;
   // theme 1 
   const defaultThemeContainerSl = `${wrapperSl} .defaultThemeContainer`;
+  const supportSectionrSl = `${wrapperSl} .support-section`;
 
   // console.log(styles?.question?.active);
   // color: ${styles?.question?.active?.color} !important;
@@ -993,6 +994,10 @@ const Style = ({
 				
 		
 				}
+				${supportSectionrSl}{
+				margin-top:${styles?.gap?.desktop};
+				}
+
 				${defaultThemeContainerSl}{
 				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg)}
 				padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.desktop)} ;
@@ -1006,12 +1011,17 @@ const Style = ({
 		
 		
 				${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.tabBreakpoint}{
+					margin-top:${styles?.gap?.tablet};
+
 					${containerSl}{
 				padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.tablet)};
 				margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin.tablet)} ;
-				max-width:${styles?.width?.tablet}
+				max-width:${styles?.width?.tablet};
 		
 		
+					}
+					${defaultThemeContainerSl}{
+					padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.tablet)} ;
 					}
 					${faqWrapperSl}{
 				grid-template-columns:${options?.selectedTheme === "theme1" ? "1fr" : " 1fr"};
@@ -1029,9 +1039,15 @@ const Style = ({
 				
 
 				${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.mobileBreakpoint}{
+					${defaultThemeContainerSl}{
+						padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.mobile)} ;
+						}
 					${faqWrapperSl}{
 						gap:${styles?.gap?.mobile};
 				grid-template-columns:${options?.selectedTheme === "theme1" ? "1fr" : " 1fr"};
+				${supportSectionrSl}{
+					margin-top:${styles?.gap?.mobile};
+					}
 
 					}
 					${containerSl}{
@@ -1371,13 +1387,12 @@ const Style1 = ({
     setAttributes: setAttributes,
     faqCategory: "generalTwo"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-shadow",
+    className: "custom-shadow support-section",
     style: {
       backgroundColor: "#FFFFFF",
       padding: "20px",
       borderRadius: "20px",
-      overflow: "hidden",
-      marginTop: "20px"
+      overflow: "hidden"
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h5", {
     style: {
@@ -1861,8 +1876,62 @@ const themeSwitch = (theme = "theme1", attributes) => (0,immer__WEBPACK_IMPORTED
         lineHeight: "135%",
         letterSpace: "0px"
       };
+      draft["faqs"]["faqItems"] = {
+        titleOne: "General FAQ",
+        titleTwo: "General FAQ",
+        titleThree: "Support",
+        general: [{
+          question: "Does BTCPayServer cost extra?",
+          answer: "Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."
+        }, {
+          question: "Does my Voltage Lightning Node connect to BTC Server automatically?",
+          answer: "Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."
+        }, {
+          question: "Can I accept payments on chain?",
+          answer: "Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."
+        }, {
+          question: "What is BTC Pay Server?",
+          answer: "Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."
+        }, {
+          question: "How to did handle my data",
+          answer: "Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."
+        }, {
+          question: "How doesit generate responses",
+          answer: "Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."
+        }],
+        generalTwo: [{
+          question: "Does my Voltage Lightning Node connect to BTC Server?",
+          answer: "Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."
+        }, {
+          question: "Can I accept payments on chain?",
+          answer: "Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."
+        }, {
+          question: "What is BTC Pay Server?",
+          answer: "Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."
+        }],
+        support: [{
+          question: "Does my Voltage Lightning Node connect to BTC Server?",
+          answer: "Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."
+        }, {
+          question: "Can I accept payments on chain?",
+          answer: "Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."
+        }, {
+          question: "What is BTC Pay Server?",
+          answer: "Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."
+        }]
+      };
       break;
     case "theme2":
+      draft["faqItems"] = [{
+        question: "Does BTCPayServer cost extra?",
+        answer: "No, BTCPayServer is completely free and open-source software."
+      }, {
+        question: "Does my Voltage Lightning Node connect to BTC Server automatically?",
+        answer: "Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."
+      }, {
+        question: "Can I accept payments on chain?",
+        answer: "Yes, you can accept both on-chain and Lightning payments through the platform."
+      }];
       draft["options"]["isShowButton"] = true;
       draft["styles"]["bg"] = {
         type: "solid",

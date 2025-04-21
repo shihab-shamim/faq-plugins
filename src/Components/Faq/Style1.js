@@ -144,7 +144,7 @@ const toggleRightFaq = (index) => {
         />
       ))}
             </div>
-            <div className="custom-shadow" style={{backgroundColor:"#FFFFFF",padding:"20px",borderRadius:"20px",overflow:"hidden",marginTop:"20px"}}>
+            <div className="custom-shadow support-section" style={{backgroundColor:"#FFFFFF",padding:"20px",borderRadius:"20px",overflow:"hidden"}}>
             <h5 style={{color:"#192534",fontWeight:"600", fontSize:"28px",textTransform:"capitalize"}}>{faqs?.faqItems?.titleThree}</h5>
             {faqs?.faqItems?.support.map((item, index) => (
         <FaqItem isView={isView}
@@ -167,4 +167,4 @@ const toggleRightFaq = (index) => {
     );
 };
 
-export default Style1;
+export default Style1;      

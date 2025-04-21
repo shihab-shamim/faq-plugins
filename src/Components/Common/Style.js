@@ -24,6 +24,7 @@
 		const faqContactButtonrSl = `${wrapperSl} .contact-btn`;
 		// theme 1 
 		const defaultThemeContainerSl=`${wrapperSl} .defaultThemeContainer`;
+		const supportSectionrSl=`${wrapperSl} .support-section`;
 
 
 	// console.log(styles?.question?.active);
@@ -143,6 +144,10 @@
 				
 		
 				}
+				${supportSectionrSl}{
+				margin-top:${styles?.gap?.desktop};
+				}
+
 				${defaultThemeContainerSl}{
 				${getBackgroundCSS(styles?.bg)}
 				padding:${getBoxCSS(styles?.padding.desktop)} ;
@@ -156,12 +161,17 @@
 		
 		
 				${tabBreakpoint}{
+					margin-top:${styles?.gap?.tablet};
+
 					${containerSl}{
 				padding:${getBoxCSS(styles?.padding.tablet)};
 				margin:${getBoxCSS(styles?.margin.tablet)} ;
-				max-width:${styles?.width?.tablet}
+				max-width:${styles?.width?.tablet};
 		
 		
+					}
+					${defaultThemeContainerSl}{
+					padding:${getBoxCSS(styles?.padding.tablet)} ;
 					}
 					${faqWrapperSl}{
 				grid-template-columns:${options?.selectedTheme ==="theme1"?"1fr":" 1fr"};
@@ -179,9 +189,15 @@
 				
 
 				${mobileBreakpoint}{
+					${defaultThemeContainerSl}{
+						padding:${getBoxCSS(styles?.padding.mobile)} ;
+						}
 					${faqWrapperSl}{
 						gap:${styles?.gap?.mobile};
 				grid-template-columns:${options?.selectedTheme ==="theme1"?"1fr":" 1fr"};
+				${supportSectionrSl}{
+					margin-top:${styles?.gap?.mobile};
+					}
 
 					}
 					${containerSl}{
