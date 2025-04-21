@@ -973,6 +973,12 @@ const Style = ({
 		
 				${wrapperSl}{
 					justify-content: ${alignment};
+					${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.section?.bg)}
+					padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.section?.padding?.desktop)};
+					margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.section?.margin?.desktop)};
+				    border-radius:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.section?.radius)};
+
+
 		
 				
 				}
@@ -1011,6 +1017,14 @@ const Style = ({
 		
 		
 				${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.tabBreakpoint}{
+					${wrapperSl}{
+						
+						padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.section?.padding?.tablet)};
+						margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.section?.margin?.tablet)};
+
+					
+					}
+
 					margin-top:${styles?.gap?.tablet};
 
 					${containerSl}{
@@ -1039,6 +1053,13 @@ const Style = ({
 				
 
 				${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.mobileBreakpoint}{
+					${wrapperSl}{
+						margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.section?.margin?.mobile)};
+						
+					padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.section?.padding?.mobile)};
+				
+				}
+
 					${defaultThemeContainerSl}{
 						padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding.mobile)} ;
 						}
@@ -1248,33 +1269,6 @@ const Style1 = ({
   attributes,
   isView
 }) => {
-  console.log(faqs?.faqItems);
-  // const faqData = [
-  //     {
-  //       question: "What is BTCPayServer used for?",
-  //       answer: "BTCPayServer is a self-hosted, open-source cryptocurrency payment processor that helps businesses accept Bitcoin payments without third-party involvement."
-  //     },
-  //     {
-  //       question: "Is it possible to run BTCPayServer without technical knowledge?",
-  //       answer: "Yes, many hosting services offer one-click deployments, so you can get started without deep technical skills."
-  //     },
-  //     {
-  //       question: "Can I accept both Bitcoin and Lightning payments?",
-  //       answer: "Absolutely! BTCPayServer supports both traditional Bitcoin on-chain payments and the Lightning Network."
-  //     },
-  //     {
-  //       question: "Is there a transaction fee for using BTCPayServer?",
-  //       answer: "No extra fees are charged by BTCPayServer itself. You only pay the standard network fees associated with Bitcoin transactions."
-  //     },
-  //     {
-  //       question: "Does BTCPayServer integrate with online stores?",
-  //       answer: "Yes, it supports plugins for popular e-commerce platforms like WooCommerce, Shopify (via third-party), and others."
-  //     },
-  //     {
-  //       question: "How do I secure my BTCPayServer setup?",
-  //       answer: "You can enhance security by keeping your server software up-to-date, using strong passwords, and running BTCPayServer behind a reverse proxy or firewall."
-  //     }
-  //   ];
   const [leftActiveIndex, setLeftActiveIndex] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
   const [rightActiveIndex, setRightActiveIndex] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
   const toggleLeftFaq = index => {
@@ -1760,6 +1754,57 @@ const themeSwitch = (theme = "theme1", attributes) => (0,immer__WEBPACK_IMPORTED
   draft["options"]["selectedTheme"] = theme;
   switch (theme) {
     case "theme1":
+      draft["styles"]["section"]["padding"] = {
+        desktop: {
+          top: "50px",
+          right: "50px",
+          bottom: "50px",
+          left: "50px"
+        },
+        tablet: {
+          top: "50px",
+          right: "50px",
+          bottom: "50px",
+          left: "50px"
+        },
+        mobile: {
+          top: "0px",
+          right: "0px",
+          bottom: "0px",
+          left: "0px"
+        }
+      };
+      draft["styles"]["section"]["bg"] = {
+        type: "solid",
+        color: "#F8F9FA",
+        gradient: "linear-gradient(135deg, rgb(34,23,23) 0%, rgb(13,13,15) 100%)"
+      };
+      draft["styles"]["section"]["margin"] = {
+        desktop: {
+          top: "0",
+          right: "0",
+          bottom: "0",
+          left: "0"
+        },
+        tablet: {
+          top: "",
+          right: "",
+          bottom: "",
+          left: ""
+        },
+        mobile: {
+          top: "",
+          right: "",
+          bottom: "",
+          left: ""
+        }
+      };
+      draft["styles"]["section"]["radius"] = {
+        top: "0px",
+        right: "0px",
+        bottom: "0px",
+        left: "0px"
+      };
       draft["options"]["isShowButton"] = true;
       draft["faqs"] = {
         title: "Have Any Question",
@@ -1942,6 +1987,57 @@ const themeSwitch = (theme = "theme1", attributes) => (0,immer__WEBPACK_IMPORTED
       };
       break;
     case "theme2":
+      draft["styles"]["section"]["padding"] = {
+        desktop: {
+          top: "0px",
+          right: "0px",
+          bottom: "0px",
+          left: "0px"
+        },
+        tablet: {
+          top: "0px",
+          right: "0px",
+          bottom: "0px",
+          left: "0px"
+        },
+        mobile: {
+          top: "0px",
+          right: "0px",
+          bottom: "0px",
+          left: "0px"
+        }
+      };
+      draft["styles"]["section"]["bg"] = {
+        type: "solid",
+        color: "",
+        gradient: ""
+      };
+      draft["styles"]["section"]["margin"] = {
+        desktop: {
+          top: "0",
+          right: "0",
+          bottom: "0",
+          left: "0"
+        },
+        tablet: {
+          top: "",
+          right: "",
+          bottom: "",
+          left: ""
+        },
+        mobile: {
+          top: "",
+          right: "",
+          bottom: "",
+          left: ""
+        }
+      };
+      draft["styles"]["section"]["radius"] = {
+        top: "0px",
+        right: "0px",
+        bottom: "0px",
+        left: "0px"
+      };
       draft["faqItems"] = [{
         question: "Does BTCPayServer cost extra?",
         answer: "No, BTCPayServer is completely free and open-source software."
@@ -2139,6 +2235,57 @@ const themeSwitch = (theme = "theme1", attributes) => (0,immer__WEBPACK_IMPORTED
       };
       break;
     case "theme3":
+      draft["styles"]["section"]["padding"] = {
+        desktop: {
+          top: "50px",
+          right: "50px",
+          bottom: "50px",
+          left: "50px"
+        },
+        tablet: {
+          top: "50px",
+          right: "50px",
+          bottom: "50px",
+          left: "50px"
+        },
+        mobile: {
+          top: "0px",
+          right: "0px",
+          bottom: "0px",
+          left: "0px"
+        }
+      };
+      draft["styles"]["section"]["bg"] = {
+        type: "solid",
+        color: "#F8F9FA",
+        gradient: "linear-gradient(135deg, rgb(34,23,23) 0%, rgb(13,13,15) 100%)"
+      };
+      draft["styles"]["section"]["margin"] = {
+        desktop: {
+          top: "0",
+          right: "0",
+          bottom: "0",
+          left: "0"
+        },
+        tablet: {
+          top: "",
+          right: "",
+          bottom: "",
+          left: ""
+        },
+        mobile: {
+          top: "",
+          right: "",
+          bottom: "",
+          left: ""
+        }
+      };
+      draft["styles"]["section"]["radius"] = {
+        top: "0px",
+        right: "0px",
+        bottom: "0px",
+        left: "0px"
+      };
       draft["options"]["isShowButton"] = true;
       draft["styles"]["bg"] = {
         type: "solid",

@@ -26,6 +26,57 @@ export const themeSwitch=(theme="theme1",attributes)=>produce(attributes,(draft)
 
   switch(theme){
     case "theme1":
+      draft["styles"]["section"]["padding"]={
+        desktop: {
+          top: "50px",
+          right: "50px",
+          bottom: "50px",
+          left: "50px"
+        },
+        tablet: {
+          top: "50px",
+          right: "50px",
+          bottom: "50px",
+          left: "50px"
+        },
+        mobile: {
+          top: "0px",
+          right: "0px",
+          bottom: "0px",
+          left: "0px"
+        }
+      };
+      draft["styles"]["section"]["bg"]={
+        type: "solid",
+        color: "#F8F9FA",
+        gradient: "linear-gradient(135deg, rgb(34,23,23) 0%, rgb(13,13,15) 100%)"
+      };
+      draft["styles"]["section"]["margin"]={
+        desktop: {
+          top: "0",
+          right: "0",
+          bottom: "0",
+          left: "0"
+        },
+        tablet: {
+          top: "",
+          right: "",
+          bottom: "",
+          left: ""
+        },
+        mobile: {
+          top: "",
+          right: "",
+          bottom: "",
+          left: ""
+        }
+      };
+      draft["styles"]["section"]["radius"]={
+        top: "0px",
+        right: "0px",
+        bottom: "0px",
+        left: "0px"
+      };
       draft["options"]["isShowButton"]=true;
       draft["faqs"]={title: "Have Any Question",
         buttonText: "FAQ",
@@ -193,6 +244,57 @@ draft["styles"]["question"]["colors"]={color: "#192534",bgType: "solid",bg: ""}
     break;
 
     case "theme2":
+      draft["styles"]["section"]["padding"]={
+        desktop: {
+          top: "0px",
+          right: "0px",
+          bottom: "0px",
+          left: "0px"
+        },
+        tablet: {
+          top: "0px",
+          right: "0px",
+          bottom: "0px",
+          left: "0px"
+        },
+        mobile: {
+          top: "0px",
+          right: "0px",
+          bottom: "0px",
+          left: "0px"
+        }
+      };
+      draft["styles"]["section"]["bg"]={
+        type: "solid",
+        color: "",
+        gradient: ""
+      };
+      draft["styles"]["section"]["margin"]={
+        desktop: {
+          top: "0",
+          right: "0",
+          bottom: "0",
+          left: "0"
+        },
+        tablet: {
+          top: "",
+          right: "",
+          bottom: "",
+          left: ""
+        },
+        mobile: {
+          top: "",
+          right: "",
+          bottom: "",
+          left: ""
+        }
+      };
+      draft["styles"]["section"]["radius"]={
+        top: "0px",
+        right: "0px",
+        bottom: "0px",
+        left: "0px"
+      };
       draft["faqItems"]=[
         {
           question: "Does BTCPayServer cost extra?",
@@ -364,6 +466,57 @@ draft["styles"]["question"]["gap"]="5px";
     break;
      
     case "theme3":
+      draft["styles"]["section"]["padding"]={
+        desktop: {
+          top: "50px",
+          right: "50px",
+          bottom: "50px",
+          left: "50px"
+        },
+        tablet: {
+          top: "50px",
+          right: "50px",
+          bottom: "50px",
+          left: "50px"
+        },
+        mobile: {
+          top: "0px",
+          right: "0px",
+          bottom: "0px",
+          left: "0px"
+        }
+      };
+      draft["styles"]["section"]["bg"]={
+        type: "solid",
+        color: "#F8F9FA",
+        gradient: "linear-gradient(135deg, rgb(34,23,23) 0%, rgb(13,13,15) 100%)"
+      };
+      draft["styles"]["section"]["margin"]={
+        desktop: {
+          top: "0",
+          right: "0",
+          bottom: "0",
+          left: "0"
+        },
+        tablet: {
+          top: "",
+          right: "",
+          bottom: "",
+          left: ""
+        },
+        mobile: {
+          top: "",
+          right: "",
+          bottom: "",
+          left: ""
+        }
+      };
+      draft["styles"]["section"]["radius"]={
+        top: "0px",
+        right: "0px",
+        bottom: "0px",
+        left: "0px"
+      };
       draft["options"]["isShowButton"]=true;
       draft["styles"]["bg"]={type:"solid",color:"#F8F9FA",gradient: "linear-gradient(to right, #ffffff, #007bff)"};
       draft["styles"]["title"]["color"]="#192534";

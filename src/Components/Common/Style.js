@@ -51,6 +51,7 @@
 			
 	}
 
+	
 
 
 		return (
@@ -123,6 +124,12 @@
 		
 				${wrapperSl}{
 					justify-content: ${alignment};
+					${getBackgroundCSS(styles?.section?.bg)}
+					padding:${getBoxCSS(styles?.section?.padding?.desktop)};
+					margin:${getBoxCSS(styles?.section?.margin?.desktop)};
+				    border-radius:${getBoxCSS(styles?.section?.radius)};
+
+
 		
 				
 				}
@@ -161,6 +168,14 @@
 		
 		
 				${tabBreakpoint}{
+					${wrapperSl}{
+						
+						padding:${getBoxCSS(styles?.section?.padding?.tablet)};
+						margin:${getBoxCSS(styles?.section?.margin?.tablet)};
+
+					
+					}
+
 					margin-top:${styles?.gap?.tablet};
 
 					${containerSl}{
@@ -189,6 +204,13 @@
 				
 
 				${mobileBreakpoint}{
+					${wrapperSl}{
+						margin:${getBoxCSS(styles?.section?.margin?.mobile)};
+						
+					padding:${getBoxCSS(styles?.section?.padding?.mobile)};
+				
+				}
+
 					${defaultThemeContainerSl}{
 						padding:${getBoxCSS(styles?.padding.mobile)} ;
 						}

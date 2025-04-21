@@ -13,12 +13,29 @@ const Style = ({ attributes, setAttributes,device }) => {
   const { styles,options} = attributes;
 
 
-// console.log(options?.selectedTheme);
+
 
 
   return (
     <>
-  
+    <PanelBody className="bPlPanelBody"
+        title={__(`${"Section"}`, "b-blocks")}
+        initialOpen={true}>
+        <Background className="mt15"  isImage={false} value={styles?.section?.bg}  onChange={(value)=>setAttributes({styles:updateData(styles,value,"section","bg")})} />
+        <PanelRow><Label>{__("Padding","b-blocks")}</Label> <Device/></PanelRow>
+
+<BoxControl values={styles?.section?.padding[device]} onChange={(value)=>setAttributes({styles:updateData(styles,value,"section","padding",device)})} />
+<PanelRow><Label>{__("Margin","b-blocks")}</Label> <Device/></PanelRow>
+
+<BoxControl values={styles?.section?.margin[device]} onChange={(value)=>setAttributes({styles:updateData(styles,value,"section","margin",device)})} />
+<div className="border-radius">
+            <Boxcontrol label={__("Radius","b-blocks")} values={styles?.section?.radius} onChange={value=>setAttributes({styles:updateData(styles,value,"section","radius")})} />
+
+
+            </div>
+
+
+    </PanelBody>
 
 
       <PanelBody
