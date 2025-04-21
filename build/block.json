@@ -248,7 +248,63 @@
         "buttonText": "FAQ",
         "description": "",
         "buttonIcon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1em\" height=\"1em\" viewBox=\"0 0 24 24\"><path fill=\"white\" fill-rule=\"evenodd\" d=\"M12 21a9 9 0 1 0 0-18a9 9 0 0 0 0 18m-.232-5.36l5-6l-1.536-1.28l-4.3 5.159l-2.225-2.226l-1.414 1.414l3 3l.774.774z\" clip-rule=\"evenodd\"></path></svg>",
-        "buttonLink": "#"
+        "buttonLink": "#",
+        "faqItems": {
+          "general": [
+            {
+              "question": "Does BTCPayServer cost extra?",
+              "answer": "Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."
+            },
+            {
+              "question": "Does my Voltage Lightning Node connect to BTC Server automatically?",
+              "answer": "Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."
+            },
+            {
+              "question": "Can I accept payments on chain?",
+              "answer": "Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."
+            },
+            {
+              "question": "What is BTC Pay Server?",
+              "answer": "Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."
+            },
+            {
+              "question": "How to did handle my data",
+              "answer": "Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."
+            },
+            {
+              "question": "How doesit generate responses",
+              "answer": "Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."
+            }
+          ],
+          "generalTwo": [
+            {
+              "question": "Does my Voltage Lightning Node connect to BTC Server?",
+              "answer": "Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."
+            },
+            {
+              "question": "Can I accept payments on chain?",
+              "answer": "Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."
+            },
+            {
+              "question": "What is BTC Pay Server?",
+              "answer": "Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."
+            }
+          ],
+          "support": [
+            {
+              "question": "Does my Voltage Lightning Node connect to BTC Server?",
+              "answer": "Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."
+            },
+            {
+              "question": "Can I accept payments on chain?",
+              "answer": "Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."
+            },
+            {
+              "question": "What is BTC Pay Server?",
+              "answer": "Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."
+            }
+          ]
+        }
       }
     },
     "faqItems": {

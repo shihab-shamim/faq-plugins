@@ -5,32 +5,34 @@ import { updateData } from "../../utils/functions";
 
 
 const Style1 = ({faqs,setAttributes,attributes,isView}) => {
-    const faqData = [
-        {
-          question: "What is BTCPayServer used for?",
-          answer: "BTCPayServer is a self-hosted, open-source cryptocurrency payment processor that helps businesses accept Bitcoin payments without third-party involvement."
-        },
-        {
-          question: "Is it possible to run BTCPayServer without technical knowledge?",
-          answer: "Yes, many hosting services offer one-click deployments, so you can get started without deep technical skills."
-        },
-        {
-          question: "Can I accept both Bitcoin and Lightning payments?",
-          answer: "Absolutely! BTCPayServer supports both traditional Bitcoin on-chain payments and the Lightning Network."
-        },
-        {
-          question: "Is there a transaction fee for using BTCPayServer?",
-          answer: "No extra fees are charged by BTCPayServer itself. You only pay the standard network fees associated with Bitcoin transactions."
-        },
-        {
-          question: "Does BTCPayServer integrate with online stores?",
-          answer: "Yes, it supports plugins for popular e-commerce platforms like WooCommerce, Shopify (via third-party), and others."
-        },
-        {
-          question: "How do I secure my BTCPayServer setup?",
-          answer: "You can enhance security by keeping your server software up-to-date, using strong passwords, and running BTCPayServer behind a reverse proxy or firewall."
-        }
-      ];
+
+  console.log(faqs?.faqItems);
+    // const faqData = [
+    //     {
+    //       question: "What is BTCPayServer used for?",
+    //       answer: "BTCPayServer is a self-hosted, open-source cryptocurrency payment processor that helps businesses accept Bitcoin payments without third-party involvement."
+    //     },
+    //     {
+    //       question: "Is it possible to run BTCPayServer without technical knowledge?",
+    //       answer: "Yes, many hosting services offer one-click deployments, so you can get started without deep technical skills."
+    //     },
+    //     {
+    //       question: "Can I accept both Bitcoin and Lightning payments?",
+    //       answer: "Absolutely! BTCPayServer supports both traditional Bitcoin on-chain payments and the Lightning Network."
+    //     },
+    //     {
+    //       question: "Is there a transaction fee for using BTCPayServer?",
+    //       answer: "No extra fees are charged by BTCPayServer itself. You only pay the standard network fees associated with Bitcoin transactions."
+    //     },
+    //     {
+    //       question: "Does BTCPayServer integrate with online stores?",
+    //       answer: "Yes, it supports plugins for popular e-commerce platforms like WooCommerce, Shopify (via third-party), and others."
+    //     },
+    //     {
+    //       question: "How do I secure my BTCPayServer setup?",
+    //       answer: "You can enhance security by keeping your server software up-to-date, using strong passwords, and running BTCPayServer behind a reverse proxy or firewall."
+    //     }
+    //   ];
       const [leftActiveIndex, setLeftActiveIndex] = useState(null);
 const [rightActiveIndex, setRightActiveIndex] = useState(null);
 
@@ -104,7 +106,7 @@ const toggleRightFaq = (index) => {
                }} />} */}
    <div className="custom-shadow" style={{backgroundColor:"#FFFFFF",padding:"20px",borderRadius:"20px"}}>
     <h5 style={{color:"#192534",fontWeight:"600", fontSize:"28px",textTransform:"capitalize"}}>General FAQ</h5>
-   {faqData.map((item, index) => (
+   {faqs?.faqItems?.general.map((item, index) => (
   <FaqItem
     key={index}
     isView={isView}
@@ -115,6 +117,8 @@ const toggleRightFaq = (index) => {
     onClick={() => toggleLeftFaq(index)}
     attributes={attributes}
     setAttributes={setAttributes}
+    faqCategory='general'
+
   />
 ))}
    </div>
@@ -126,7 +130,7 @@ const toggleRightFaq = (index) => {
               <div className="faq-right">
             <div className="custom-shadow" style={{backgroundColor:"#FFFFFF",padding:"20px",borderRadius:"20px",overflow:"hidden"}}>
             <h5 style={{color:"#192534",fontWeight:"600", fontSize:"28px",textTransform:"capitalize"}}>General FAQ</h5>
-            {faqItems.map((item, index) => (
+            {faqs?.faqItems?.generalTwo.map((item, index) => (
         <FaqItem isView={isView}
           key={index}
           index={index}
@@ -136,12 +140,13 @@ const toggleRightFaq = (index) => {
           onClick={() => toggleFaq(index)}
           attributes={attributes}
           setAttributes={setAttributes}
+          faqCategory='generalTwo'
         />
       ))}
             </div>
             <div className="custom-shadow" style={{backgroundColor:"#FFFFFF",padding:"20px",borderRadius:"20px",overflow:"hidden",marginTop:"20px"}}>
             <h5 style={{color:"#192534",fontWeight:"600", fontSize:"28px",textTransform:"capitalize"}}>Support</h5>
-            {faqItems.map((item, index) => (
+            {faqs?.faqItems?.support.map((item, index) => (
         <FaqItem isView={isView}
           key={index}
           index={index}
@@ -151,6 +156,7 @@ const toggleRightFaq = (index) => {
           onClick={() => toggleRightFaq(index)}
           attributes={attributes}
           setAttributes={setAttributes}
+          faqCategory='support'
         />
       ))}
             </div>

@@ -45987,25 +45987,33 @@ const Style1 = ({
   attributes,
   isView
 }) => {
-  const faqData = [{
-    question: "What is BTCPayServer used for?",
-    answer: "BTCPayServer is a self-hosted, open-source cryptocurrency payment processor that helps businesses accept Bitcoin payments without third-party involvement."
-  }, {
-    question: "Is it possible to run BTCPayServer without technical knowledge?",
-    answer: "Yes, many hosting services offer one-click deployments, so you can get started without deep technical skills."
-  }, {
-    question: "Can I accept both Bitcoin and Lightning payments?",
-    answer: "Absolutely! BTCPayServer supports both traditional Bitcoin on-chain payments and the Lightning Network."
-  }, {
-    question: "Is there a transaction fee for using BTCPayServer?",
-    answer: "No extra fees are charged by BTCPayServer itself. You only pay the standard network fees associated with Bitcoin transactions."
-  }, {
-    question: "Does BTCPayServer integrate with online stores?",
-    answer: "Yes, it supports plugins for popular e-commerce platforms like WooCommerce, Shopify (via third-party), and others."
-  }, {
-    question: "How do I secure my BTCPayServer setup?",
-    answer: "You can enhance security by keeping your server software up-to-date, using strong passwords, and running BTCPayServer behind a reverse proxy or firewall."
-  }];
+  console.log(faqs?.faqItems);
+  // const faqData = [
+  //     {
+  //       question: "What is BTCPayServer used for?",
+  //       answer: "BTCPayServer is a self-hosted, open-source cryptocurrency payment processor that helps businesses accept Bitcoin payments without third-party involvement."
+  //     },
+  //     {
+  //       question: "Is it possible to run BTCPayServer without technical knowledge?",
+  //       answer: "Yes, many hosting services offer one-click deployments, so you can get started without deep technical skills."
+  //     },
+  //     {
+  //       question: "Can I accept both Bitcoin and Lightning payments?",
+  //       answer: "Absolutely! BTCPayServer supports both traditional Bitcoin on-chain payments and the Lightning Network."
+  //     },
+  //     {
+  //       question: "Is there a transaction fee for using BTCPayServer?",
+  //       answer: "No extra fees are charged by BTCPayServer itself. You only pay the standard network fees associated with Bitcoin transactions."
+  //     },
+  //     {
+  //       question: "Does BTCPayServer integrate with online stores?",
+  //       answer: "Yes, it supports plugins for popular e-commerce platforms like WooCommerce, Shopify (via third-party), and others."
+  //     },
+  //     {
+  //       question: "How do I secure my BTCPayServer setup?",
+  //       answer: "You can enhance security by keeping your server software up-to-date, using strong passwords, and running BTCPayServer behind a reverse proxy or firewall."
+  //     }
+  //   ];
   const [leftActiveIndex, setLeftActiveIndex] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
   const [rightActiveIndex, setRightActiveIndex] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
   const toggleLeftFaq = index => {
@@ -46078,7 +46086,7 @@ const Style1 = ({
       fontSize: "28px",
       textTransform: "capitalize"
     }
-  }, "General FAQ"), faqData.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, "General FAQ"), faqs?.faqItems?.general.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
     key: index,
     isView: isView,
     index: index,
@@ -46087,7 +46095,8 @@ const Style1 = ({
     isActive: leftActiveIndex === index,
     onClick: () => toggleLeftFaq(index),
     attributes: attributes,
-    setAttributes: setAttributes
+    setAttributes: setAttributes,
+    faqCategory: "general"
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "faq-right"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -46105,7 +46114,7 @@ const Style1 = ({
       fontSize: "28px",
       textTransform: "capitalize"
     }
-  }, "General FAQ"), faqItems.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, "General FAQ"), faqs?.faqItems?.generalTwo.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
     isView: isView,
     key: index,
     index: index,
@@ -46114,7 +46123,8 @@ const Style1 = ({
     isActive: activeIndex === index,
     onClick: () => toggleFaq(index),
     attributes: attributes,
-    setAttributes: setAttributes
+    setAttributes: setAttributes,
+    faqCategory: "generalTwo"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-shadow",
     style: {
@@ -46131,7 +46141,7 @@ const Style1 = ({
       fontSize: "28px",
       textTransform: "capitalize"
     }
-  }, "Support"), faqItems.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, "Support"), faqs?.faqItems?.support.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
     isView: isView,
     key: index,
     index: index,
@@ -46140,7 +46150,8 @@ const Style1 = ({
     isActive: rightActiveIndex === index,
     onClick: () => toggleRightFaq(index),
     attributes: attributes,
-    setAttributes: setAttributes
+    setAttributes: setAttributes,
+    faqCategory: "support"
   })))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Style1);
@@ -46378,11 +46389,13 @@ const FaqItem = ({
   attributes,
   setAttributes,
   isView,
-  index
+  index,
+  faqCategory
 }) => {
   const {
     options,
-    faqItems
+    faqItems,
+    faqs
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `faq-item`
@@ -46396,9 +46409,22 @@ const FaqItem = ({
     className: "question",
     value: question,
     onChange: value => {
-      setAttributes({
-        faqItems: (0,_functions__WEBPACK_IMPORTED_MODULE_2__.updateData)(faqItems, value, index, "question")
-      });
+      // setAttributes({faqItems:updateData(faqItems,value,index,"question")})
+      if (options?.selectedTheme === "theme1") {
+        setAttributes({
+          faqs: {
+            ...faqs,
+            faqItems: {
+              ...faqs?.faqItems,
+              [faqCategory]: (0,_functions__WEBPACK_IMPORTED_MODULE_2__.updateData)(faqs?.faqItems?.[faqCategory], value, index, "question")
+            }
+          }
+        });
+      } else {
+        setAttributes({
+          faqItems: (0,_functions__WEBPACK_IMPORTED_MODULE_2__.updateData)(faqItems, value, index, "question")
+        });
+      }
     }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
     className: "toggle-btn"
@@ -46420,9 +46446,22 @@ const FaqItem = ({
     className: "faq-answer-dec",
     value: answer,
     onChange: value => {
-      setAttributes({
-        faqItems: (0,_functions__WEBPACK_IMPORTED_MODULE_2__.updateData)(faqItems, value, index, "answer")
-      });
+      // setAttributes({faqItems:updateData(faqItems,value,index,"answer")})
+      if (options?.selectedTheme === "theme1") {
+        setAttributes({
+          faqs: {
+            ...faqs,
+            faqItems: {
+              ...faqs?.faqItems,
+              [faqCategory]: (0,_functions__WEBPACK_IMPORTED_MODULE_2__.updateData)(faqs?.faqItems?.[faqCategory], value, index, "answer")
+            }
+          }
+        });
+      } else {
+        setAttributes({
+          faqItems: (0,_functions__WEBPACK_IMPORTED_MODULE_2__.updateData)(faqItems, value, index, "answer")
+        });
+      }
     }
   })));
 };
@@ -50445,7 +50484,7 @@ module.exports = /*#__PURE__*/JSON.parse('[{"terms":["Digit Zero","nada","none",
 /***/ ((module) => {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"b-blocks/test-purpose","version":"1.0.0","title":"FAQ!","category":"widgets","description":"Short description of the Test Purpose","keywords":["Faq","faqs","FAQS"],"textdomain":"b-blocks","attributes":{"align":{"type":"string","default":"full"},"alignment":{"type":"string","default":"center"},"styles":{"type":"object","default":{"width":{"desktop":"1350px","tablet":"768px","mobile":"500px"},"gap":{"desktop":"20px","tablet":"20","mobile":"20"},"bg":{"type":"solid","color":"#F8F9FA","gradient":"linear-gradient(135deg,rgb(34,23,23) 0%,rgb(13,13,15) 100%)"},"padding":{"desktop":{"top":"100px","right":"50px","bottom":"100px","left":"50px"},"tablet":{"top":"80px","right":"40px","bottom":"80px","left":"40px"},"mobile":{"top":"50px","right":"20px","bottom":"50px","left":"20px"}},"margin":{"desktop":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"tablet":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"mobile":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"radius":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"question":{"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":600,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":16,"tablet":16,"mobile":14},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"1.5","letterSpace":"0px"},"colors":{"color":"#192534","bgType":"solid","bg":""},"padding":{"top":"5px","right":"14px","bottom":"5px","left":"14px"},"gap":"0","active":{"color":"#451CB3","bgType":"solid","bg":"#E8DFFF","gradient":""}},"answer":{"colors":{"color":"#616A72","bgType":"solid","bg":""},"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":400,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":16,"tablet":16,"mobile":14},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"1.5","letterSpace":"0px"},"padding":{"top":"5px","right":"5px","bottom":"5px","left":"5px"},"radius":{"top":"10px","right":"10px","bottom":"10px","left":"10px"}},"title":{"color":"#192534","highlightColor":{"type":"gradient","color":"#c7f32f","gradient":"linear-gradient(white 30%, #c7f32f 65%)"},"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":700,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":48,"tablet":32,"mobile":25},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"}},"description":{"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":400,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":17,"tablet":16,"mobile":17},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"},"color":"rgba(252, 252, 253, 0.7)"},"button":{"colors":{"color":"#FFFFFF","bgType":"solid","bg":"#6328FF"},"padding":{"top":"4px","right":"8px","bottom":"4px","left":"8px"},"radius":{"top":"4px","right":"4px","bottom":"4px","left":"4px"},"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":500,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":12,"tablet":12,"mobile":12},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"}}}},"faqs":{"type":"object","default":{"title":"Have Any Question","buttonText":"FAQ","description":"","buttonIcon":"<svg xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\"><path fill=\\"white\\" fill-rule=\\"evenodd\\" d=\\"M12 21a9 9 0 1 0 0-18a9 9 0 0 0 0 18m-.232-5.36l5-6l-1.536-1.28l-4.3 5.159l-2.225-2.226l-1.414 1.414l3 3l.774.774z\\" clip-rule=\\"evenodd\\"></path></svg>","buttonLink":"#"}},"faqItems":{"type":"array","default":[{"question":"Does BTCPayServer cost extra?","answer":"No, BTCPayServer is completely free and open-source software."},{"question":"Does my Voltage Lightning Node connect to BTC Server automatically?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"Can I accept payments on chain?","answer":"Yes, you can accept both on-chain and Lightning payments through the platform."}]},"options":{"type":"object","default":{"selectedTheme":"theme1","icon":"<svg  stroke-width=\\"0\\" viewBox=\\"0 0 512 512\\" height=\\"16\\" width=\\"16\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z\\"></path></svg>","isLinkTarget":true,"isShowButton":true,"contentAlignment":"center"}}},"supports":{"align":["wide","full"],"html":false},"example":{"attributes":{}},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./view.css","render":"file:./render.php","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"b-blocks/test-purpose","version":"1.0.0","title":"FAQ!","category":"widgets","description":"Short description of the Test Purpose","keywords":["Faq","faqs","FAQS"],"textdomain":"b-blocks","attributes":{"align":{"type":"string","default":"full"},"alignment":{"type":"string","default":"center"},"styles":{"type":"object","default":{"width":{"desktop":"1350px","tablet":"768px","mobile":"500px"},"gap":{"desktop":"20px","tablet":"20","mobile":"20"},"bg":{"type":"solid","color":"#F8F9FA","gradient":"linear-gradient(135deg,rgb(34,23,23) 0%,rgb(13,13,15) 100%)"},"padding":{"desktop":{"top":"100px","right":"50px","bottom":"100px","left":"50px"},"tablet":{"top":"80px","right":"40px","bottom":"80px","left":"40px"},"mobile":{"top":"50px","right":"20px","bottom":"50px","left":"20px"}},"margin":{"desktop":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"tablet":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"mobile":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"radius":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"question":{"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":600,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":16,"tablet":16,"mobile":14},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"1.5","letterSpace":"0px"},"colors":{"color":"#192534","bgType":"solid","bg":""},"padding":{"top":"5px","right":"14px","bottom":"5px","left":"14px"},"gap":"0","active":{"color":"#451CB3","bgType":"solid","bg":"#E8DFFF","gradient":""}},"answer":{"colors":{"color":"#616A72","bgType":"solid","bg":""},"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":400,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":16,"tablet":16,"mobile":14},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"1.5","letterSpace":"0px"},"padding":{"top":"5px","right":"5px","bottom":"5px","left":"5px"},"radius":{"top":"10px","right":"10px","bottom":"10px","left":"10px"}},"title":{"color":"#192534","highlightColor":{"type":"gradient","color":"#c7f32f","gradient":"linear-gradient(white 30%, #c7f32f 65%)"},"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":700,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":48,"tablet":32,"mobile":25},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"}},"description":{"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":400,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":17,"tablet":16,"mobile":17},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"},"color":"rgba(252, 252, 253, 0.7)"},"button":{"colors":{"color":"#FFFFFF","bgType":"solid","bg":"#6328FF"},"padding":{"top":"4px","right":"8px","bottom":"4px","left":"8px"},"radius":{"top":"4px","right":"4px","bottom":"4px","left":"4px"},"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":500,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":12,"tablet":12,"mobile":12},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"}}}},"faqs":{"type":"object","default":{"title":"Have Any Question","buttonText":"FAQ","description":"","buttonIcon":"<svg xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\"><path fill=\\"white\\" fill-rule=\\"evenodd\\" d=\\"M12 21a9 9 0 1 0 0-18a9 9 0 0 0 0 18m-.232-5.36l5-6l-1.536-1.28l-4.3 5.159l-2.225-2.226l-1.414 1.414l3 3l.774.774z\\" clip-rule=\\"evenodd\\"></path></svg>","buttonLink":"#","faqItems":{"general":[{"question":"Does BTCPayServer cost extra?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"Does my Voltage Lightning Node connect to BTC Server automatically?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"Can I accept payments on chain?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"What is BTC Pay Server?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"How to did handle my data","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"How doesit generate responses","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."}],"generalTwo":[{"question":"Does my Voltage Lightning Node connect to BTC Server?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"Can I accept payments on chain?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"What is BTC Pay Server?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."}],"support":[{"question":"Does my Voltage Lightning Node connect to BTC Server?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"Can I accept payments on chain?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"What is BTC Pay Server?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."}]}}},"faqItems":{"type":"array","default":[{"question":"Does BTCPayServer cost extra?","answer":"No, BTCPayServer is completely free and open-source software."},{"question":"Does my Voltage Lightning Node connect to BTC Server automatically?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"Can I accept payments on chain?","answer":"Yes, you can accept both on-chain and Lightning payments through the platform."}]},"options":{"type":"object","default":{"selectedTheme":"theme1","icon":"<svg  stroke-width=\\"0\\" viewBox=\\"0 0 512 512\\" height=\\"16\\" width=\\"16\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z\\"></path></svg>","isLinkTarget":true,"isShowButton":true,"contentAlignment":"center"}}},"supports":{"align":["wide","full"],"html":false},"example":{"attributes":{}},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./view.css","render":"file:./render.php","viewScript":"file:./view.js"}');
 
 /***/ })
 

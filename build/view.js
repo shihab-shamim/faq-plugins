@@ -1232,25 +1232,33 @@ const Style1 = ({
   attributes,
   isView
 }) => {
-  const faqData = [{
-    question: "What is BTCPayServer used for?",
-    answer: "BTCPayServer is a self-hosted, open-source cryptocurrency payment processor that helps businesses accept Bitcoin payments without third-party involvement."
-  }, {
-    question: "Is it possible to run BTCPayServer without technical knowledge?",
-    answer: "Yes, many hosting services offer one-click deployments, so you can get started without deep technical skills."
-  }, {
-    question: "Can I accept both Bitcoin and Lightning payments?",
-    answer: "Absolutely! BTCPayServer supports both traditional Bitcoin on-chain payments and the Lightning Network."
-  }, {
-    question: "Is there a transaction fee for using BTCPayServer?",
-    answer: "No extra fees are charged by BTCPayServer itself. You only pay the standard network fees associated with Bitcoin transactions."
-  }, {
-    question: "Does BTCPayServer integrate with online stores?",
-    answer: "Yes, it supports plugins for popular e-commerce platforms like WooCommerce, Shopify (via third-party), and others."
-  }, {
-    question: "How do I secure my BTCPayServer setup?",
-    answer: "You can enhance security by keeping your server software up-to-date, using strong passwords, and running BTCPayServer behind a reverse proxy or firewall."
-  }];
+  console.log(faqs?.faqItems);
+  // const faqData = [
+  //     {
+  //       question: "What is BTCPayServer used for?",
+  //       answer: "BTCPayServer is a self-hosted, open-source cryptocurrency payment processor that helps businesses accept Bitcoin payments without third-party involvement."
+  //     },
+  //     {
+  //       question: "Is it possible to run BTCPayServer without technical knowledge?",
+  //       answer: "Yes, many hosting services offer one-click deployments, so you can get started without deep technical skills."
+  //     },
+  //     {
+  //       question: "Can I accept both Bitcoin and Lightning payments?",
+  //       answer: "Absolutely! BTCPayServer supports both traditional Bitcoin on-chain payments and the Lightning Network."
+  //     },
+  //     {
+  //       question: "Is there a transaction fee for using BTCPayServer?",
+  //       answer: "No extra fees are charged by BTCPayServer itself. You only pay the standard network fees associated with Bitcoin transactions."
+  //     },
+  //     {
+  //       question: "Does BTCPayServer integrate with online stores?",
+  //       answer: "Yes, it supports plugins for popular e-commerce platforms like WooCommerce, Shopify (via third-party), and others."
+  //     },
+  //     {
+  //       question: "How do I secure my BTCPayServer setup?",
+  //       answer: "You can enhance security by keeping your server software up-to-date, using strong passwords, and running BTCPayServer behind a reverse proxy or firewall."
+  //     }
+  //   ];
   const [leftActiveIndex, setLeftActiveIndex] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
   const [rightActiveIndex, setRightActiveIndex] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
   const toggleLeftFaq = index => {
@@ -1323,7 +1331,7 @@ const Style1 = ({
       fontSize: "28px",
       textTransform: "capitalize"
     }
-  }, "General FAQ"), faqData.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, "General FAQ"), faqs?.faqItems?.general.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
     key: index,
     isView: isView,
     index: index,
@@ -1332,7 +1340,8 @@ const Style1 = ({
     isActive: leftActiveIndex === index,
     onClick: () => toggleLeftFaq(index),
     attributes: attributes,
-    setAttributes: setAttributes
+    setAttributes: setAttributes,
+    faqCategory: "general"
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "faq-right"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -1350,7 +1359,7 @@ const Style1 = ({
       fontSize: "28px",
       textTransform: "capitalize"
     }
-  }, "General FAQ"), faqItems.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, "General FAQ"), faqs?.faqItems?.generalTwo.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
     isView: isView,
     key: index,
     index: index,
@@ -1359,7 +1368,8 @@ const Style1 = ({
     isActive: activeIndex === index,
     onClick: () => toggleFaq(index),
     attributes: attributes,
-    setAttributes: setAttributes
+    setAttributes: setAttributes,
+    faqCategory: "generalTwo"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-shadow",
     style: {
@@ -1376,7 +1386,7 @@ const Style1 = ({
       fontSize: "28px",
       textTransform: "capitalize"
     }
-  }, "Support"), faqItems.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, "Support"), faqs?.faqItems?.support.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
     isView: isView,
     key: index,
     index: index,
@@ -1385,7 +1395,8 @@ const Style1 = ({
     isActive: rightActiveIndex === index,
     onClick: () => toggleRightFaq(index),
     attributes: attributes,
-    setAttributes: setAttributes
+    setAttributes: setAttributes,
+    faqCategory: "support"
   })))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Style1);
@@ -1620,11 +1631,13 @@ const FaqItem = ({
   attributes,
   setAttributes,
   isView,
-  index
+  index,
+  faqCategory
 }) => {
   const {
     options,
-    faqItems
+    faqItems,
+    faqs
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `faq-item`
@@ -1638,9 +1651,22 @@ const FaqItem = ({
     className: "question",
     value: question,
     onChange: value => {
-      setAttributes({
-        faqItems: (0,_functions__WEBPACK_IMPORTED_MODULE_2__.updateData)(faqItems, value, index, "question")
-      });
+      // setAttributes({faqItems:updateData(faqItems,value,index,"question")})
+      if (options?.selectedTheme === "theme1") {
+        setAttributes({
+          faqs: {
+            ...faqs,
+            faqItems: {
+              ...faqs?.faqItems,
+              [faqCategory]: (0,_functions__WEBPACK_IMPORTED_MODULE_2__.updateData)(faqs?.faqItems?.[faqCategory], value, index, "question")
+            }
+          }
+        });
+      } else {
+        setAttributes({
+          faqItems: (0,_functions__WEBPACK_IMPORTED_MODULE_2__.updateData)(faqItems, value, index, "question")
+        });
+      }
     }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
     className: "toggle-btn"
@@ -1662,9 +1688,22 @@ const FaqItem = ({
     className: "faq-answer-dec",
     value: answer,
     onChange: value => {
-      setAttributes({
-        faqItems: (0,_functions__WEBPACK_IMPORTED_MODULE_2__.updateData)(faqItems, value, index, "answer")
-      });
+      // setAttributes({faqItems:updateData(faqItems,value,index,"answer")})
+      if (options?.selectedTheme === "theme1") {
+        setAttributes({
+          faqs: {
+            ...faqs,
+            faqItems: {
+              ...faqs?.faqItems,
+              [faqCategory]: (0,_functions__WEBPACK_IMPORTED_MODULE_2__.updateData)(faqs?.faqItems?.[faqCategory], value, index, "answer")
+            }
+          }
+        });
+      } else {
+        setAttributes({
+          faqItems: (0,_functions__WEBPACK_IMPORTED_MODULE_2__.updateData)(faqItems, value, index, "answer")
+        });
+      }
     }
   })));
 };

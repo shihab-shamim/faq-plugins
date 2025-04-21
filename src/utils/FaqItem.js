@@ -1,15 +1,32 @@
 import { RichText } from "@wordpress/block-editor";
 import { updateData } from "./functions";
 
-const FaqItem = ({ question, answer, isActive, onClick,attributes,setAttributes,isView,index}) => {
-    const {options,faqItems}=attributes;
+const FaqItem = ({ question, answer, isActive, onClick,attributes,setAttributes,isView,index,faqCategory}) => {
+    const {options,faqItems,faqs}=attributes;
     
 
   return (
     <div  className={`faq-item`}>
       <div className={`faq-question ${isActive ? "active" : ""}`}   onClick={onClick}> 
         { isView? <span className="question">{question}</span>: <RichText placeholder="Enter Your Questions Here..." className="question" value={question} onChange={(value)=>{
-            setAttributes({faqItems:updateData(faqItems,value,index,"question")})
+            // setAttributes({faqItems:updateData(faqItems,value,index,"question")})
+            if(options?.selectedTheme==="theme1"){
+              setAttributes({
+                faqs: {
+                    ...faqs,
+                    faqItems: {
+                        ...faqs?.faqItems,
+                        [faqCategory]: updateData(faqs?.faqItems?.[faqCategory], value, index, "question")
+                    }
+                }
+            });
+
+            }
+            else{
+              setAttributes({faqItems:updateData(faqItems,value,index,"question")})
+
+            }
+            
         }} />
     }
         <button className="toggle-btn">
@@ -20,7 +37,23 @@ const FaqItem = ({ question, answer, isActive, onClick,attributes,setAttributes,
       </div>
       <div className={`faq-answer`} style={{ maxHeight: isActive ? "400px" : "0",  padding:isActive?"10px 10px":"0px 10px"}}>
         { isView? <span className="faq-answer-dec">{answer}</span>:<RichText placeholder="Enter Your Answer Here..." className="faq-answer-dec" value={answer} onChange={(value)=>{
-            setAttributes({faqItems:updateData(faqItems,value,index,"answer")})
+            // setAttributes({faqItems:updateData(faqItems,value,index,"answer")})
+             if(options?.selectedTheme==="theme1"){
+              setAttributes({
+                faqs: {
+                    ...faqs,
+                    faqItems: {
+                        ...faqs?.faqItems,
+                        [faqCategory]: updateData(faqs?.faqItems?.[faqCategory], value, index, "answer")
+                    }
+                }
+            });
+
+            }
+            else{
+              setAttributes({faqItems:updateData(faqItems,value,index,"answer")})
+
+            }
         }}  />}
       </div>
     </div> 
