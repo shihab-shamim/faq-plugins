@@ -26,6 +26,12 @@ export const themeSwitch=(theme="theme1",attributes)=>produce(attributes,(draft)
 
   switch(theme){
     case "theme1":
+      draft["styles"]["question"]["active"]={
+        color: "#451CB3",
+        bgType: "solid",
+        bg: "#E8DFFF",
+        gradient: "linear-gradient(135deg, #E8DFFF, #C8B6FF)"
+      };
       draft["styles"]["section"]["padding"]={
         desktop: {
           top: "50px",

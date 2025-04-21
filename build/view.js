@@ -1334,14 +1334,28 @@ const Style1 = ({
       padding: "20px",
       borderRadius: "20px"
     }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h5", {
+  }, isView ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h5", {
     style: {
       color: "#192534",
       fontWeight: "600",
       fontSize: "28px",
       textTransform: "capitalize"
     }
-  }, faqs?.faqItems?.titleOne), faqs?.faqItems?.general.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, faqs?.faqItems?.titleOne) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    style: {
+      color: "#192534",
+      fontWeight: "600",
+      fontSize: "28px",
+      textTransform: "capitalize"
+    },
+    value: faqs?.faqItems?.titleOne,
+    onChange: value => {
+      // console.log(value);
+      setAttributes({
+        faqs: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.updateData)(faqs, value, "faqItems", "titleOne")
+      });
+    }
+  }), faqs?.faqItems?.general.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
     key: index,
     isView: isView,
     index: index,
@@ -1362,14 +1376,27 @@ const Style1 = ({
       borderRadius: "20px",
       overflow: "hidden"
     }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h5", {
+  }, isView ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h5", {
     style: {
       color: "#192534",
       fontWeight: "600",
       fontSize: "28px",
       textTransform: "capitalize"
     }
-  }, faqs?.faqItems?.titleTwo), faqs?.faqItems?.generalTwo.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, faqs?.faqItems?.titleTwo) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    style: {
+      color: "#192534",
+      fontWeight: "600",
+      fontSize: "28px",
+      textTransform: "capitalize"
+    },
+    value: faqs?.faqItems?.titleTwo,
+    onChange: value => {
+      setAttributes({
+        faqs: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.updateData)(faqs, value, "faqItems", "titleTwo")
+      });
+    }
+  }), faqs?.faqItems?.generalTwo.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
     isView: isView,
     key: index,
     index: index,
@@ -1388,14 +1415,27 @@ const Style1 = ({
       borderRadius: "20px",
       overflow: "hidden"
     }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h5", {
+  }, isView ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h5", {
     style: {
       color: "#192534",
       fontWeight: "600",
       fontSize: "28px",
       textTransform: "capitalize"
     }
-  }, faqs?.faqItems?.titleThree), faqs?.faqItems?.support.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, faqs?.faqItems?.titleThree) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    style: {
+      color: "#192534",
+      fontWeight: "600",
+      fontSize: "28px",
+      textTransform: "capitalize"
+    },
+    value: faqs?.faqItems?.titleThree,
+    onChange: value => {
+      setAttributes({
+        faqs: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.updateData)(faqs, value, "faqItems", "titleThree")
+      });
+    }
+  }), faqs?.faqItems?.support.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
     isView: isView,
     key: index,
     index: index,
@@ -1754,6 +1794,12 @@ const themeSwitch = (theme = "theme1", attributes) => (0,immer__WEBPACK_IMPORTED
   draft["options"]["selectedTheme"] = theme;
   switch (theme) {
     case "theme1":
+      draft["styles"]["question"]["active"] = {
+        color: "#451CB3",
+        bgType: "solid",
+        bg: "#E8DFFF",
+        gradient: "linear-gradient(135deg, #E8DFFF, #C8B6FF)"
+      };
       draft["styles"]["section"]["padding"] = {
         desktop: {
           top: "50px",

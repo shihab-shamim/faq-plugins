@@ -6,6 +6,7 @@ import { updateData } from "../../utils/functions";
 
 const Style1 = ({faqs,setAttributes,attributes,isView}) => {
 
+
   
    
       const [leftActiveIndex, setLeftActiveIndex] = useState(null);
@@ -74,7 +75,10 @@ const toggleRightFaq = (index) => {
              
                  
    <div className="custom-shadow" style={{backgroundColor:"#FFFFFF",padding:"20px",borderRadius:"20px"}}>
-    <h5 style={{color:"#192534",fontWeight:"600", fontSize:"28px",textTransform:"capitalize"}}>{faqs?.faqItems?.titleOne}</h5>
+    {isView?<h5 style={{color:"#192534",fontWeight:"600", fontSize:"28px",textTransform:"capitalize"}}>{faqs?.faqItems?.titleOne}</h5>:<RichText style={{color:"#192534",fontWeight:"600", fontSize:"28px",textTransform:"capitalize"}} value={faqs?.faqItems?.titleOne}   onChange={(value)=>{
+      // console.log(value);
+      setAttributes({faqs:updateData(faqs,value,"faqItems","titleOne")})
+    }} ></RichText>}
    {faqs?.faqItems?.general.map((item, index) => (
   <FaqItem
     key={index}
@@ -98,7 +102,10 @@ const toggleRightFaq = (index) => {
     
               <div className="faq-right">
             <div className="custom-shadow" style={{backgroundColor:"#FFFFFF",padding:"20px",borderRadius:"20px",overflow:"hidden"}}>
-            <h5 style={{color:"#192534",fontWeight:"600", fontSize:"28px",textTransform:"capitalize"}}>{faqs?.faqItems?.titleTwo}</h5>
+            {isView?<h5 style={{color:"#192534",fontWeight:"600", fontSize:"28px",textTransform:"capitalize"}}>{faqs?.faqItems?.titleTwo}</h5>:<RichText style={{color:"#192534",fontWeight:"600", fontSize:"28px",textTransform:"capitalize"}} value={faqs?.faqItems?.titleTwo}   onChange={(value)=>{
+      
+      setAttributes({faqs:updateData(faqs,value,"faqItems","titleTwo")})
+    }} ></RichText>}
             {faqs?.faqItems?.generalTwo.map((item, index) => (
         <FaqItem isView={isView}
           key={index}
@@ -114,7 +121,10 @@ const toggleRightFaq = (index) => {
       ))}
             </div>
             <div className="custom-shadow support-section" style={{backgroundColor:"#FFFFFF",padding:"20px",borderRadius:"20px",overflow:"hidden"}}>
-            <h5 style={{color:"#192534",fontWeight:"600", fontSize:"28px",textTransform:"capitalize"}}>{faqs?.faqItems?.titleThree}</h5>
+            {isView?<h5 style={{color:"#192534",fontWeight:"600", fontSize:"28px",textTransform:"capitalize"}}>{faqs?.faqItems?.titleThree}</h5>:<RichText style={{color:"#192534",fontWeight:"600", fontSize:"28px",textTransform:"capitalize"}} value={faqs?.faqItems?.titleThree}   onChange={(value)=>{
+      
+      setAttributes({faqs:updateData(faqs,value,"faqItems","titleThree")})
+    }} ></RichText>}
             {faqs?.faqItems?.support.map((item, index) => (
         <FaqItem isView={isView}
           key={index}
