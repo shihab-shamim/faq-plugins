@@ -36,7 +36,7 @@
 				},
                 "bg":{
 					"type":"solid",
-					"color":"#000000",
+					"color":"#F8F9FA",
 					"gradient": "linear-gradient(135deg,rgb(34,23,23) 0%,rgb(13,13,15) 100%)"
 				},
                 "padding":{
@@ -89,24 +89,24 @@
 							"typho":{
 								"fontFamily":"Archivo",
 								"fontCategory": "sans-serif",
-								"fontWeight": 400,
+								"fontWeight": 600,
 								"fontVariant": "400",
 								"isUploadFont": true,
 								"fontSize": {
-								  "desktop": 18,
+								  "desktop": 16,
 								  "tablet": 16,
 								  "mobile": 14
 								},
 								"fontStyle": "normal",
 								"textTransform": "none",
 								"textDecoration": "none",
-								"lineHeight": "135%",
+								"lineHeight": "1.5",
 								"letterSpace": "0px"
 							  },
 							  "colors":{
-								"color": "#fcecfd",
+								"color": "#192534",
 								"bgType": "solid",
-								"bg": "#0D0E10"
+								"bg": ""
 							  },
 							  "padding": {
 							"top": "5px",
@@ -114,20 +114,20 @@
 							"bottom": "5px",
 							"left": "14px"
 						},
-						"gap":"5px",
+						"gap":"0",
 						"active":{
-							"color":"",
-							"bgType":"",
-							"bg":"",
+							"color":"#451CB3",
+							"bgType":"solid",
+							"bg":"#E8DFFF",
 							"gradient":""
 						}
 
 						 },
 						 "answer":{
 							"colors":{
-								"color": "#888",
+								"color": "#616A72",
 								"bgType": "solid",
-								"bg": "#0D0E10"
+								"bg": ""
 							},
 							"typho":{
 								"fontFamily":"Archivo",
@@ -143,7 +143,7 @@
 								"fontStyle": "normal",
 								"textTransform": "none",
 								"textDecoration": "none",
-								"lineHeight": "135%",
+								"lineHeight": "1.5",
 								"letterSpace": "0px"
 							  },
 							  "padding":{
@@ -162,7 +162,7 @@
 
 						 },
 						 "title":{
-							"color":"rgba(252, 252, 253, 1)",
+							"color":"#192534",
 							 "highlightColor":{
 								"type":"gradient",
 					      "color":"#c7f32f",
@@ -209,32 +209,32 @@
 						 },
 						 "button":{
 							"colors":{
-								"color": "#000000",
+								"color": "#FFFFFF",
 								"bgType": "solid",
-								"bg": "#c5fb00"
+								"bg": "#6328FF"
 							  },
 							  "padding":{
-								"top":"10px",
-								"right":"20px",
-								"bottom":"10px",
-								"left":"20px"
+								"top":"4px",
+								"right":"8px",
+								"bottom":"4px",
+								"left":"8px"
 							  },
 							  "radius":{
-								"top":"8px",
-								"right":"8px",
-								"bottom":"8px",
-								"left":"8px"
+								"top":"4px",
+								"right":"4px",
+								"bottom":"4px",
+								"left":"4px"
 							  },
 							  "typho":{
 								"fontFamily":"Archivo",
 								"fontCategory": "sans-serif",
-								"fontWeight": 600,
+								"fontWeight": 500,
 								"fontVariant": "400",
 								"isUploadFont": true,
 								"fontSize": {
-								  "desktop": 18,
-								  "tablet": 15,
-								  "mobile": 13
+								  "desktop": 12,
+								  "tablet": 12,
+								  "mobile": 12
 								},
 								"fontStyle": "normal",
 								"textTransform": "none",
@@ -250,10 +250,10 @@
 		"faqs":{
 			"type":"object",
 			"default":{
-				"title":"Frequently asked Questions",
-				"buttonText":"Contact Us Now ",
-				"description":"Discover clarity and insights as we unravel answers to your questions",
-				"buttonIcon": "<svg stroke='currentColor' fill='currentColor' strokeWidth='0' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'><path fillRule='evenodd' d='M10.146 4.646a.5.5 0 01.708 0l3 3a.5.5 0 010 .708l-3 3a.5.5 0 01-.708-.708L12.793 8l-2.647-2.646a.5.5 0 010-.708z' clipRule='evenodd'/><path fillRule='evenodd' d='M2 8a.5.5 0 01.5-.5H13a.5.5 0 010 1H2.5A.5.5 0 012 8z' clipRule='evenodd'/></svg>",
+				"title":"Have Any Question",
+				"buttonText":"FAQ",
+				"description":"",
+				"buttonIcon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1em\" height=\"1em\" viewBox=\"0 0 24 24\"><path fill=\"white\" fill-rule=\"evenodd\" d=\"M12 21a9 9 0 1 0 0-18a9 9 0 0 0 0 18m-.232-5.36l5-6l-1.536-1.28l-4.3 5.159l-2.225-2.226l-1.414 1.414l3 3l.774.774z\" clip-rule=\"evenodd\"></path></svg>",
 				"buttonLink":"#"
 				
 			}

@@ -1710,8 +1710,8 @@ const themeSwitch = (theme = "theme1", attributes) => (0,immer__WEBPACK_IMPORTED
       draft["faqs"] = {
         title: "Have Any Question",
         buttonText: "FAQ",
-        description: "Discover clarity and insights as we unravel answers to your questions",
-        buttonIcon: "  <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1em\" height=\"1em\" viewBox=\"0 0 24 24\"><path fill=\"white\" fill-rule=\"evenodd\" d=\"M12 21a9 9 0 1 0 0-18a9 9 0 0 0 0 18m-.232-5.36l5-6l-1.536-1.28l-4.3 5.159l-2.225-2.226l-1.414 1.414l3 3l.774.774z\" clip-rule=\"evenodd\"></path></svg>",
+        description: "",
+        buttonIcon: "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1em\" height=\"1em\" viewBox=\"0 0 24 24\"><path fill=\"white\" fill-rule=\"evenodd\" d=\"M12 21a9 9 0 1 0 0-18a9 9 0 0 0 0 18m-.232-5.36l5-6l-1.536-1.28l-4.3 5.159l-2.225-2.226l-1.414 1.414l3 3l.774.774z\" clip-rule=\"evenodd\"></path></svg>",
         buttonLink: "#"
       };
       draft["styles"]["bg"] = {
@@ -1786,6 +1786,41 @@ const themeSwitch = (theme = "theme1", attributes) => (0,immer__WEBPACK_IMPORTED
         desktop: "50px",
         tablet: "40px",
         mobile: "30px"
+      };
+      draft["styles"]["title"]["color"] = "#192534";
+      draft["styles"]["button"]["colors"] = {
+        color: "#FFFFFF",
+        bgType: "solid",
+        bg: "#6328FF"
+      };
+      draft["styles"]["button"]["padding"] = {
+        top: "4px",
+        right: "8px",
+        bottom: "4px",
+        left: "8px"
+      };
+      draft["styles"]["button"]["radius"] = {
+        top: "4px",
+        right: "4px",
+        bottom: "4px",
+        left: "4px"
+      };
+      draft["styles"]["button"]["typho"] = {
+        fontFamily: "Archivo",
+        fontCategory: "sans-serif",
+        fontWeight: 500,
+        fontVariant: "regular",
+        isUploadFont: true,
+        fontSize: {
+          desktop: 12,
+          tablet: 12,
+          mobile: 12
+        },
+        fontStyle: "normal",
+        textTransform: "none",
+        textDecoration: "none",
+        lineHeight: "135%",
+        letterSpace: "0px"
       };
       break;
     case "theme2":
