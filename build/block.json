@@ -41,16 +41,16 @@
         },
         "padding": {
           "desktop": {
-            "top": "100px",
-            "right": "50px",
-            "bottom": "100px",
-            "left": "50px"
+            "top": "0",
+            "right": "0",
+            "bottom": "0",
+            "left": "0"
           },
           "tablet": {
-            "top": "80px",
-            "right": "40px",
-            "bottom": "80px",
-            "left": "40px"
+            "top": "",
+            "right": "",
+            "bottom": "",
+            "left": ""
           },
           "mobile": {
             "top": "5px",

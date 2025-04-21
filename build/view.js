@@ -1920,6 +1920,26 @@ const themeSwitch = (theme = "theme1", attributes) => (0,immer__WEBPACK_IMPORTED
           answer: "Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."
         }]
       };
+      draft["styles"]["padding"] = {
+        desktop: {
+          top: "0",
+          right: "0",
+          bottom: "0",
+          left: "0"
+        },
+        tablet: {
+          top: "",
+          right: "",
+          bottom: "",
+          left: ""
+        },
+        mobile: {
+          top: "5px",
+          right: "5px",
+          bottom: "5px",
+          left: "5px"
+        }
+      };
       break;
     case "theme2":
       draft["faqItems"] = [{
@@ -2097,6 +2117,26 @@ const themeSwitch = (theme = "theme1", attributes) => (0,immer__WEBPACK_IMPORTED
         tablet: "40px",
         mobile: "30px"
       };
+      draft["styles"]["padding"] = {
+        desktop: {
+          top: "100px",
+          right: "50px",
+          bottom: "100px",
+          left: "50px"
+        },
+        tablet: {
+          top: "80px",
+          right: "60px",
+          bottom: "80px",
+          left: "60px"
+        },
+        mobile: {
+          top: "5px",
+          right: "5px",
+          bottom: "5px",
+          left: "5px"
+        }
+      };
       break;
     case "theme3":
       draft["options"]["isShowButton"] = true;
@@ -2263,6 +2303,26 @@ const themeSwitch = (theme = "theme1", attributes) => (0,immer__WEBPACK_IMPORTED
         desktop: "120px",
         tablet: "40px",
         mobile: "30px"
+      };
+      draft["styles"]["padding"] = {
+        desktop: {
+          top: "100px",
+          right: "50px",
+          bottom: "100px",
+          left: "50px"
+        },
+        tablet: {
+          top: "80px",
+          right: "60px",
+          bottom: "80px",
+          left: "60px"
+        },
+        mobile: {
+          top: "5px",
+          right: "5px",
+          bottom: "5px",
+          left: "5px"
+        }
       };
       break;
   }

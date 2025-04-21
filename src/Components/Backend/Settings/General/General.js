@@ -40,14 +40,14 @@ const General = ({ attributes, setAttributes,device}) => {
 							answer: "New Answer."}} design="sortable"  attributes={attributes} setAttributes={setAttributes} arrKey="faqItems" itemLabel="FAQ" ItemSettings={FaqSetting}  />
     </PanelBody>
  
-    <PanelBody className='bPlPanelBody' title={__('Layouts' , 'b-blocks')} initialOpen={false}>
+    <PanelBody className='bPlPanelBody' title={__('Layout' , 'b-blocks')} initialOpen={false}>
       <TextControl  placeholder='Title...' label="Title" value={faqs?.title} onChange={(value)=>{setAttributes({faqs:updateData(faqs,value,"title")})}}/>
-      <TextControl placeholder='Description...' label="Descriptions" value={faqs?.description} onChange={(value)=>{setAttributes({faqs:updateData(faqs,value,"description")})}}/>
+      {options?.selectedTheme==="theme1"?"":<TextControl placeholder='Description...' label="Descriptions" value={faqs?.description} onChange={(value)=>{setAttributes({faqs:updateData(faqs,value,"description")})}}/>}
     
-    {   options?.selectedTheme ==="theme1" || <Label>Show Button <FormToggle
+   <Label>Show Button <FormToggle
             checked={ options?.isShowButton }
             onChange={ () =>setAttributes({options:{...options, isShowButton:!options?.isShowButton }}) }
-        /></Label>}
+        /></Label>
 
        { options?.isShowButton && <> <TextControl value={faqs?.buttonText} label="Button Text"  onChange={(value)=>setAttributes({faqs:updateData(faqs,value,"buttonText")})} />
         <TextControl value={faqs?.buttonLink} label="Button Link"  onChange={(value)=>setAttributes({faqs:updateData(faqs,value,"buttonLink")})} />
@@ -67,10 +67,7 @@ const General = ({ attributes, setAttributes,device}) => {
 
 
        <BButtonGroup style={{marginTop:"15px"}} label={__("Alignment","b-blocks")} options={contentAlignment} value={options?.contentAlignment}  onChange={(value)=>setAttributes({options:updateData(options,value,"contentAlignment")})} />
-       <Label>Show Button <FormToggle
-            checked={ options?.isShowButton }
-            onChange={ () =>setAttributes({options:{...options, isShowButton:!options?.isShowButton }}) }
-        /></Label>
+      
 
     </PanelBody>
    </>

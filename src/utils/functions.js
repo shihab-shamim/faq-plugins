@@ -166,6 +166,26 @@ draft["styles"]["question"]["colors"]={color: "#192534",bgType: "solid",bg: ""}
         }
       ]
     };
+    draft["styles"]["padding"]={
+      desktop: {
+        top: "0",
+        right: "0",
+        bottom: "0",
+        left: "0"
+      },
+      tablet: {
+        top: "",
+        right: "",
+        bottom: "",
+        left: ""
+      },
+      mobile: {
+        top: "5px",
+        right: "5px",
+        bottom: "5px",
+        left: "5px"
+      }
+    };
 
 
 
@@ -315,6 +335,27 @@ draft["styles"]["question"]["gap"]="5px";
       tablet: "40px",
       mobile: "30px"
     };
+    draft["styles"]["padding"]={
+      desktop: {
+        top: "100px",
+        right: "50px",
+        bottom: "100px",
+        left: "50px"
+      },
+      tablet: {
+        top: "80px",
+        right: "60px",
+        bottom: "80px",
+        left: "60px"
+      },
+      mobile: {
+        top: "5px",
+        right: "5px",
+        bottom: "5px",
+        left: "5px"
+      }
+    };
+
     
     
     
@@ -454,6 +495,27 @@ draft["styles"]["question"]["gap"]="5px";
         tablet: "40px",
         mobile: "30px"
       };
+       draft["styles"]["padding"]={
+        desktop: {
+          top: "100px",
+          right: "50px",
+          bottom: "100px",
+          left: "50px"
+        },
+        tablet: {
+          top: "80px",
+          right: "60px",
+          bottom: "80px",
+          left: "60px"
+        },
+        mobile: {
+          top: "5px",
+          right: "5px",
+          bottom: "5px",
+          left: "5px"
+        }
+      };
+  
       
 
     break;

@@ -45171,7 +45171,7 @@ const General = ({
     ItemSettings: _Faq_FaqSetting__WEBPACK_IMPORTED_MODULE_6__["default"]
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
     className: "bPlPanelBody",
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Layouts', 'b-blocks'),
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Layout', 'b-blocks'),
     initialOpen: false
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
     placeholder: "Title...",
@@ -45182,7 +45182,7 @@ const General = ({
         faqs: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(faqs, value, "title")
       });
     }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+  }), options?.selectedTheme === "theme1" ? "" : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
     placeholder: "Description...",
     label: "Descriptions",
     value: faqs?.description,
@@ -45191,7 +45191,7 @@ const General = ({
         faqs: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(faqs, value, "description")
       });
     }
-  }), options?.selectedTheme === "theme1" || (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_5__.Label, null, "Show Button ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FormToggle, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_5__.Label, null, "Show Button ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FormToggle, {
     checked: options?.isShowButton,
     onChange: () => setAttributes({
       options: {
@@ -45234,15 +45234,7 @@ const General = ({
     onChange: value => setAttributes({
       options: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(options, value, "contentAlignment")
     })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_5__.Label, null, "Show Button ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FormToggle, {
-    checked: options?.isShowButton,
-    onChange: () => setAttributes({
-      options: {
-        ...options,
-        isShowButton: !options?.isShowButton
-      }
-    })
-  }))));
+  })));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (General);
 
@@ -46679,6 +46671,26 @@ const themeSwitch = (theme = "theme1", attributes) => (0,immer__WEBPACK_IMPORTED
           answer: "Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."
         }]
       };
+      draft["styles"]["padding"] = {
+        desktop: {
+          top: "0",
+          right: "0",
+          bottom: "0",
+          left: "0"
+        },
+        tablet: {
+          top: "",
+          right: "",
+          bottom: "",
+          left: ""
+        },
+        mobile: {
+          top: "5px",
+          right: "5px",
+          bottom: "5px",
+          left: "5px"
+        }
+      };
       break;
     case "theme2":
       draft["faqItems"] = [{
@@ -46856,6 +46868,26 @@ const themeSwitch = (theme = "theme1", attributes) => (0,immer__WEBPACK_IMPORTED
         tablet: "40px",
         mobile: "30px"
       };
+      draft["styles"]["padding"] = {
+        desktop: {
+          top: "100px",
+          right: "50px",
+          bottom: "100px",
+          left: "50px"
+        },
+        tablet: {
+          top: "80px",
+          right: "60px",
+          bottom: "80px",
+          left: "60px"
+        },
+        mobile: {
+          top: "5px",
+          right: "5px",
+          bottom: "5px",
+          left: "5px"
+        }
+      };
       break;
     case "theme3":
       draft["options"]["isShowButton"] = true;
@@ -47022,6 +47054,26 @@ const themeSwitch = (theme = "theme1", attributes) => (0,immer__WEBPACK_IMPORTED
         desktop: "120px",
         tablet: "40px",
         mobile: "30px"
+      };
+      draft["styles"]["padding"] = {
+        desktop: {
+          top: "100px",
+          right: "50px",
+          bottom: "100px",
+          left: "50px"
+        },
+        tablet: {
+          top: "80px",
+          right: "60px",
+          bottom: "80px",
+          left: "60px"
+        },
+        mobile: {
+          top: "5px",
+          right: "5px",
+          bottom: "5px",
+          left: "5px"
+        }
       };
       break;
   }
@@ -50553,7 +50605,7 @@ module.exports = /*#__PURE__*/JSON.parse('[{"terms":["Digit Zero","nada","none",
 /***/ ((module) => {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"b-blocks/test-purpose","version":"1.0.0","title":"FAQ!","category":"widgets","description":"Short description of the Test Purpose","keywords":["Faq","faqs","FAQS"],"textdomain":"b-blocks","attributes":{"align":{"type":"string","default":"full"},"alignment":{"type":"string","default":"center"},"styles":{"type":"object","default":{"width":{"desktop":"1350px","tablet":"768px","mobile":"500px"},"gap":{"desktop":"20px","tablet":"20px","mobile":"20px"},"bg":{"type":"solid","color":"#F8F9FA","gradient":"linear-gradient(135deg,rgb(34,23,23) 0%,rgb(13,13,15) 100%)"},"padding":{"desktop":{"top":"100px","right":"50px","bottom":"100px","left":"50px"},"tablet":{"top":"80px","right":"40px","bottom":"80px","left":"40px"},"mobile":{"top":"5px","right":"5px","bottom":"5px","left":"5px"}},"margin":{"desktop":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"tablet":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"mobile":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"radius":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"question":{"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":600,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":16,"tablet":16,"mobile":14},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"1.5","letterSpace":"0px"},"colors":{"color":"#192534","bgType":"solid","bg":""},"padding":{"top":"5px","right":"14px","bottom":"5px","left":"14px"},"gap":"0","active":{"color":"#451CB3","bgType":"solid","bg":"#E8DFFF","gradient":""}},"answer":{"colors":{"color":"#616A72","bgType":"solid","bg":""},"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":400,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":16,"tablet":16,"mobile":14},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"1.5","letterSpace":"0px"},"padding":{"top":"5px","right":"5px","bottom":"5px","left":"5px"},"radius":{"top":"10px","right":"10px","bottom":"10px","left":"10px"}},"title":{"color":"#192534","highlightColor":{"type":"gradient","color":"#c7f32f","gradient":"linear-gradient(white 30%, #c7f32f 65%)"},"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":700,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":48,"tablet":32,"mobile":25},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"}},"description":{"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":400,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":17,"tablet":16,"mobile":17},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"},"color":"rgba(252, 252, 253, 0.7)"},"button":{"colors":{"color":"#FFFFFF","bgType":"solid","bg":"#6328FF"},"padding":{"top":"4px","right":"8px","bottom":"4px","left":"8px"},"radius":{"top":"4px","right":"4px","bottom":"4px","left":"4px"},"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":500,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":12,"tablet":12,"mobile":12},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"}}}},"faqs":{"type":"object","default":{"title":"Have Any Question","buttonText":"FAQ","description":"","buttonIcon":"<svg xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\"><path fill=\\"white\\" fill-rule=\\"evenodd\\" d=\\"M12 21a9 9 0 1 0 0-18a9 9 0 0 0 0 18m-.232-5.36l5-6l-1.536-1.28l-4.3 5.159l-2.225-2.226l-1.414 1.414l3 3l.774.774z\\" clip-rule=\\"evenodd\\"></path></svg>","buttonLink":"#","faqItems":{"general":[{"question":"Does BTCPayServer cost extra?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"Does my Voltage Lightning Node connect to BTC Server automatically?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"Can I accept payments on chain?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"What is BTC Pay Server?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"How to did handle my data","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"How doesit generate responses","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."}],"generalTwo":[{"question":"Does my Voltage Lightning Node connect to BTC Server?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"Can I accept payments on chain?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"What is BTC Pay Server?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."}],"support":[{"question":"Does my Voltage Lightning Node connect to BTC Server?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"Can I accept payments on chain?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"What is BTC Pay Server?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."}],"titleOne":"General FAQ","titleTwo":"General FAQ","titleThree":"Support"}}},"faqItems":{"type":"array","default":[{"question":"Does BTCPayServer cost extra?","answer":"No, BTCPayServer is completely free and open-source software."},{"question":"Does my Voltage Lightning Node connect to BTC Server automatically?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"Can I accept payments on chain?","answer":"Yes, you can accept both on-chain and Lightning payments through the platform."}]},"options":{"type":"object","default":{"selectedTheme":"theme1","icon":"<svg  stroke-width=\\"0\\" viewBox=\\"0 0 512 512\\" height=\\"16\\" width=\\"16\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z\\"></path></svg>","isLinkTarget":true,"isShowButton":true,"contentAlignment":"center"}}},"supports":{"align":["wide","full"],"html":false},"example":{"attributes":{}},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./view.css","render":"file:./render.php","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"b-blocks/test-purpose","version":"1.0.0","title":"FAQ!","category":"widgets","description":"Short description of the Test Purpose","keywords":["Faq","faqs","FAQS"],"textdomain":"b-blocks","attributes":{"align":{"type":"string","default":"full"},"alignment":{"type":"string","default":"center"},"styles":{"type":"object","default":{"width":{"desktop":"1350px","tablet":"768px","mobile":"500px"},"gap":{"desktop":"20px","tablet":"20px","mobile":"20px"},"bg":{"type":"solid","color":"#F8F9FA","gradient":"linear-gradient(135deg,rgb(34,23,23) 0%,rgb(13,13,15) 100%)"},"padding":{"desktop":{"top":"0","right":"0","bottom":"0","left":"0"},"tablet":{"top":"","right":"","bottom":"","left":""},"mobile":{"top":"5px","right":"5px","bottom":"5px","left":"5px"}},"margin":{"desktop":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"tablet":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"mobile":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"radius":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"question":{"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":600,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":16,"tablet":16,"mobile":14},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"1.5","letterSpace":"0px"},"colors":{"color":"#192534","bgType":"solid","bg":""},"padding":{"top":"5px","right":"14px","bottom":"5px","left":"14px"},"gap":"0","active":{"color":"#451CB3","bgType":"solid","bg":"#E8DFFF","gradient":""}},"answer":{"colors":{"color":"#616A72","bgType":"solid","bg":""},"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":400,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":16,"tablet":16,"mobile":14},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"1.5","letterSpace":"0px"},"padding":{"top":"5px","right":"5px","bottom":"5px","left":"5px"},"radius":{"top":"10px","right":"10px","bottom":"10px","left":"10px"}},"title":{"color":"#192534","highlightColor":{"type":"gradient","color":"#c7f32f","gradient":"linear-gradient(white 30%, #c7f32f 65%)"},"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":700,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":48,"tablet":32,"mobile":25},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"}},"description":{"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":400,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":17,"tablet":16,"mobile":17},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"},"color":"rgba(252, 252, 253, 0.7)"},"button":{"colors":{"color":"#FFFFFF","bgType":"solid","bg":"#6328FF"},"padding":{"top":"4px","right":"8px","bottom":"4px","left":"8px"},"radius":{"top":"4px","right":"4px","bottom":"4px","left":"4px"},"typho":{"fontFamily":"Archivo","fontCategory":"sans-serif","fontWeight":500,"fontVariant":"400","isUploadFont":true,"fontSize":{"desktop":12,"tablet":12,"mobile":12},"fontStyle":"normal","textTransform":"none","textDecoration":"none","lineHeight":"135%","letterSpace":"0px"}}}},"faqs":{"type":"object","default":{"title":"Have Any Question","buttonText":"FAQ","description":"","buttonIcon":"<svg xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\"><path fill=\\"white\\" fill-rule=\\"evenodd\\" d=\\"M12 21a9 9 0 1 0 0-18a9 9 0 0 0 0 18m-.232-5.36l5-6l-1.536-1.28l-4.3 5.159l-2.225-2.226l-1.414 1.414l3 3l.774.774z\\" clip-rule=\\"evenodd\\"></path></svg>","buttonLink":"#","faqItems":{"general":[{"question":"Does BTCPayServer cost extra?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"Does my Voltage Lightning Node connect to BTC Server automatically?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"Can I accept payments on chain?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"What is BTC Pay Server?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"How to did handle my data","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"How doesit generate responses","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."}],"generalTwo":[{"question":"Does my Voltage Lightning Node connect to BTC Server?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"Can I accept payments on chain?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"What is BTC Pay Server?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."}],"support":[{"question":"Does my Voltage Lightning Node connect to BTC Server?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"Can I accept payments on chain?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"What is BTC Pay Server?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."}],"titleOne":"General FAQ","titleTwo":"General FAQ","titleThree":"Support"}}},"faqItems":{"type":"array","default":[{"question":"Does BTCPayServer cost extra?","answer":"No, BTCPayServer is completely free and open-source software."},{"question":"Does my Voltage Lightning Node connect to BTC Server automatically?","answer":"Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."},{"question":"Can I accept payments on chain?","answer":"Yes, you can accept both on-chain and Lightning payments through the platform."}]},"options":{"type":"object","default":{"selectedTheme":"theme1","icon":"<svg  stroke-width=\\"0\\" viewBox=\\"0 0 512 512\\" height=\\"16\\" width=\\"16\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z\\"></path></svg>","isLinkTarget":true,"isShowButton":true,"contentAlignment":"center"}}},"supports":{"align":["wide","full"],"html":false},"example":{"attributes":{}},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./view.css","render":"file:./render.php","viewScript":"file:./view.js"}');
 
 /***/ })
 
