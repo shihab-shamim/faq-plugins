@@ -309,7 +309,10 @@
 						  "question": "What is BTC Pay Server?",
 						  "answer": "Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."
 						}
-					  ]
+					  ],
+					  "titleOne":"General FAQ",
+					  "titleTwo":"General FAQ",
+					  "titleThree":"Support"
 
 				}
 				

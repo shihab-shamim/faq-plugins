@@ -1331,7 +1331,7 @@ const Style1 = ({
       fontSize: "28px",
       textTransform: "capitalize"
     }
-  }, "General FAQ"), faqs?.faqItems?.general.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, faqs?.faqItems?.titleOne), faqs?.faqItems?.general.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
     key: index,
     isView: isView,
     index: index,
@@ -1359,7 +1359,7 @@ const Style1 = ({
       fontSize: "28px",
       textTransform: "capitalize"
     }
-  }, "General FAQ"), faqs?.faqItems?.generalTwo.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, faqs?.faqItems?.titleTwo), faqs?.faqItems?.generalTwo.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
     isView: isView,
     key: index,
     index: index,
@@ -1386,7 +1386,7 @@ const Style1 = ({
       fontSize: "28px",
       textTransform: "capitalize"
     }
-  }, "Support"), faqs?.faqItems?.support.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, faqs?.faqItems?.titleThree), faqs?.faqItems?.support.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_utils_FaqItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
     isView: isView,
     key: index,
     index: index,

@@ -105,7 +105,7 @@ const toggleRightFaq = (index) => {
                 setAttributes({faqs:updateData(faqs,value,"description")})
                }} />} */}
    <div className="custom-shadow" style={{backgroundColor:"#FFFFFF",padding:"20px",borderRadius:"20px"}}>
-    <h5 style={{color:"#192534",fontWeight:"600", fontSize:"28px",textTransform:"capitalize"}}>General FAQ</h5>
+    <h5 style={{color:"#192534",fontWeight:"600", fontSize:"28px",textTransform:"capitalize"}}>{faqs?.faqItems?.titleOne}</h5>
    {faqs?.faqItems?.general.map((item, index) => (
   <FaqItem
     key={index}
@@ -129,7 +129,7 @@ const toggleRightFaq = (index) => {
     
               <div className="faq-right">
             <div className="custom-shadow" style={{backgroundColor:"#FFFFFF",padding:"20px",borderRadius:"20px",overflow:"hidden"}}>
-            <h5 style={{color:"#192534",fontWeight:"600", fontSize:"28px",textTransform:"capitalize"}}>General FAQ</h5>
+            <h5 style={{color:"#192534",fontWeight:"600", fontSize:"28px",textTransform:"capitalize"}}>{faqs?.faqItems?.titleTwo}</h5>
             {faqs?.faqItems?.generalTwo.map((item, index) => (
         <FaqItem isView={isView}
           key={index}
@@ -145,7 +145,7 @@ const toggleRightFaq = (index) => {
       ))}
             </div>
             <div className="custom-shadow" style={{backgroundColor:"#FFFFFF",padding:"20px",borderRadius:"20px",overflow:"hidden",marginTop:"20px"}}>
-            <h5 style={{color:"#192534",fontWeight:"600", fontSize:"28px",textTransform:"capitalize"}}>Support</h5>
+            <h5 style={{color:"#192534",fontWeight:"600", fontSize:"28px",textTransform:"capitalize"}}>{faqs?.faqItems?.titleThree}</h5>
             {faqs?.faqItems?.support.map((item, index) => (
         <FaqItem isView={isView}
           key={index}
