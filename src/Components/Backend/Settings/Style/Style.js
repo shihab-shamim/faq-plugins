@@ -20,7 +20,7 @@ const Style = ({ attributes, setAttributes,device }) => {
     <>
     <PanelBody className="bPlPanelBody"
         title={__(`${"Section"}`, "b-blocks")}
-        initialOpen={true}>
+        initialOpen={false}>
         <Background className="mt15"  isImage={false} value={styles?.section?.bg}  onChange={(value)=>setAttributes({styles:updateData(styles,value,"section","bg")})} />
         <PanelRow><Label>{__("Padding","b-blocks")}</Label> <Device/></PanelRow>
 
@@ -85,7 +85,25 @@ const Style = ({ attributes, setAttributes,device }) => {
 
     </PanelBody>
     
-    <PanelBody  className="bPlPanelBody"
+  { options?.selectedTheme ==="theme1" ?<PanelBody className="bPlPanelBody"
+        title={__("Card", "b-blocks")}
+        initialOpen={true}>
+
+          <ColorControl label="Background-Color" value={styles?.card?.bg} onChange={value=>{
+            setAttributes({styles:updateData(styles,value,"card","bg")})
+          }} />
+          <BoxControl label="Padding"   values={styles?.card?.padding} onChange={value=>{
+            setAttributes({styles:updateData(styles,value,"card","padding")})
+          }} />
+         <div className="border-radius" >
+         <Boxcontrol s values={styles?.card?.radius} label="Radius" onChange={value=>{
+            setAttributes({styles:updateData(styles,value,"card","radius")})
+
+
+          }} />
+         </div>
+
+  </PanelBody>: <PanelBody  className="bPlPanelBody"
         title={__("Description", "b-blocks")}
         initialOpen={false}>
 
@@ -93,7 +111,7 @@ const Style = ({ attributes, setAttributes,device }) => {
 
             <ColorControl value={styles?.description?.color} onChange={value=>setAttributes({styles:updateData(styles,value,"description","color")})} />
 
-    </PanelBody>
+    </PanelBody>}
     
     { options?.isShowButton && <PanelBody  className="bPlPanelBody"
         title={__("Button", "b-blocks")}
