@@ -22,7 +22,17 @@ const General = ({ attributes, setAttributes,device}) => {
   const generalTwo =getValueByPath(attributes,"faqs.faqItems.generalTwo")
   const support =getValueByPath(attributes,"faqs.faqItems.support")
 
-  // console.log(general,generalTwo,support);
+  const newItem={
+    question:"New Questions?",
+    answer:"New Answer."
+
+  }
+  const handleNewItem =(type)=>{
+    const items=faqs?.faqItems[type]
+    const updatedItem=[...items,newItem]
+    setAttributes({faqs:updateData(faqs,updatedItem,"faqItems",type)})
+    
+  }
 
   
 
@@ -54,6 +64,47 @@ const General = ({ attributes, setAttributes,device}) => {
                 setAttributes({faqs:updateData(faqs,value,"faqItems","titleOne")})
               }}   />
            {general.map((item,index)=><FaqItems item={item} setAttributes={setAttributes} index={index} attributes={attributes} type="general"  key={index} />)}
+           <div className='btnPrimaryContainer'>
+           <button onClick={()=>handleNewItem("general")} className="btn-primary">
+    <svg className="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4"/>
+    </svg>
+    Add New Item
+  </button>
+           </div>
+
+            </PanelBody>
+
+            <PanelBody className='bPlPanelBody' title={__(`${faqs?.faqItems?.titleTwo}`, 'b-blocks')} initialOpen={false}>
+              <TextControl label="Title" value={faqs?.faqItems?.titleTwo} onChange={value=>{
+                setAttributes({faqs:updateData(faqs,value,"faqItems","titleTwo")})
+              }}   />
+           {generalTwo.map((item,index)=><FaqItems item={item} setAttributes={setAttributes} index={index} attributes={attributes} type="generalTwo"  key={index} />)}
+           <div className='btnPrimaryContainer'>
+           <button onClick={()=>handleNewItem("generalTwo")} className="btn-primary">
+    <svg className="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4"/>
+    </svg>
+    Add New Item
+  </button>
+           </div>
+
+
+            </PanelBody>
+            <PanelBody className='bPlPanelBody' title={__(`${faqs?.faqItems?.titleThree}`, 'b-blocks')} initialOpen={false}>
+              <TextControl label="Title" value={faqs?.faqItems?.titleThree} onChange={value=>{
+                setAttributes({faqs:updateData(faqs,value,"faqItems","titleThree")})
+              }}   />
+           {support.map((item,index)=><FaqItems item={item} setAttributes={setAttributes} index={index} attributes={attributes} type="support"  key={index} />)}
+           <div className='btnPrimaryContainer'>
+           <button onClick={()=>handleNewItem("support")} className="btn-primary">
+    <svg className="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4"/>
+    </svg>
+    Add New Item
+  </button>
+           </div>
+
 
             </PanelBody>
 

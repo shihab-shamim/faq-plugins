@@ -134,3 +134,34 @@ $primaryColor: #4527a4;
 	  max-width: 150px;
 	}
   }
+  .btnPrimaryContainer{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  .btn-primary {
+
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	background-color: #4F46E5; /* Indigo tone */
+	color: #ffffff;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	padding: 10px 14px;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	margin-top: 50px;
+  }
+
+  .btn-icon {
+	width: 16px;
+	height: 16px;
+	fill: none;
+	stroke: #ffffff;
+	stroke-width: 2;
+  }

@@ -45148,9 +45148,17 @@ const General = ({
   const general = getValueByPath(attributes, "faqs.faqItems.general");
   const generalTwo = getValueByPath(attributes, "faqs.faqItems.generalTwo");
   const support = getValueByPath(attributes, "faqs.faqItems.support");
-
-  // console.log(general,generalTwo,support);
-
+  const newItem = {
+    question: "New Questions?",
+    answer: "New Answer."
+  };
+  const handleNewItem = type => {
+    const items = faqs?.faqItems[type];
+    const updatedItem = [...items, newItem];
+    setAttributes({
+      faqs: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(faqs, updatedItem, "faqItems", type)
+    });
+  };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
     className: "bPlPanelBody",
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Themes', 'b-blocks'),
@@ -45182,7 +45190,84 @@ const General = ({
     attributes: attributes,
     type: "general",
     key: index
-  })))) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_5__.ItemsPanel, {
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "btnPrimaryContainer"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    onClick: () => handleNewItem("general"),
+    className: "btn-primary"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    className: "btn-icon",
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 24 24"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    d: "M12 4v16m8-8H4"
+  })), "Add New Item"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+    className: "bPlPanelBody",
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`${faqs?.faqItems?.titleTwo}`, 'b-blocks'),
+    initialOpen: false
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+    label: "Title",
+    value: faqs?.faqItems?.titleTwo,
+    onChange: value => {
+      setAttributes({
+        faqs: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(faqs, value, "faqItems", "titleTwo")
+      });
+    }
+  }), generalTwo.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Faq_FaqItems__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    item: item,
+    setAttributes: setAttributes,
+    index: index,
+    attributes: attributes,
+    type: "generalTwo",
+    key: index
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "btnPrimaryContainer"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    onClick: () => handleNewItem("generalTwo"),
+    className: "btn-primary"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    className: "btn-icon",
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 24 24"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    d: "M12 4v16m8-8H4"
+  })), "Add New Item"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+    className: "bPlPanelBody",
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`${faqs?.faqItems?.titleThree}`, 'b-blocks'),
+    initialOpen: false
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+    label: "Title",
+    value: faqs?.faqItems?.titleThree,
+    onChange: value => {
+      setAttributes({
+        faqs: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(faqs, value, "faqItems", "titleThree")
+      });
+    }
+  }), support.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Faq_FaqItems__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    item: item,
+    setAttributes: setAttributes,
+    index: index,
+    attributes: attributes,
+    type: "support",
+    key: index
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "btnPrimaryContainer"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    onClick: () => handleNewItem("support"),
+    className: "btn-primary"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    className: "btn-icon",
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 24 24"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    d: "M12 4v16m8-8H4"
+  })), "Add New Item")))) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_5__.ItemsPanel, {
     newItem: {
       question: "New Question?",
       answer: "New Answer."
