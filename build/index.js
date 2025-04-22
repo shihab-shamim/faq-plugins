@@ -46020,6 +46020,20 @@ const FaqItems = ({
   const {
     faqs
   } = attributes;
+  const items = faqs?.faqItems[type];
+  const handleDelete = () => {
+    const updatedItems = items.filter((_, ind) => ind !== index);
+    setAttributes({
+      faqs: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_2__.updateData)(faqs, updatedItems, "faqItems", type)
+    });
+  };
+  const handleCopy = index => {
+    const updatedItems = [...items.slice(0, index + 1), item, ...items.slice(index + 1)];
+    // setItems(updatedItems);
+    setAttributes({
+      faqs: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_2__.updateData)(faqs, updatedItems, "faqItems", type)
+    });
+  };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
     label: "Question",
     value: item.question,
@@ -46039,6 +46053,7 @@ const FaqItems = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "button-container"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    onClick: () => handleDelete(),
     className: "btn btn-delete"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "icon-delete"
@@ -46049,6 +46064,7 @@ const FaqItems = ({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "btn-text"
   }, "Delete")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    onClick: () => handleCopy(),
     className: "btn btn-copy"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "icon-copy"

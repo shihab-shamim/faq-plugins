@@ -4,6 +4,21 @@ import { updateData } from "../../utils/functions";
 const FaqItems = ({item,index,setAttributes,type,attributes}) => {
    
     const {faqs}=attributes;
+    const items=faqs?.faqItems[type]
+    const handleDelete = () => {
+        const updatedItems = items.filter((_, ind) => ind !== index);
+        setAttributes({faqs:updateData(faqs,updatedItems,"faqItems",type)})
+      
+    }
+    const handleCopy = (index) => {
+        const updatedItems = [
+          ...items.slice(0, index + 1),
+          item,
+          ...items.slice(index + 1),
+        ];
+        // setItems(updatedItems);
+        setAttributes({faqs:updateData(faqs,updatedItems,"faqItems",type)})
+      };
     return (
         <div>
         <TextControl label="Question" value={item.question}  onChange={(value)=>{
@@ -13,7 +28,7 @@ const FaqItems = ({item,index,setAttributes,type,attributes}) => {
             setAttributes({faqs:updateData(faqs,value,"faqItems",type,index,"answer")})
         }}  />
          <div className="button-container">
-      <button className="btn btn-delete">
+      <button onClick={()=>handleDelete()} className="btn btn-delete">
         <div className="icon-delete">
           <span className="delete-line delete-line-1"></span>
           <span className="delete-line delete-line-2"></span>
@@ -21,7 +36,7 @@ const FaqItems = ({item,index,setAttributes,type,attributes}) => {
         <span className="btn-text">Delete</span>
       </button>
       
-      <button className="btn btn-copy">
+      <button onClick={()=>handleCopy()} className="btn btn-copy">
         <div className="icon-copy">
           <span className="copy-paper copy-paper-back"></span>
           <span className="copy-paper copy-paper-front"></span>
