@@ -5,13 +5,24 @@ import { contentAlignment, themesOption } from '../../../../utils/options';
 import { themeSwitch, updateData } from '../../../../utils/functions';
 import { BButtonGroup, Device, ItemsPanel, Label } from '../../../../../../bpl-tools/Components';
 import FaqSetting from '../../../Faq/FaqSetting';
-// import UnitControl from '@wordpress/components/build-types/unit-control';
+import FaqItems from '../../../Faq/FaqItems';
+
+
 
 
 const General = ({ attributes, setAttributes,device}) => {
   const { options,faqs,styles} = attributes;
   const {selectedTheme}=options;
 
+  const getValueByPath = (obj, path) => {
+    return path.split('.').reduce((acc, part) => acc && acc[part], obj);
+  };
+
+  const general =getValueByPath(attributes,"faqs.faqItems.general")
+  const generalTwo =getValueByPath(attributes,"faqs.faqItems.generalTwo")
+  const support =getValueByPath(attributes,"faqs.faqItems.support")
+
+  // console.log(general,generalTwo,support);
 
   
 
@@ -34,10 +45,22 @@ const General = ({ attributes, setAttributes,device}) => {
     </PanelBody>
 
 
-    <PanelBody className='bPlPanelBody' title={__('FAQS!', 'b-blocks')} initialOpen={false}>
+    <PanelBody  >
 
-      <ItemsPanel newItem={{question: "New Question?",
+      
+      { options?.selectedTheme ==="theme1"?<>
+            <PanelBody className='bPlPanelBody' title={__(`${faqs?.faqItems?.titleOne}`, 'b-blocks')} initialOpen={false}>
+              <TextControl label="Title" value={faqs?.faqItems?.titleOne} onChange={value=>{
+                setAttributes({faqs:updateData(faqs,value,"faqItems","titleOne")})
+              }}   />
+           {general.map((item,index)=><FaqItems item={item} setAttributes={setAttributes} index={index} attributes={attributes} type="general"  key={index} />)}
+
+            </PanelBody>
+
+      </> :<ItemsPanel newItem={{question: "New Question?",
 							answer: "New Answer."}} design="sortable"  attributes={attributes} setAttributes={setAttributes} arrKey="faqItems" itemLabel="FAQ" ItemSettings={FaqSetting}  />
+    }
+              
     </PanelBody>
  
     <PanelBody className='bPlPanelBody' title={__('Layout' , 'b-blocks')} initialOpen={false}>

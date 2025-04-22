@@ -45120,6 +45120,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_functions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../utils/functions */ "./src/utils/functions.js");
 /* harmony import */ var _bpl_tools_Components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../bpl-tools/Components */ "../bpl-tools/Components/index.js");
 /* harmony import */ var _Faq_FaqSetting__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../Faq/FaqSetting */ "./src/Components/Faq/FaqSetting.jsx");
+/* harmony import */ var _Faq_FaqItems__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../Faq/FaqItems */ "./src/Components/Faq/FaqItems.jsx");
 
 
 
@@ -45127,7 +45128,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// import UnitControl from '@wordpress/components/build-types/unit-control';
 
 const General = ({
   attributes,
@@ -45142,6 +45142,15 @@ const General = ({
   const {
     selectedTheme
   } = options;
+  const getValueByPath = (obj, path) => {
+    return path.split('.').reduce((acc, part) => acc && acc[part], obj);
+  };
+  const general = getValueByPath(attributes, "faqs.faqItems.general");
+  const generalTwo = getValueByPath(attributes, "faqs.faqItems.generalTwo");
+  const support = getValueByPath(attributes, "faqs.faqItems.support");
+
+  // console.log(general,generalTwo,support);
+
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
     className: "bPlPanelBody",
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Themes', 'b-blocks'),
@@ -45154,11 +45163,26 @@ const General = ({
     onChange: value => {
       setAttributes((0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.themeSwitch)(value, attributes));
     }
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, null, options?.selectedTheme === "theme1" ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
     className: "bPlPanelBody",
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('FAQS!', 'b-blocks'),
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`${faqs?.faqItems?.titleOne}`, 'b-blocks'),
     initialOpen: false
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_5__.ItemsPanel, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+    label: "Title",
+    value: faqs?.faqItems?.titleOne,
+    onChange: value => {
+      setAttributes({
+        faqs: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(faqs, value, "faqItems", "titleOne")
+      });
+    }
+  }), general.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Faq_FaqItems__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    item: item,
+    setAttributes: setAttributes,
+    index: index,
+    attributes: attributes,
+    type: "general",
+    key: index
+  })))) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_5__.ItemsPanel, {
     newItem: {
       question: "New Question?",
       answer: "New Answer."
@@ -45964,6 +45988,79 @@ const Faq = ({
   }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Faq);
+
+/***/ }),
+
+/***/ "./src/Components/Faq/FaqItems.jsx":
+/*!*****************************************!*\
+  !*** ./src/Components/Faq/FaqItems.jsx ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_functions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/functions */ "./src/utils/functions.js");
+
+
+
+const FaqItems = ({
+  item,
+  index,
+  setAttributes,
+  type,
+  attributes
+}) => {
+  const {
+    faqs
+  } = attributes;
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+    label: "Question",
+    value: item.question,
+    onChange: value => {
+      setAttributes({
+        faqs: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_2__.updateData)(faqs, value, "faqItems", type, index, "question")
+      });
+    }
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextareaControl, {
+    label: "Answer",
+    value: item.answer,
+    onChange: value => {
+      setAttributes({
+        faqs: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_2__.updateData)(faqs, value, "faqItems", type, index, "answer")
+      });
+    }
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "button-container"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    className: "btn btn-delete"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "icon-delete"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "delete-line delete-line-1"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "delete-line delete-line-2"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "btn-text"
+  }, "Delete")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    className: "btn btn-copy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "icon-copy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "copy-paper copy-paper-back"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "copy-paper copy-paper-front"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "btn-text"
+  }, "Copy"))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FaqItems);
 
 /***/ }),
 
@@ -47294,6 +47391,16 @@ const themeSwitch = (theme = "theme1", attributes) => (0,immer__WEBPACK_IMPORTED
           left: "5px"
         }
       };
+      draft["faqItems"] = [{
+        question: "Does BTCPayServer cost extra?",
+        answer: "No, BTCPayServer is completely free and open-source software."
+      }, {
+        question: "Does my Voltage Lightning Node connect to BTC Server automatically?",
+        answer: "Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."
+      }, {
+        question: "Can I accept payments on chain?",
+        answer: "Yes, you can accept both on-chain and Lightning payments through the platform."
+      }];
       break;
   }
 });

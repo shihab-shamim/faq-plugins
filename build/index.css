@@ -1,6 +1,15 @@
 /*!****************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/editor.scss ***!
   \****************************************************************************************************************************************************************************************************************************************/
+:root {
+  --color-delete: #E53E3E;
+  --color-copy: #3B82F6;
+  --color-text: #FFFFFF;
+  --color-background: #F7FAFC;
+  --spacing-unit: 6px;
+  --border-radius: 4px;
+}
+
 .bBlocksInspectorInfo {
   padding: 6px;
 }
@@ -15,6 +24,112 @@
 
 .border-radius, .bPlIconLibrary {
   margin-top: 25px !important;
+}
+
+.icon-delete {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-line {
+  position: absolute;
+  width: 14px;
+  height: 2px;
+  background-color: white;
+}
+
+.delete-line-1 {
+  transform: rotate(45deg);
+}
+
+.delete-line-2 {
+  transform: rotate(-45deg);
+}
+
+/* Copy Icon */
+.icon-copy {
+  position: relative;
+  width: 14px;
+  height: 14px;
+}
+
+.copy-paper {
+  position: absolute;
+  width: 12px;
+  height: 14px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+.copy-paper-back {
+  bottom: 0;
+  right: 0;
+}
+
+.copy-paper-front {
+  top: 0;
+  left: 0;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: calc(var(--spacing-unit) * 2);
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-unit) calc(var(--spacing-unit) * 2);
+  border-radius: var(--border-radius);
+  border: none;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  color: var(--color-text);
+}
+
+.btn-text {
+  margin-left: var(--spacing-unit);
+}
+
+.btn-delete {
+  background-color: var(--color-delete);
+}
+
+.btn-copy {
+  background-color: var(--color-copy);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+  }
+  h1 {
+    color: #E2E8F0;
+  }
+  .container {
+    background-color: #1A202C;
+    border-radius: var(--border-radius);
+  }
+}
+@media (max-width: 480px) {
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .btn {
+    width: 100%;
+    max-width: 150px;
+  }
 }
 /*!*********************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!../bpl-tools/Components/style.scss ***!

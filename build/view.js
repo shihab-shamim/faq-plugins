@@ -2517,6 +2517,16 @@ const themeSwitch = (theme = "theme1", attributes) => (0,immer__WEBPACK_IMPORTED
           left: "5px"
         }
       };
+      draft["faqItems"] = [{
+        question: "Does BTCPayServer cost extra?",
+        answer: "No, BTCPayServer is completely free and open-source software."
+      }, {
+        question: "Does my Voltage Lightning Node connect to BTC Server automatically?",
+        answer: "Yes. After you deploy your Lightning Node, you can click the BTCPayServer icon on the node dashboard to easily start your BTCPayServer which connects to your node automatically."
+      }, {
+        question: "Can I accept payments on chain?",
+        answer: "Yes, you can accept both on-chain and Lightning payments through the platform."
+      }];
       break;
   }
 });
