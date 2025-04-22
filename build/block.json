@@ -256,6 +256,22 @@
           },
           "color": "rgba(252, 252, 253, 0.7)"
         },
+        "card": {
+          "bg": "#FFFFFF",
+          "padding": {
+            "top": "20px",
+            "right": "20px",
+            "bottom": "20px",
+            "left": "20px"
+          },
+          "radius": {
+            "top": "20px",
+            "right": "20px",
+            "bottom": "20px",
+            "left": "20px"
+          },
+          "shadow": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)"
+        },
         "button": {
           "colors": {
             "color": "#FFFFFF",

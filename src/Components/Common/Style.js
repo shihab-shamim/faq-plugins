@@ -25,6 +25,7 @@
 		// theme 1 
 		const defaultThemeContainerSl=`${wrapperSl} .defaultThemeContainer`;
 		const supportSectionrSl=`${wrapperSl} .support-section`;
+		const customShadowSl=`${containerSl} .custom-shadow`;
 
 
 	// console.log(styles?.question?.active);
@@ -51,6 +52,7 @@
 			
 	}
 
+
 	
 
 
@@ -75,7 +77,12 @@
 				${getTypoCSS(faqDescriptionSl, styles?.description?.typho)?.styles}
 
 				
-
+				${customShadowSl}{
+			
+				background-color:${styles?.card?.bg};
+				padding:${getBoxCSS(styles?.card?.padding)};
+				border-radius:${getBoxCSS(styles?.card?.radius)};
+				}
 
 				${faqWrapperSl}{
 				grid-template-columns:${options?.selectedTheme ==="theme1"?"1fr 1fr":" minmax(200px, 500px) auto"};

@@ -53,12 +53,15 @@ const General = ({ attributes, setAttributes,device}) => {
 
 
     </PanelBody>
+    {/* style={{backgroundColor:"#FFFFFF",padding:"20px",borderRadius:"20px"}}>
+    {isView?<h5 style={{color:"#192534",fontWeight:"600", fontSize:"28px",textTransform:"capitalize"}} */}
 
 
     <PanelBody  >
 
       
       { options?.selectedTheme ==="theme1"?<>
+      <Label><strong>FAQS!</strong></Label>
             <PanelBody className='bPlPanelBody' title={__(`${faqs?.faqItems?.titleOne}`, 'b-blocks')} initialOpen={false}>
               <TextControl label="Title" value={faqs?.faqItems?.titleOne} onChange={value=>{
                 setAttributes({faqs:updateData(faqs,value,"faqItems","titleOne")})

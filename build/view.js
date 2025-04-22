@@ -888,6 +888,7 @@ const Style = ({
   // theme 1 
   const defaultThemeContainerSl = `${wrapperSl} .defaultThemeContainer`;
   const supportSectionrSl = `${wrapperSl} .support-section`;
+  const customShadowSl = `${containerSl} .custom-shadow`;
 
   // console.log(styles?.question?.active);
   // color: ${styles?.question?.active?.color} !important;
@@ -924,7 +925,12 @@ const Style = ({
 				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqDescriptionSl, styles?.description?.typho)?.styles}
 
 				
-
+				${customShadowSl}{
+			
+				background-color:${styles?.card?.bg};
+				padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.card?.padding)};
+				border-radius:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.card?.radius)};
+				}
 
 				${faqWrapperSl}{
 				grid-template-columns:${options?.selectedTheme === "theme1" ? "1fr 1fr" : " minmax(200px, 500px) auto"};
@@ -1328,12 +1334,7 @@ const Style1 = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "faq-left"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-shadow",
-    style: {
-      backgroundColor: "#FFFFFF",
-      padding: "20px",
-      borderRadius: "20px"
-    }
+    className: "custom-shadow"
   }, isView ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h5", {
     style: {
       color: "#192534",
@@ -1369,13 +1370,7 @@ const Style1 = ({
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "faq-right"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-shadow",
-    style: {
-      backgroundColor: "#FFFFFF",
-      padding: "20px",
-      borderRadius: "20px",
-      overflow: "hidden"
-    }
+    className: "custom-shadow"
   }, isView ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h5", {
     style: {
       color: "#192534",
@@ -1408,13 +1403,7 @@ const Style1 = ({
     setAttributes: setAttributes,
     faqCategory: "generalTwo"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-shadow support-section",
-    style: {
-      backgroundColor: "#FFFFFF",
-      padding: "20px",
-      borderRadius: "20px",
-      overflow: "hidden"
-    }
+    className: "custom-shadow support-section"
   }, isView ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h5", {
     style: {
       color: "#192534",

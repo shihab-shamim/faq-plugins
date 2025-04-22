@@ -74,7 +74,7 @@ const toggleRightFaq = (index) => {
               <div className="faq-left">
              
                  
-   <div className="custom-shadow" style={{backgroundColor:"#FFFFFF",padding:"20px",borderRadius:"20px"}}>
+   <div className="custom-shadow" >
     {isView?<h5 style={{color:"#192534",fontWeight:"600", fontSize:"28px",textTransform:"capitalize"}}>{faqs?.faqItems?.titleOne}</h5>:<RichText style={{color:"#192534",fontWeight:"600", fontSize:"28px",textTransform:"capitalize"}} value={faqs?.faqItems?.titleOne}   onChange={(value)=>{
       // console.log(value);
       setAttributes({faqs:updateData(faqs,value,"faqItems","titleOne")})
@@ -101,7 +101,7 @@ const toggleRightFaq = (index) => {
               </div>
     
               <div className="faq-right">
-            <div className="custom-shadow" style={{backgroundColor:"#FFFFFF",padding:"20px",borderRadius:"20px",overflow:"hidden"}}>
+            <div className="custom-shadow" >
             {isView?<h5 style={{color:"#192534",fontWeight:"600", fontSize:"28px",textTransform:"capitalize"}}>{faqs?.faqItems?.titleTwo}</h5>:<RichText style={{color:"#192534",fontWeight:"600", fontSize:"28px",textTransform:"capitalize"}} value={faqs?.faqItems?.titleTwo}   onChange={(value)=>{
       
       setAttributes({faqs:updateData(faqs,value,"faqItems","titleTwo")})
@@ -120,7 +120,7 @@ const toggleRightFaq = (index) => {
         />
       ))}
             </div>
-            <div className="custom-shadow support-section" style={{backgroundColor:"#FFFFFF",padding:"20px",borderRadius:"20px",overflow:"hidden"}}>
+            <div className="custom-shadow support-section" >
             {isView?<h5 style={{color:"#192534",fontWeight:"600", fontSize:"28px",textTransform:"capitalize"}}>{faqs?.faqItems?.titleThree}</h5>:<RichText style={{color:"#192534",fontWeight:"600", fontSize:"28px",textTransform:"capitalize"}} value={faqs?.faqItems?.titleThree}   onChange={(value)=>{
       
       setAttributes({faqs:updateData(faqs,value,"faqItems","titleThree")})
