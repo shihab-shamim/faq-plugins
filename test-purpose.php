@@ -22,11 +22,17 @@ if( !class_exists( 'PREFIXPlugin' ) ){
 	class PREFIXPlugin{
 		function __construct(){
 			add_action( 'init', [ $this, 'onInit' ] );
+			add_action( 'admin_enqueue_scripts', [ $this, 'myplugin_admin_styles' ] );
 		}
 
 		function onInit(){
 			register_block_type( __DIR__ . '/build' );
 		}
+
+		function myplugin_admin_styles() {
+			wp_enqueue_style('myplugin-admin', plugin_dir_url(__FILE__) . 'admin.css', [], PREFIX_VERSION);
+		}
 	}
+
 	new PREFIXPlugin();
 }
