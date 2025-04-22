@@ -244,9 +244,6 @@ draft["styles"]["question"]["colors"]={color: "#192534",bgType: "solid",bg: ""}
       }
     };
 
-
-
-
     break;
 
     case "theme2":

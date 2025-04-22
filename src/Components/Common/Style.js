@@ -1,5 +1,5 @@
 	import { mobileBreakpoint, tabBreakpoint } from '../../../../bpl-tools/utils/data';
-	import { getBackgroundCSS, getBoxCSS, getColorsCSS, getMultiShadowCSS, getShadowCSS, getTypoCSS, } from '../../../../bpl-tools/utils/getCSS';
+	import { getBackgroundCSS, getBoxCSS, getColorsCSS, getMultiShadowCSS, getTypoCSS, } from '../../../../bpl-tools/utils/getCSS';
 
 	const Style = ({ attributes, id }) => {
 		const { styles,alignment,options} = attributes;
@@ -8,8 +8,8 @@
 		const wrapperSl = `${mainSl} .wrapper`; 
 		const containerSl = `${wrapperSl} .container`;
 		const faqWrapperSl = `${containerSl} .faq-wrapper`;
-		const faqRightrSl = `${faqWrapperSl} .faq-right`;
-		const faqItemrSl = `${faqRightrSl} .faq-item`;
+		// const faqRightrSl = `${faqWrapperSl} .faq-right`;
+		// const faqItemrSl = `${faqRightrSl} .faq-item`;
 		const faqAnswerSl = `${containerSl} .faq-answer`;
 		const faqQuestionSl = `${containerSl} .faq-question`;
 		const toggleBtnSl = `${faqQuestionSl} .toggle-btn`;

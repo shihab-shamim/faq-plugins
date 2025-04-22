@@ -872,8 +872,8 @@ const Style = ({
   const wrapperSl = `${mainSl} .wrapper`;
   const containerSl = `${wrapperSl} .container`;
   const faqWrapperSl = `${containerSl} .faq-wrapper`;
-  const faqRightrSl = `${faqWrapperSl} .faq-right`;
-  const faqItemrSl = `${faqRightrSl} .faq-item`;
+  // const faqRightrSl = `${faqWrapperSl} .faq-right`;
+  // const faqItemrSl = `${faqRightrSl} .faq-item`;
   const faqAnswerSl = `${containerSl} .faq-answer`;
   const faqQuestionSl = `${containerSl} .faq-question`;
   const toggleBtnSl = `${faqQuestionSl} .toggle-btn`;
@@ -1126,39 +1126,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 // FAQ Item Component
-const FaqItem = ({
-  question,
-  answer,
-  isActive,
-  onClick
-}) => {
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: `faq-item ${isActive ? "active" : ""}`
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "faq-question",
-    onClick: onClick
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, question), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
-    className: "toggle-btn"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    width: "24",
-    height: "24",
-    viewBox: "0 0 24 24",
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: "2",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("polyline", {
-    points: isActive ? "18 15 12 9 6 15" : "6 9 12 15 18 9"
-  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "faq-answer",
-    style: {
-      maxHeight: isActive ? "300px" : "0"
-    }
-  }, answer));
-};
 
 // Main FAQ Component
 const Faq = ({
@@ -1170,10 +1138,6 @@ const Faq = ({
     options,
     faqs
   } = attributes;
-  const [activeIndex, setActiveIndex] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
-  const toggleFaq = index => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
   const faqData = [{
     category: "1",
     title: "General FAQ",
@@ -1284,9 +1248,6 @@ const Style1 = ({
   const toggleRightFaq = index => {
     setRightActiveIndex(rightActiveIndex === index ? null : index);
   };
-  const {
-    faqItems
-  } = attributes;
   const [activeIndex, setActiveIndex] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
   const toggleFaq = index => {
     setActiveIndex(activeIndex === index ? null : index);

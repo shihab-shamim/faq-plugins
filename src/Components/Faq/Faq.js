@@ -1,46 +1,17 @@
-import { useState } from "react";
+
 import Style2 from "./Style2";
 import Style3 from "./Style3";
 import Style1 from "./Style1";
 
 // FAQ Item Component
-const FaqItem = ({ question, answer, isActive, onClick }) => {
-  return (
-    <div className={`faq-item ${isActive ? "active" : ""}`}>
-      <div className="faq-question" onClick={onClick}>
-        <span>{question}</span>
-        <button className="toggle-btn">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <polyline
-              points={isActive ? "18 15 12 9 6 15" : "6 9 12 15 18 9"}
-            ></polyline>
-          </svg>
-        </button>
-      </div>
-      <div className="faq-answer" style={{ maxHeight: isActive ? "300px" : "0" }}>
-        {answer}
-      </div>
-    </div>
-  );
-};
+
 
 // Main FAQ Component
 const Faq = ({ isView, setAttributes, attributes }) => {
   const { options,faqs} = attributes;
-  const [activeIndex, setActiveIndex] = useState(null);
 
-  const toggleFaq = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
+
+
 
   const faqData = [
     {

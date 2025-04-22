@@ -15,3 +15,28 @@ export const contentAlignment = [
 	{ label: 'Center', value: 'center' },
 	{ label: 'Right', value: 'right' }
 ]
+
+
+export const toolTipPresets = [
+	{
+		label: "Default",
+		value: "theme1",
+		img: "https://templates.bplugins.com/wp-content/uploads/2025/04/image-3.png",
+		height: "auto",
+		width: "160px",
+		},
+		{
+		label: "Style One",
+		value: "theme2",
+		img: "https://templates.bplugins.com/wp-content/uploads/2025/04/image-2.png",
+		height: "auto",
+		width: "160px",
+		},
+		{
+		label: "Style Two",
+		value: "theme3",
+		img: "https://templates.bplugins.com/wp-content/uploads/2025/04/image-4.png",
+		height: "auto",
+		width: "160px",
+	},
+  ];

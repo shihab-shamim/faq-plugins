@@ -38,12 +38,7 @@ const Style = ({ attributes, setAttributes,device }) => {
     </PanelBody>
 
 
-      <PanelBody
-      
-        className="bPlPanelBody"
-        title={__(`${"Wrapper"}`, "b-blocks")}
-        initialOpen={false}
-      >
+      <PanelBody className="bPlPanelBody" title={__(`${"Wrapper"}`, "b-blocks")} initialOpen={false}>
           <PanelRow><Label>{__("Width","b-blocks")}</Label> <Device/></PanelRow>
 
         <UnitControl value={styles?.width[device]} onChange={(value)=>setAttributes({styles:updateData(styles,value,"width",device)})}  />

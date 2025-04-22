@@ -21,7 +21,6 @@ const toggleRightFaq = (index) => {
 };
 
   
-        const {faqItems}=attributes;
       
           const [activeIndex, setActiveIndex] = useState(null);
         
