@@ -278,7 +278,24 @@
 								"left":"20px"
 
 							},
-							"shadow":"0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)"
+							"shadow":[
+								{
+								  "hOffset": "0px",
+								  "vOffset": "10px",
+								  "blur": "15px",
+								  "spreed": "-3px",
+								  "color": "rgba(0, 0, 0, 0.1)",
+								  "isInset": false
+								},
+								{
+								  "hOffset": "0px",
+								  "vOffset": "4px",
+								  "blur": "6px",
+								  "spreed": "-4px",
+								  "color": "rgba(0, 0, 0, 0.1)",
+								  "isInset": false
+								}
+							  ]
 
 
 						 },

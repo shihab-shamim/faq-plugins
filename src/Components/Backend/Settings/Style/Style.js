@@ -6,7 +6,7 @@ import {
   // __experimentalBoxControl as BoxControl,
   __experimentalUnitControl as  UnitControl ,  __experimentalBoxControl as Boxcontrol
 } from "@wordpress/components";
-import {  Background, BoxControl, ColorControl, ColorsControl, Device, IconLibrary, Label, Typography } from "../../../../../../bpl-tools/Components";
+import {  Background, BoxControl, ColorControl, ColorsControl, Device, IconLibrary, Label, ShadowControl, Typography } from "../../../../../../bpl-tools/Components";
 import { updateData } from "../../../../utils/functions";
 
 const Style = ({ attributes, setAttributes,device }) => {
@@ -102,6 +102,9 @@ const Style = ({ attributes, setAttributes,device }) => {
 
           }} />
          </div>
+         <ShadowControl value={styles?.card?.shadow} onChange={value=>{
+           setAttributes({styles:updateData(styles,value,"card","shadow")})          
+         }}  />
 
   </PanelBody>: <PanelBody  className="bPlPanelBody"
         title={__("Description", "b-blocks")}

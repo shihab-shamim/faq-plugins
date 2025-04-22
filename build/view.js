@@ -930,6 +930,7 @@ const Style = ({
 				background-color:${styles?.card?.bg};
 				padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.card?.padding)};
 				border-radius:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.card?.radius)};
+				box-shadow:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getMultiShadowCSS)(styles?.card?.shadow)}!important;
 				}
 
 				${faqWrapperSl}{

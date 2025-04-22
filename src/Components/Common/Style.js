@@ -1,5 +1,5 @@
 	import { mobileBreakpoint, tabBreakpoint } from '../../../../bpl-tools/utils/data';
-	import { getBackgroundCSS, getBoxCSS, getColorsCSS, getTypoCSS, } from '../../../../bpl-tools/utils/getCSS';
+	import { getBackgroundCSS, getBoxCSS, getColorsCSS, getMultiShadowCSS, getShadowCSS, getTypoCSS, } from '../../../../bpl-tools/utils/getCSS';
 
 	const Style = ({ attributes, id }) => {
 		const { styles,alignment,options} = attributes;
@@ -82,6 +82,7 @@
 				background-color:${styles?.card?.bg};
 				padding:${getBoxCSS(styles?.card?.padding)};
 				border-radius:${getBoxCSS(styles?.card?.radius)};
+				box-shadow:${getMultiShadowCSS(styles?.card?.shadow)}!important;
 				}
 
 				${faqWrapperSl}{
