@@ -75,7 +75,7 @@ const toggleRightFaq = (index) => {
                  
    <div className="custom-shadow" >
     {isView?<h5 className="card-title">{faqs?.faqItems?.titleOne}</h5>:<RichText  className="card-title" value={faqs?.faqItems?.titleOne}   onChange={(value)=>{
-      // console.log(value);
+     
       setAttributes({faqs:updateData(faqs,value,"faqItems","titleOne")})
     }} ></RichText>}
    {faqs?.faqItems?.general.map((item, index) => (

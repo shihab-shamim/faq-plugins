@@ -46410,7 +46410,6 @@ const Style1 = ({
     className: "card-title",
     value: faqs?.faqItems?.titleOne,
     onChange: value => {
-      // console.log(value);
       setAttributes({
         faqs: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.updateData)(faqs, value, "faqItems", "titleOne")
       });
