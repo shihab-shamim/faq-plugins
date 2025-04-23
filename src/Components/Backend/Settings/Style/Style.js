@@ -1,9 +1,9 @@
-// import { useState } from "react";
+
 import { __ } from "@wordpress/i18n";
 import {
   PanelBody,
   PanelRow,
-  // __experimentalBoxControl as BoxControl,
+
   __experimentalUnitControl as  UnitControl ,  __experimentalBoxControl as Boxcontrol
 } from "@wordpress/components";
 import {  Background, BoxControl, ColorControl, ColorsControl, Device, IconLibrary, Label, ShadowControl, Typography } from "../../../../../../bpl-tools/Components";
@@ -12,7 +12,7 @@ import { updateData } from "../../../../utils/functions";
 const Style = ({ attributes, setAttributes,device }) => {
   const { styles,options,faqs} = attributes;
 
-// console.log(faqs?.buttonIcon);
+
 
 
 
