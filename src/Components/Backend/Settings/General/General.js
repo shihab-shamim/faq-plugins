@@ -53,9 +53,7 @@ const General = ({ attributes, setAttributes,device}) => {
 
 
     </PanelBody>
-    {/* style={{backgroundColor:"#FFFFFF",padding:"20px",borderRadius:"20px"}}>
-    {isView?<h5 style={{color:"#192534",fontWeight:"600", fontSize:"28px",textTransform:"capitalize"}} */}
-
+   
 
     <PanelBody  >
 
