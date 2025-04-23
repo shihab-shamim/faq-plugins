@@ -45547,8 +45547,12 @@ const Style = ({
 }) => {
   const {
     styles,
-    options
+    options,
+    faqs
   } = attributes;
+
+  // console.log(faqs?.buttonIcon);
+
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
     className: "bPlPanelBody",
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`${"Section"}`, "b-blocks"),
@@ -45636,7 +45640,7 @@ const Style = ({
   })), options?.selectedTheme === "theme1" ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
     className: "bPlPanelBody",
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Card", "b-blocks"),
-    initialOpen: true
+    initialOpen: false
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.ColorControl, {
     label: "Background-Color",
     value: styles?.card?.bg,
@@ -45732,6 +45736,11 @@ const Style = ({
     values: styles?.button?.radius,
     onChange: value => setAttributes({
       styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(styles, value, "button", "radius")
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.IconLibrary, {
+    value: faqs?.buttonIcon,
+    onChange: value => setAttributes({
+      faqs: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(faqs, value, "buttonIcon")
     })
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
     className: "bPlPanelBody",

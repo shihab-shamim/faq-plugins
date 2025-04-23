@@ -10,8 +10,9 @@ import {  Background, BoxControl, ColorControl, ColorsControl, Device, IconLibra
 import { updateData } from "../../../../utils/functions";
 
 const Style = ({ attributes, setAttributes,device }) => {
-  const { styles,options} = attributes;
+  const { styles,options,faqs} = attributes;
 
+// console.log(faqs?.buttonIcon);
 
 
 
@@ -82,7 +83,7 @@ const Style = ({ attributes, setAttributes,device }) => {
     
   { options?.selectedTheme ==="theme1" ?<PanelBody className="bPlPanelBody"
         title={__("Card", "b-blocks")}
-        initialOpen={true}>
+        initialOpen={false}>
 
           <ColorControl label="Background-Color" value={styles?.card?.bg} onChange={value=>{
             setAttributes({styles:updateData(styles,value,"card","bg")})
@@ -131,6 +132,8 @@ const Style = ({ attributes, setAttributes,device }) => {
           <BoxControl style={{marginTop:"15px"}} label={__("Padding","b-blocks")} values={styles?.button?.padding}  onChange={value=>setAttributes({styles:updateData(styles,value,"button","padding")})} />
             
           <BoxControl style={{marginTop:"15px"}} label={__("Radius","b-blocks")} values={styles?.button?.radius}  onChange={value=>setAttributes({styles:updateData(styles,value,"button","radius")})} />
+
+            <IconLibrary value={faqs?.buttonIcon} onChange={value=>setAttributes({faqs:updateData(faqs,value,"buttonIcon")})}  />
 
 
       </PanelBody>}
