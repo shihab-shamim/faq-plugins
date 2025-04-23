@@ -1,4 +1,5 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "../bpl-tools/Components/Mask/assets/shapes/blob.svg":
@@ -7,7 +8,6 @@
   \***********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ReactComponent: () => (/* binding */ SvgBlob),
@@ -38,7 +38,6 @@ var SvgBlob = function SvgBlob(props) {
   \*************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ReactComponent: () => (/* binding */ SvgCircle),
@@ -71,7 +70,6 @@ var SvgCircle = function SvgCircle(props) {
   \*************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ReactComponent: () => (/* binding */ SvgFlower),
@@ -102,7 +100,6 @@ var SvgFlower = function SvgFlower(props) {
   \**************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ReactComponent: () => (/* binding */ SvgHexagon),
@@ -133,7 +130,6 @@ var SvgHexagon = function SvgHexagon(props) {
   \*************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ReactComponent: () => (/* binding */ SvgSketch),
@@ -164,7 +160,6 @@ var SvgSketch = function SvgSketch(props) {
   \***************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ReactComponent: () => (/* binding */ SvgTriangle),
@@ -195,7 +190,6 @@ var SvgTriangle = function SvgTriangle(props) {
   \**********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   deskBreakpoint: () => (/* binding */ deskBreakpoint),
@@ -214,7 +208,6 @@ const mobileBreakpoint = '@media only screen and (max-width: 640px)';
   \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   debounce: () => (/* binding */ debounce),
@@ -343,7 +336,6 @@ const escapeHTML = input => {
   \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getAdvBGCSS: () => (/* binding */ getAdvBGCSS),
@@ -856,7 +848,6 @@ const getMaskCSS = mask => {
   \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -1131,7 +1122,6 @@ const Style = ({
   \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -1239,7 +1229,6 @@ const Faq = ({
   \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -1400,7 +1389,6 @@ const Style1 = ({
   \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -1501,7 +1489,6 @@ const Style2 = ({
   \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -1604,7 +1591,6 @@ const Style3 = ({
   \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -1711,7 +1697,6 @@ const FaqItem = ({
   \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   themeSwitch: () => (/* binding */ themeSwitch),
@@ -2483,9 +2468,11 @@ const themeSwitch = (theme = "theme1", attributes) => (0,immer__WEBPACK_IMPORTED
 /*!************************!*\
   !*** ./src/style.scss ***!
   \************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nHookWebpackError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: unmatched \"}\".\n    ╷\n286 │ }\n    │ ^\n    ╵\n  src\\style.scss 286:1  root stylesheet\n    at tryRunOrWebpackError (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\HookWebpackError.js:88:9)\n    at __webpack_require_module__ (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\Compilation.js:5246:12)\n    at __webpack_require__ (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\Compilation.js:5203:18)\n    at C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\Compilation.js:5275:20\n    at symbolIterator (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\neo-async\\async.js:3485:9)\n    at done (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\neo-async\\async.js:3527:9)\n    at Hook.eval [as callAsync] (eval at create (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\tapable\\lib\\Hook.js:18:14)\n    at C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\Compilation.js:5181:43\n    at symbolIterator (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\neo-async\\async.js:3482:9)\n    at timesSync (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\neo-async\\async.js:2297:7)\n    at Object.eachLimit (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\neo-async\\async.js:3463:5)\n    at C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\Compilation.js:5143:16\n    at symbolIterator (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\neo-async\\async.js:3485:9)\n    at timesSync (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\neo-async\\async.js:2297:7)\n    at Object.eachLimit (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\neo-async\\async.js:3463:5)\n    at C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\Compilation.js:5111:15\n    at symbolIterator (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\neo-async\\async.js:3485:9)\n    at done (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\neo-async\\async.js:3527:9)\n    at C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\Compilation.js:5057:8\n    at C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\Compilation.js:3495:6\n    at C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\HookWebpackError.js:68:3\n    at Hook.eval [as callAsync] (eval at create (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at Cache.store (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\Cache.js:113:20)\n    at ItemCacheFacade.store (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\CacheFacade.js:141:15)\n    at C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\Compilation.js:3494:11\n    at C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\Cache.js:99:5\n    at Hook.eval [as callAsync] (eval at create (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:16:1)\n    at Cache.get (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\Cache.js:81:18)\n    at ItemCacheFacade.get (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\CacheFacade.js:115:15)\n    at Compilation._codeGenerationModule (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\Compilation.js:3462:9)\n    at codeGen (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\Compilation.js:5045:11)\n    at symbolIterator (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\neo-async\\async.js:3482:9)\n    at timesSync (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\neo-async\\async.js:2297:7)\n    at Object.eachLimit (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\neo-async\\async.js:3463:5)\n    at C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\Compilation.js:5075:14\n    at processQueue (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\util\\processAsyncTree.js:61:4)\n    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)\n-- inner error --\nError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: unmatched \"}\".\n    ╷\n286 │ }\n    │ ^\n    ╵\n  src\\style.scss 286:1  root stylesheet\n    at Object.<anonymous> (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\css-loader\\dist\\cjs.js??ruleSet[1].rules[4].use[1]!C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\postcss-loader\\dist\\cjs.js??ruleSet[1].rules[4].use[2]!C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\sass-loader\\dist\\cjs.js??ruleSet[1].rules[4].use[3]!C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\src\\style.scss:1:7)\n    at C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\javascript\\JavascriptModulesPlugin.js:457:10\n    at Hook.eval [as call] (eval at create (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\tapable\\lib\\HookCodeFactory.js:19:10), <anonymous>:7:1)\n    at Hook.CALL_DELEGATE [as _call] (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\tapable\\lib\\Hook.js:14:14)\n    at C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\Compilation.js:5248:39\n    at tryRunOrWebpackError (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\HookWebpackError.js:83:7)\n    at __webpack_require_module__ (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\Compilation.js:5246:12)\n    at __webpack_require__ (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\Compilation.js:5203:18)\n    at C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\Compilation.js:5275:20\n    at symbolIterator (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\neo-async\\async.js:3485:9)\n    at done (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\neo-async\\async.js:3527:9)\n    at Hook.eval [as callAsync] (eval at create (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\tapable\\lib\\Hook.js:18:14)\n    at C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\Compilation.js:5181:43\n    at symbolIterator (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\neo-async\\async.js:3482:9)\n    at timesSync (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\neo-async\\async.js:2297:7)\n    at Object.eachLimit (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\neo-async\\async.js:3463:5)\n    at C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\Compilation.js:5143:16\n    at symbolIterator (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\neo-async\\async.js:3485:9)\n    at timesSync (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\neo-async\\async.js:2297:7)\n    at Object.eachLimit (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\neo-async\\async.js:3463:5)\n    at C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\Compilation.js:5111:15\n    at symbolIterator (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\neo-async\\async.js:3485:9)\n    at done (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\neo-async\\async.js:3527:9)\n    at C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\Compilation.js:5057:8\n    at C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\Compilation.js:3495:6\n    at C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\HookWebpackError.js:68:3\n    at Hook.eval [as callAsync] (eval at create (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at Cache.store (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\Cache.js:113:20)\n    at ItemCacheFacade.store (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\CacheFacade.js:141:15)\n    at C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\Compilation.js:3494:11\n    at C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\Cache.js:99:5\n    at Hook.eval [as callAsync] (eval at create (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:16:1)\n    at Cache.get (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\Cache.js:81:18)\n    at ItemCacheFacade.get (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\CacheFacade.js:115:15)\n    at Compilation._codeGenerationModule (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\Compilation.js:3462:9)\n    at codeGen (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\Compilation.js:5045:11)\n    at symbolIterator (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\neo-async\\async.js:3482:9)\n    at timesSync (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\neo-async\\async.js:2297:7)\n    at Object.eachLimit (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\neo-async\\async.js:3463:5)\n    at C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\Compilation.js:5075:14\n    at processQueue (C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\webpack\\lib\\util\\processAsyncTree.js:61:4)\n    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)\n\nGenerated code for C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\css-loader\\dist\\cjs.js??ruleSet[1].rules[4].use[1]!C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\postcss-loader\\dist\\cjs.js??ruleSet[1].rules[4].use[2]!C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\node_modules\\sass-loader\\dist\\cjs.js??ruleSet[1].rules[4].use[3]!C:\\Users\\shiha\\Local Sites\\shihab\\app\\public\\wp-content\\plugins\\faq plugin\\src\\style.scss\n1 | throw new Error(\"Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\\nSassError: unmatched \\\"}\\\".\\n    ╷\\n286 │ }\\n    │ ^\\n    ╵\\n  src\\\\style.scss 286:1  root stylesheet\");");
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
 
 /***/ }),
 
@@ -2495,7 +2482,6 @@ throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugi
   \******************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-"use strict";
 
 
 var m = __webpack_require__(/*! react-dom */ "react-dom");
@@ -2528,7 +2514,6 @@ if (false) {} else {
   \************************/
 /***/ ((module) => {
 
-"use strict";
 module.exports = window["React"];
 
 /***/ }),
@@ -2539,7 +2524,6 @@ module.exports = window["React"];
   \***************************/
 /***/ ((module) => {
 
-"use strict";
 module.exports = window["ReactDOM"];
 
 /***/ }),
@@ -2550,7 +2534,6 @@ module.exports = window["ReactDOM"];
   \*************************************/
 /***/ ((module) => {
 
-"use strict";
 module.exports = window["wp"]["blockEditor"];
 
 /***/ }),
@@ -2561,7 +2544,6 @@ module.exports = window["wp"]["blockEditor"];
   \******************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Immer: () => (/* binding */ Immer2),
@@ -3804,7 +3786,6 @@ function castImmutable(value) {
   \*******************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Immer: () => (/* binding */ Immer2),
@@ -5110,9 +5091,6 @@ function castImmutable(value) {
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
-(() => {
-"use strict";
 /*!*********************!*\
   !*** ./src/view.js ***!
   \*********************/
@@ -5142,8 +5120,6 @@ document.addEventListener('DOMContentLoaded', () => {
     blockNameEl?.removeAttribute('data-attributes');
   });
 });
-})();
-
 /******/ })()
 ;
 //# sourceMappingURL=view.js.map
