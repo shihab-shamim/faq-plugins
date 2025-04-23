@@ -45069,9 +45069,6 @@ const Edit = props => {
     clientId,
     device
   } = props;
-  // const { purposeType } = attributes;
-  // console.log(device);
-
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Settings_Settings__WEBPACK_IMPORTED_MODULE_3__["default"], {
     attributes,
     setAttributes,
@@ -45088,7 +45085,6 @@ const Edit = props => {
     setAttributes: setAttributes
   })));
 };
-// export default Edit;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_wordpress_data__WEBPACK_IMPORTED_MODULE_2__.withSelect)(select => {
   const {
     getDeviceType
