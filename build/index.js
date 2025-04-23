@@ -46730,7 +46730,6 @@ const FaqItem = ({
     className: "question",
     value: question,
     onChange: value => {
-      // setAttributes({faqItems:updateData(faqItems,value,index,"question")})
       if (options?.selectedTheme === "theme1") {
         setAttributes({
           faqs: {
@@ -46767,7 +46766,6 @@ const FaqItem = ({
     className: "faq-answer-dec",
     value: answer,
     onChange: value => {
-      // setAttributes({faqItems:updateData(faqItems,value,index,"answer")})
       if (options?.selectedTheme === "theme1") {
         setAttributes({
           faqs: {
