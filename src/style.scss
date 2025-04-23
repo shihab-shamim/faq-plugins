@@ -95,10 +95,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		// background-color: #c5fb00;
-		// color: #000000;
-		// padding:  8px 20px;
-		// border-radius: 0.5rem;
+		
 		text-decoration: none;
 		font-weight: 600;
 		transition: all 0.3s ease;
@@ -179,7 +176,7 @@
 	}
 	
 	.faq-item.active .faq-question span {
-		// color: #c5fb00;
+		
 	}
 	.faq-answer ,.faq-question{
 		max-width: 700px;
@@ -196,10 +193,7 @@
 		
 		
 
-	// .active{
-	// 	background-color: #E8DFFF !important;
-	// 	color: #451CB3 !important;
-	// }
+
 	
 	.faq-item.active .faq-answer {
 		  max-height:auto;
