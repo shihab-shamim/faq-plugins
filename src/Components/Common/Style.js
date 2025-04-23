@@ -77,6 +77,10 @@
 				${getTypoCSS(faqhighlighteSl, styles?.title?.typho)?.styles}
 				${getTypoCSS(faqDescriptionSl, styles?.description?.typho)?.styles}
 				${getTypoCSS(cardTitleSl, styles?.card?.title?.typo)?.styles}
+
+				${faqContactButtonrSl} svg{
+				fill:${styles?.button?.colors?.color};
+				}
 				
 				${cardTitleSl}{
 				    color:${styles?.card?.title?.color};

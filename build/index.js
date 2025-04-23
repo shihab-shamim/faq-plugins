@@ -45905,6 +45905,10 @@ const Style = ({
 				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqhighlighteSl, styles?.title?.typho)?.styles}
 				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqDescriptionSl, styles?.description?.typho)?.styles}
 				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(cardTitleSl, styles?.card?.title?.typo)?.styles}
+
+				${faqContactButtonrSl} svg{
+				fill:${styles?.button?.colors?.color};
+				}
 				
 				${cardTitleSl}{
 				    color:${styles?.card?.title?.color};

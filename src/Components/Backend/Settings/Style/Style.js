@@ -177,5 +177,5 @@ const Style = ({ attributes, setAttributes,device }) => {
   );
 };
 
-export default Style;  
+export default Style;     
 
