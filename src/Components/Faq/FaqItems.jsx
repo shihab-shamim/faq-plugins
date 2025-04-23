@@ -16,7 +16,7 @@ const FaqItems = ({item,index,setAttributes,type,attributes}) => {
           item,
           ...items.slice(index + 1),
         ];
-        // setItems(updatedItems);
+       
         setAttributes({faqs:updateData(faqs,updatedItems,"faqItems",type)})
       };
     return (

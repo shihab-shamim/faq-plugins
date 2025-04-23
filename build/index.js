@@ -46222,7 +46222,6 @@ const FaqItems = ({
   };
   const handleCopy = index => {
     const updatedItems = [...items.slice(0, index + 1), item, ...items.slice(index + 1)];
-    // setItems(updatedItems);
     setAttributes({
       faqs: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_2__.updateData)(faqs, updatedItems, "faqItems", type)
     });
