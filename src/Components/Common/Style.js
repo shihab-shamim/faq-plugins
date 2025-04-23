@@ -8,8 +8,7 @@
 		const wrapperSl = `${mainSl} .wrapper`; 
 		const containerSl = `${wrapperSl} .container`;
 		const faqWrapperSl = `${containerSl} .faq-wrapper`;
-		// const faqRightrSl = `${faqWrapperSl} .faq-right`;
-		// const faqItemrSl = `${faqRightrSl} .faq-item`;
+	
 		const faqAnswerSl = `${containerSl} .faq-answer`;
 		const faqQuestionSl = `${containerSl} .faq-question`;
 		const toggleBtnSl = `${faqQuestionSl} .toggle-btn`;
@@ -22,16 +21,13 @@
 		const faqDescriptionSl = `${faqLeftSl} .description`;
 		
 		const faqContactButtonrSl = `${wrapperSl} .contact-btn`;
-		// theme 1 
+		
 		const defaultThemeContainerSl=`${wrapperSl} .defaultThemeContainer`;
 		const supportSectionrSl=`${wrapperSl} .support-section`;
 		const customShadowSl=`${containerSl} .custom-shadow`;
 		const cardTitleSl=`${customShadowSl} .card-title`;
 
 
-	// console.log(styles?.question?.active);
-	// color: ${styles?.question?.active?.color} !important;
-	// background: ${styles?.question?.active?.bg} !important;
 	const getActiveColorsCSS =(colors)=>{
 
 		if(colors?.bgType==="solid"){
