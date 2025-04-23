@@ -46100,10 +46100,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-// FAQ Item Component
-
-// Main FAQ Component
 const Faq = ({
   isView,
   setAttributes,
