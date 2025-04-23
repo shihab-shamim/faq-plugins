@@ -295,7 +295,27 @@
 								  "color": "rgba(0, 0, 0, 0.1)",
 								  "isInset": false
 								}
-							  ]
+							  ],
+							  "title":{
+								"color":"#192534",
+								"typo":{
+									"fontFamily":"Archivo",
+									"fontCategory": "sans-serif",
+									"fontWeight": 600,
+									"fontVariant": "400",
+									"isUploadFont": true,
+									"fontSize": {
+									  "desktop": 28,
+									  "tablet": 28,
+									  "mobile": 28
+									},
+									"fontStyle": "normal",
+									"textTransform": "none",
+									"textDecoration": "none",
+									"lineHeight": "135%",
+									"letterSpace": "0px"
+								  }
+							  }
 
 
 						 },

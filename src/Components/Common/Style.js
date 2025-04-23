@@ -26,6 +26,7 @@
 		const defaultThemeContainerSl=`${wrapperSl} .defaultThemeContainer`;
 		const supportSectionrSl=`${wrapperSl} .support-section`;
 		const customShadowSl=`${containerSl} .custom-shadow`;
+		const cardTitleSl=`${customShadowSl} .card-title`;
 
 
 	// console.log(styles?.question?.active);
@@ -46,13 +47,13 @@
 
 		return `${color} ${background}`;
 
-		}
-
-
-			
+		}			
 	}
 
 
+
+
+	console.log(styles?.card?.title?.typo);
 	
 
 
@@ -68,6 +69,7 @@
 				${getTypoCSS('', styles?.title?.typho)?.googleFontLink}
 				${getTypoCSS('', styles?.description?.typho)?.googleFontLink}
 				${getTypoCSS('', styles?.button?.typho)?.googleFontLink}
+				${getTypoCSS('', styles?.card?.title?.typo)?.googleFontLink}
 		
 		
 				${getTypoCSS(questionSl, styles?.question?.typho)?.styles}
@@ -75,7 +77,11 @@
 				${getTypoCSS(faqTitle, styles?.title?.typho)?.styles}
 				${getTypoCSS(faqhighlighteSl, styles?.title?.typho)?.styles}
 				${getTypoCSS(faqDescriptionSl, styles?.description?.typho)?.styles}
-
+				${getTypoCSS(cardTitleSl, styles?.card?.title?.typo)?.styles}
+				
+				${cardTitleSl}{
+				    color:${styles?.card?.title?.color};
+				}
 				
 				${customShadowSl}{
 			

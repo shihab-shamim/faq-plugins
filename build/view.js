@@ -889,6 +889,7 @@ const Style = ({
   const defaultThemeContainerSl = `${wrapperSl} .defaultThemeContainer`;
   const supportSectionrSl = `${wrapperSl} .support-section`;
   const customShadowSl = `${containerSl} .custom-shadow`;
+  const cardTitleSl = `${customShadowSl} .card-title`;
 
   // console.log(styles?.question?.active);
   // color: ${styles?.question?.active?.color} !important;
@@ -905,6 +906,7 @@ const Style = ({
       return `${color} ${background}`;
     }
   };
+  console.log(styles?.card?.title?.typo);
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: `
@@ -916,6 +918,7 @@ const Style = ({
 				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.title?.typho)?.googleFontLink}
 				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.description?.typho)?.googleFontLink}
 				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.button?.typho)?.googleFontLink}
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.card?.title?.typo)?.googleFontLink}
 		
 		
 				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(questionSl, styles?.question?.typho)?.styles}
@@ -923,7 +926,11 @@ const Style = ({
 				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqTitle, styles?.title?.typho)?.styles}
 				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqhighlighteSl, styles?.title?.typho)?.styles}
 				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqDescriptionSl, styles?.description?.typho)?.styles}
-
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(cardTitleSl, styles?.card?.title?.typo)?.styles}
+				
+				${cardTitleSl}{
+				    color:${styles?.card?.title?.color};
+				}
 				
 				${customShadowSl}{
 			
@@ -1298,19 +1305,9 @@ const Style1 = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-shadow"
   }, isView ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h5", {
-    style: {
-      color: "#192534",
-      fontWeight: "600",
-      fontSize: "28px",
-      textTransform: "capitalize"
-    }
+    className: "card-title"
   }, faqs?.faqItems?.titleOne) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
-    style: {
-      color: "#192534",
-      fontWeight: "600",
-      fontSize: "28px",
-      textTransform: "capitalize"
-    },
+    className: "card-title",
     value: faqs?.faqItems?.titleOne,
     onChange: value => {
       // console.log(value);
@@ -1334,19 +1331,9 @@ const Style1 = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-shadow"
   }, isView ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h5", {
-    style: {
-      color: "#192534",
-      fontWeight: "600",
-      fontSize: "28px",
-      textTransform: "capitalize"
-    }
+    className: "card-title"
   }, faqs?.faqItems?.titleTwo) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
-    style: {
-      color: "#192534",
-      fontWeight: "600",
-      fontSize: "28px",
-      textTransform: "capitalize"
-    },
+    className: "card-title",
     value: faqs?.faqItems?.titleTwo,
     onChange: value => {
       setAttributes({
@@ -1367,19 +1354,9 @@ const Style1 = ({
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-shadow support-section"
   }, isView ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h5", {
-    style: {
-      color: "#192534",
-      fontWeight: "600",
-      fontSize: "28px",
-      textTransform: "capitalize"
-    }
+    className: "card-title"
   }, faqs?.faqItems?.titleThree) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
-    style: {
-      color: "#192534",
-      fontWeight: "600",
-      fontSize: "28px",
-      textTransform: "capitalize"
-    },
+    className: "card-title",
     value: faqs?.faqItems?.titleThree,
     onChange: value => {
       setAttributes({
