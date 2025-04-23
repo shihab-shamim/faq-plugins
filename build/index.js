@@ -45671,6 +45671,22 @@ const Style = ({
         styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(styles, value, "card", "shadow")
       });
     }
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.Typography, {
+    label: "Title-Typography",
+    value: styles?.card?.title?.typo,
+    onChange: value => {
+      setAttributes({
+        styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(styles, value, "card", "title", "typo")
+      });
+    }
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.ColorControl, {
+    value: styles?.card?.title?.color,
+    label: "Title-Color",
+    onChange: value => {
+      setAttributes({
+        styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(styles, value, "card", "title", "color")
+      });
+    }
   })) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
     className: "bPlPanelBody",
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Description", "b-blocks"),
@@ -45860,7 +45876,6 @@ const Style = ({
       return `${color} ${background}`;
     }
   };
-  console.log(styles?.card?.title?.typo);
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: `

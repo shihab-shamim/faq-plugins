@@ -101,6 +101,14 @@ const Style = ({ attributes, setAttributes,device }) => {
            setAttributes({styles:updateData(styles,value,"card","shadow")})          
          }}  />
 
+         <Typography label={"Title-Typography"} value={styles?.card?.title?.typo} onChange={(value)=>{
+          setAttributes({styles:updateData(styles,value,"card","title","typo")})
+         }} />
+
+         <ColorControl value={styles?.card?.title?.color} label={"Title-Color"} onChange={(value)=>{
+          setAttributes({styles:updateData(styles,value,"card","title","color")})
+         }} />
+
   </PanelBody>: <PanelBody  className="bPlPanelBody"
         title={__("Description", "b-blocks")}
         initialOpen={false}>

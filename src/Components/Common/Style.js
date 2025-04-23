@@ -53,7 +53,6 @@
 
 
 
-	console.log(styles?.card?.title?.typo);
 	
 
 

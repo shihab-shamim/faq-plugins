@@ -906,7 +906,6 @@ const Style = ({
       return `${color} ${background}`;
     }
   };
-  console.log(styles?.card?.title?.typo);
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: `
