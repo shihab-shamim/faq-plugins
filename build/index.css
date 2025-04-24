@@ -170,6 +170,21 @@
 .edit-post-layout__content {
   transition: all 0.3s ease-in-out !important;
 }
+
+.addItem .components-button, .mt15 .components-button {
+  background-color: #4527A4;
+  color: #fff;
+  padding: 20px 30px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.addItem .components-button:hover, .mt15 .components-button:hover {
+  background-color: #4527A4;
+  color: #fff;
+}
 /*!*********************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!../bpl-tools/Components/style.scss ***!
   \*********************************************************************************************************************************************************************************************************************************************************/

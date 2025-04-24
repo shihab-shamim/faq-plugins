@@ -55,11 +55,11 @@ const General = ({ attributes, setAttributes,device}) => {
     </PanelBody>
    
 
-    <PanelBody  >
+    
 
       
       { options?.selectedTheme ==="theme1"?<>
-      <Label><strong>FAQS!</strong></Label>
+      
             <PanelBody className='bPlPanelBody' title={__(`${faqs?.faqItems?.titleOne}`, 'b-blocks')} initialOpen={false}>
               <TextControl label="Title" value={faqs?.faqItems?.titleOne} onChange={value=>{
                 setAttributes({faqs:updateData(faqs,value,"faqItems","titleOne")})
@@ -109,11 +109,11 @@ const General = ({ attributes, setAttributes,device}) => {
 
             </PanelBody>
 
-      </> :<ItemsPanel newItem={{question: "New Question?",
-							answer: "New Answer."}} design="sortable"  attributes={attributes} setAttributes={setAttributes} arrKey="faqItems" itemLabel="FAQ" ItemSettings={FaqSetting}  />
+      </> :<PanelBody className='bPlPanelBody' title={__(`FAQS!`, 'b-blocks')} initialOpen={false}><ItemsPanel newItem={{question: "New Question?",
+							answer: "New Answer."}} design="sortable"  attributes={attributes} setAttributes={setAttributes} arrKey="faqItems" itemLabel="FAQ" ItemSettings={FaqSetting}  /> </PanelBody>
     }
               
-    </PanelBody>
+
  
     <PanelBody className='bPlPanelBody' title={__('Layout' , 'b-blocks')} initialOpen={false}>
       <TextControl  placeholder='Title...' label="Title" value={faqs?.title} onChange={(value)=>{setAttributes({faqs:updateData(faqs,value,"title")})}}/>

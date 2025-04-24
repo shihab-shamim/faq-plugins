@@ -16,7 +16,6 @@ import { themeSwitch } from "../../../utils/functions";
 const Settings = ({ attributes, setAttributes, device }) => {
   const { alignment, options } = attributes;
 
-
   return (
     <>
       <InspectorControls>
@@ -83,15 +82,13 @@ const Settings = ({ attributes, setAttributes, device }) => {
           ]}
         />
 
-		<BlockPreview
-			options={toolTipPresets}
-			value={options?.selectedTheme}
-			onChange={(value)=>{
-			setAttributes(themeSwitch(value,attributes));
-			}}
-		></BlockPreview>
-
-       
+        <BlockPreview
+          options={toolTipPresets}
+          value={options?.selectedTheme}
+          onChange={(value) => {
+            setAttributes(themeSwitch(value, attributes));
+          }}
+        ></BlockPreview>
       </BlockControls>
     </>
   );

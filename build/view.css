@@ -124,6 +124,9 @@
   .wp-block-b-blocks-test-purpose .wrapper .faq-wrapper {
     grid-template-columns: 1fr;
   }
+  .wp-block-b-blocks-test-purpose .wrapper .container {
+    margin-top: 20px;
+  }
 }
 
 /*# sourceMappingURL=view.css.map*/

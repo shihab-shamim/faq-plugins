@@ -45168,7 +45168,7 @@ const General = ({
     onChange: value => {
       setAttributes((0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.themeSwitch)(value, attributes));
     }
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, null, options?.selectedTheme === "theme1" ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_5__.Label, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("strong", null, "FAQS!")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+  })), options?.selectedTheme === "theme1" ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
     className: "bPlPanelBody",
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`${faqs?.faqItems?.titleOne}`, 'b-blocks'),
     initialOpen: false
@@ -45264,7 +45264,11 @@ const General = ({
     strokeLinecap: "round",
     strokeLinejoin: "round",
     d: "M12 4v16m8-8H4"
-  })), "Add New Item")))) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_5__.ItemsPanel, {
+  })), "Add New Item")))) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+    className: "bPlPanelBody",
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`FAQS!`, 'b-blocks'),
+    initialOpen: false
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_5__.ItemsPanel, {
     newItem: {
       question: "New Question?",
       answer: "New Answer."
@@ -45275,7 +45279,7 @@ const General = ({
     arrKey: "faqItems",
     itemLabel: "FAQ",
     ItemSettings: _Faq_FaqSetting__WEBPACK_IMPORTED_MODULE_6__["default"]
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+  }), " "), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
     className: "bPlPanelBody",
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Layout', 'b-blocks'),
     initialOpen: false
