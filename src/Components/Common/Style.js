@@ -47,7 +47,7 @@
 	}
 
 
-
+console.log(styles?.answer?.padding);
 
 	
 
@@ -120,8 +120,10 @@
 				${getColorsCSS(styles?.answer?.colors)}
 		
 				border-radius:${getBoxCSS(styles?.answer?.radius)};
+				
 				.faq-answer-dec{
 				padding:${getBoxCSS(styles?.answer?.padding)};
+				padding-left:0px !important;
 			}
 			
 			}
