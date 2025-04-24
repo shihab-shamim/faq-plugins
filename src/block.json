@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
-	"name": "b-blocks/test-purpose",
+	"name": "b-blocks/faq-blocks",
 	"version": "1.0.0",
 	"title": "FAQ!",
 	"category": "widgets",
 	"description": "Short description of the Test Purpose",
 	"keywords": [
-		"Faq","faqs","FAQS"
+		"Faq","faqs","FAQS","f","fa","collapsible","accessibility"
 	],
 	"textdomain": "b-blocks",
 	"attributes": {

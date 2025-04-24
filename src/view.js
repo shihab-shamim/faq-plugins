@@ -4,7 +4,7 @@ import Style from './Components/Common/Style';
 import Faq from './Components/Faq/Faq';
 
 document.addEventListener('DOMContentLoaded', () => {
-	const blockNameEls = document.querySelectorAll('.wp-block-b-blocks-test-purpose');
+	const blockNameEls = document.querySelectorAll('.wp-block-b-blocks-faq-blocks');
 	blockNameEls.forEach(blockNameEl => {
 		const attributes = JSON.parse(blockNameEl.dataset.attributes);
 
