@@ -106,7 +106,8 @@
 .wp-block-b-blocks-faq-blocks .wrapper .faq-question.active .toggle-btn {
   transform: rotate(180deg);
 }
-.wp-block-b-blocks-faq-blocks .wrapper .faq-answer, .wp-block-b-blocks-faq-blocks .wrapper .faq-question {
+.wp-block-b-blocks-faq-blocks .wrapper .faq-answer,
+.wp-block-b-blocks-faq-blocks .wrapper .faq-question {
   max-width: 700px;
 }
 .wp-block-b-blocks-faq-blocks .wrapper .faq-answer {

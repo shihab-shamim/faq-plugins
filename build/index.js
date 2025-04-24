@@ -45088,7 +45088,7 @@ const Edit = props => {
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_wordpress_data__WEBPACK_IMPORTED_MODULE_2__.withSelect)(select => {
   const {
     getDeviceType
-  } = select('core/editor');
+  } = select("core/editor");
   return {
     device: getDeviceType()?.toLowerCase()
   };
@@ -45140,7 +45140,7 @@ const General = ({
     selectedTheme
   } = options;
   const getValueByPath = (obj, path) => {
-    return path.split('.').reduce((acc, part) => acc && acc[part], obj);
+    return path.split(".").reduce((acc, part) => acc && acc[part], obj);
   };
   const general = getValueByPath(attributes, "faqs.faqItems.general");
   const generalTwo = getValueByPath(attributes, "faqs.faqItems.generalTwo");
@@ -45158,10 +45158,10 @@ const General = ({
   };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
     className: "bPlPanelBody",
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Themes', 'b-blocks'),
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Themes", "b-blocks"),
     initialOpen: false
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Select A Style', 'b-blocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Select A Style", "b-blocks"),
     labelPosition: "left",
     value: selectedTheme,
     options: _utils_options__WEBPACK_IMPORTED_MODULE_3__.themesOption,
@@ -45170,7 +45170,7 @@ const General = ({
     }
   })), options?.selectedTheme === "theme1" ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
     className: "bPlPanelBody",
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`${faqs?.faqItems?.titleOne}`, 'b-blocks'),
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`${faqs?.faqItems?.titleOne}`, "b-blocks"),
     initialOpen: false
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
     label: "Title",
@@ -45202,7 +45202,7 @@ const General = ({
     d: "M12 4v16m8-8H4"
   })), "Add New Item"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
     className: "bPlPanelBody",
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`${faqs?.faqItems?.titleTwo}`, 'b-blocks'),
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`${faqs?.faqItems?.titleTwo}`, "b-blocks"),
     initialOpen: false
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
     label: "Title",
@@ -45234,7 +45234,7 @@ const General = ({
     d: "M12 4v16m8-8H4"
   })), "Add New Item"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
     className: "bPlPanelBody",
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`${faqs?.faqItems?.titleThree}`, 'b-blocks'),
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`${faqs?.faqItems?.titleThree}`, "b-blocks"),
     initialOpen: false
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
     label: "Title",
@@ -45266,7 +45266,7 @@ const General = ({
     d: "M12 4v16m8-8H4"
   })), "Add New Item")))) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
     className: "bPlPanelBody",
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`FAQS!`, 'b-blocks'),
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`FAQS!`, "b-blocks"),
     initialOpen: false
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_5__.ItemsPanel, {
     newItem: {
@@ -45281,7 +45281,7 @@ const General = ({
     ItemSettings: _Faq_FaqSetting__WEBPACK_IMPORTED_MODULE_6__["default"]
   }), " "), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
     className: "bPlPanelBody",
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Layout', 'b-blocks'),
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Layout", "b-blocks"),
     initialOpen: false
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
     placeholder: "Title...",
@@ -45301,7 +45301,7 @@ const General = ({
         faqs: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(faqs, value, "description")
       });
     }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_5__.Label, null, "Show Button ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FormToggle, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_5__.Label, null, "Show Button", " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FormToggle, {
     checked: options?.isShowButton,
     onChange: () => setAttributes({
       options: {
@@ -45321,7 +45321,7 @@ const General = ({
     onChange: value => setAttributes({
       faqs: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(faqs, value, "buttonLink")
     })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_5__.Label, null, "Open In New Tab ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FormToggle, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_5__.Label, null, "Open In New Tab", " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FormToggle, {
     checked: options?.isLinkTarget,
     onChange: () => setAttributes({
       options: {
@@ -45758,7 +45758,7 @@ const Style = ({
     onChange: value => setAttributes({
       styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(styles, value, "question", "padding")
     })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.Label, null, " Gap: ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalUnitControl, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.Label, null, " ", "Gap:", " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalUnitControl, {
     value: styles?.question?.gap,
     onChange: value => setAttributes({
       styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.updateData)(styles, value, "question", "gap")

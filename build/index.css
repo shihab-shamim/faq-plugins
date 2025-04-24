@@ -2,10 +2,10 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/editor.scss ***!
   \****************************************************************************************************************************************************************************************************************************************/
 :root {
-  --color-delete: #E53E3E;
-  --color-copy: #3B82F6;
-  --color-text: #FFFFFF;
-  --color-background: #F7FAFC;
+  --color-delete: #e53e3e;
+  --color-copy: #3b82f6;
+  --color-text: #ffffff;
+  --color-background: #f7fafc;
   --spacing-unit: 6px;
   --border-radius: 4px;
 }
@@ -22,7 +22,8 @@
   color: #616063;
 }
 
-.border-radius, .bPlIconLibrary {
+.border-radius,
+.bPlIconLibrary {
   margin-top: 25px !important;
 }
 
@@ -113,10 +114,10 @@
     background-color: #242424;
   }
   h1 {
-    color: #E2E8F0;
+    color: #e2e8f0;
   }
   .container {
-    background-color: #1A202C;
+    background-color: #1a202c;
     border-radius: var(--border-radius);
   }
 }
@@ -142,7 +143,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background-color: #4F46E5; /* Indigo tone */
+  background-color: #4f46e5; /* Indigo tone */
   color: #ffffff;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 14px;
