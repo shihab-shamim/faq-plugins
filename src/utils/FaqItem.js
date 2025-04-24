@@ -21,12 +21,13 @@ const FaqItem = ({
         onClick={onClick}
       >
         {isView ? (
-          <span className="question">{question}</span>
+          <RichText.Content value={question} tagName="h3" className="question"></RichText.Content>
         ) : (
           <RichText
             placeholder="Enter Your Questions Here..."
             className="question"
             value={question}
+            tagName="h3"
             onChange={(value) => {
               if (options?.selectedTheme === "theme1") {
                 setAttributes({
@@ -66,12 +67,13 @@ const FaqItem = ({
         }}
       >
         {isView ? (
-          <span className="faq-answer-dec">{answer}</span>
+          <RichText.Content value={answer}  tagName="p" className="faq-answer-dec"></RichText.Content>
         ) : (
           <RichText
             placeholder="Enter Your Answer Here..."
             className="faq-answer-dec"
             value={answer}
+            tagName="p"
             onChange={(value) => {
               if (options?.selectedTheme === "theme1") {
                 setAttributes({

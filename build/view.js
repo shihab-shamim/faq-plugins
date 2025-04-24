@@ -970,7 +970,7 @@ const Style = ({
 				
 				.faq-answer-dec{
 				padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.answer?.padding)};
-				padding-left:0px !important;
+				
 			}
 			
 			}
@@ -1568,12 +1568,15 @@ const FaqItem = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `faq-question ${isActive ? "active" : ""}`,
     onClick: onClick
-  }, isView ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+  }, isView ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    value: question,
+    tagName: "h3",
     className: "question"
-  }, question) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+  }) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
     placeholder: "Enter Your Questions Here...",
     className: "question",
     value: question,
+    tagName: "h3",
     onChange: value => {
       if (options?.selectedTheme === "theme1") {
         setAttributes({
@@ -1604,12 +1607,15 @@ const FaqItem = ({
       maxHeight: isActive ? "400px" : "0",
       padding: isActive ? "10px 10px" : "0px 10px"
     }
-  }, isView ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+  }, isView ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    value: answer,
+    tagName: "p",
     className: "faq-answer-dec"
-  }, answer) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+  }) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
     placeholder: "Enter Your Answer Here...",
     className: "faq-answer-dec",
     value: answer,
+    tagName: "p",
     onChange: value => {
       if (options?.selectedTheme === "theme1") {
         setAttributes({

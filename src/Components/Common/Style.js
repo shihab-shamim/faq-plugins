@@ -123,7 +123,7 @@ console.log(styles?.answer?.padding);
 				
 				.faq-answer-dec{
 				padding:${getBoxCSS(styles?.answer?.padding)};
-				padding-left:0px !important;
+				
 			}
 			
 			}
