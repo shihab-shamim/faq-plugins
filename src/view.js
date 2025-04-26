@@ -18,6 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
       </>
     );
 
-    blockNameEl?.removeAttribute("data-attributes");
+     blockNameEl?.removeAttribute("data-attributes");
   });
 });

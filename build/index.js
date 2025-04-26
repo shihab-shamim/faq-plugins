@@ -45874,7 +45874,6 @@ const Style = ({
       return `${color} ${background}`;
     }
   };
-  console.log(styles?.answer?.padding);
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: `
@@ -45882,11 +45881,11 @@ const Style = ({
 		
 				
 		
-				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.question?.typho)?.googleFontLink}
-				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.title?.typho)?.googleFontLink}
-				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.description?.typho)?.googleFontLink}
-				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.button?.typho)?.googleFontLink}
-				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.card?.title?.typo)?.googleFontLink}
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", styles?.question?.typho)?.googleFontLink}
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", styles?.title?.typho)?.googleFontLink}
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", styles?.description?.typho)?.googleFontLink}
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", styles?.button?.typho)?.googleFontLink}
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", styles?.card?.title?.typo)?.googleFontLink}
 		
 		
 				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(questionSl, styles?.question?.typho)?.styles}
@@ -46076,7 +46075,7 @@ const Style = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: `
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)('', styles?.answer?.typho)?.googleFontLink}
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", styles?.answer?.typho)?.googleFontLink}
 			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(faqAnswerSl, styles?.answer?.typho)?.styles}
 		
 			`
@@ -46116,11 +46115,6 @@ const Faq = ({
     options,
     faqs
   } = attributes;
-  const faqsData = {
-    question: "What is your name ?",
-    answer: "My Name is Shihab Shamim"
-  };
-  console.log(faqsData["question"].split(" "));
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wrapper"
   }, options.selectedTheme === "theme1" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Style1__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -46220,11 +46214,18 @@ const FaqItems = ({
     className: "btn btn-copy"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "icon-copy"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "copy-paper copy-paper-back"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "copy-paper copy-paper-front"
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    fill: "white",
+    stroke: "currentColor",
+    fill: "currentColor",
+    "stroke-width": "0",
+    viewBox: "0 0 24 24",
+    height: "1em",
+    width: "1em",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "btn-text"
   }, "Copy"))));
 };

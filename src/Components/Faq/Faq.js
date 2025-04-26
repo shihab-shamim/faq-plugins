@@ -5,12 +5,9 @@ import Style1 from "./Style1";
 const Faq = ({ isView, setAttributes, attributes }) => {
   const { options, faqs } = attributes;
 
-  const faqsData={
-    question:"What is your name ?",
-    answer:"My Name is Shihab Shamim"
-  }
 
-  console.log(faqsData["question"].split(" "))
+
+
 
   return (
     <div className="wrapper">

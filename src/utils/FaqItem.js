@@ -14,6 +14,7 @@ const FaqItem = ({
 }) => {
   const { options, faqItems, faqs } = attributes;
 
+
   return (
     <div className={`faq-item`}>
       <div
@@ -66,6 +67,7 @@ const FaqItem = ({
           padding: isActive ? "10px 10px" : "0px 10px",
         }}
       >
+        
         {isView ? (
           <RichText.Content value={answer}  tagName="p" className="faq-answer-dec"></RichText.Content>
         ) : (
