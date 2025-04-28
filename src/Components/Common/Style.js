@@ -57,9 +57,6 @@ const Style = ({ attributes, id }) => {
         dangerouslySetInnerHTML={{
           __html: `
 
-		
-				
-		
 				${getTypoCSS("", styles?.question?.typho)?.googleFontLink}
 				${getTypoCSS("", styles?.title?.typho)?.googleFontLink}
 				${getTypoCSS("", styles?.description?.typho)?.googleFontLink}

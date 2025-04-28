@@ -45878,9 +45878,6 @@ const Style = ({
     dangerouslySetInnerHTML: {
       __html: `
 
-		
-				
-		
 				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", styles?.question?.typho)?.googleFontLink}
 				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", styles?.title?.typho)?.googleFontLink}
 				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", styles?.description?.typho)?.googleFontLink}
@@ -46217,8 +46214,7 @@ const FaqItems = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     fill: "white",
     stroke: "currentColor",
-    fill: "currentColor",
-    "stroke-width": "0",
+    strokeWidth: "0",
     viewBox: "0 0 24 24",
     height: "1em",
     width: "1em",

@@ -903,9 +903,6 @@ const Style = ({
     dangerouslySetInnerHTML: {
       __html: `
 
-		
-				
-		
 				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", styles?.question?.typho)?.googleFontLink}
 				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", styles?.title?.typho)?.googleFontLink}
 				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", styles?.description?.typho)?.googleFontLink}

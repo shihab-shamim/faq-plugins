@@ -13,6 +13,7 @@ import { themeSwitch, updateData } from "../../../../utils/functions";
 import {
   BButtonGroup,
   Device,
+  IconLibrary,
   ItemsPanel,
   Label,
 } from "../../../../../../bpl-tools/Components";
@@ -308,7 +309,9 @@ const General = ({ attributes, setAttributes, device }) => {
             })
           }
         />
-      </PanelBody>
+      </PanelBody> 
+       
+     
     </>
   );
 };
